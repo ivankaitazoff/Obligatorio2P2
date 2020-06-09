@@ -27,18 +27,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        GestionarTemas = new javax.swing.JButton();
+        GestionarPreguntasManualmente = new javax.swing.JButton();
+        CargaColectiva = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        GestionarTemas.setText("Gestionar Temas");
+        getContentPane().add(GestionarTemas);
+        GestionarTemas.setBounds(136, 37, 115, 23);
+
+        GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
+        getContentPane().add(GestionarPreguntasManualmente);
+        GestionarPreguntasManualmente.setBounds(80, 120, 250, 23);
+
+        CargaColectiva.setText("Carga De Preguntas En Forma Colectiva");
+        getContentPane().add(CargaColectiva);
+        CargaColectiva.setBounds(30, 230, 350, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +85,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CargaColectiva;
+    private javax.swing.JButton GestionarPreguntasManualmente;
+    private javax.swing.JButton GestionarTemas;
     // End of variables declaration//GEN-END:variables
 }

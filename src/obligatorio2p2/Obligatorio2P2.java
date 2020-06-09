@@ -5,6 +5,8 @@
  */
 package obligatorio2p2;
 
+import interfaz.MenuPrincipal;
+
 /**
  *
  * @author ivan
@@ -15,7 +17,10 @@ public class Obligatorio2P2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MenuPrincipal menu= new MenuPrincipal();
+        //menu.pack();
+        menu.setSize(600, 400);
+        menu.setVisible(true);
     }
     
 }
