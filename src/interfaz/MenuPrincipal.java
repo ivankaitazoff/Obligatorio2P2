@@ -35,10 +35,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         GestionarTemas.setText("Gestionar Temas");
+        GestionarTemas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GestionarTemasActionPerformed(evt);
+            }
+        });
         getContentPane().add(GestionarTemas);
         GestionarTemas.setBounds(136, 37, 115, 23);
 
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
+        GestionarPreguntasManualmente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GestionarPreguntasManualmenteActionPerformed(evt);
+            }
+        });
         getContentPane().add(GestionarPreguntasManualmente);
         GestionarPreguntasManualmente.setBounds(80, 120, 250, 23);
 
@@ -48,6 +58,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void GestionarTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarTemasActionPerformed
+        GestionTemas gestionP = new GestionTemas();
+        gestionP.setVisible(true);
+    }//GEN-LAST:event_GestionarTemasActionPerformed
+
+    private void GestionarPreguntasManualmenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarPreguntasManualmenteActionPerformed
+        GestionPreguntas gestionP = new GestionPreguntas();
+        gestionP.setVisible(true);
+    }//GEN-LAST:event_GestionarPreguntasManualmenteActionPerformed
 
     /**
      * @param args the command line arguments
