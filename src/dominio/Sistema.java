@@ -17,6 +17,24 @@ public class Sistema {
     
     private ArrayList<Tema> listaTemas;
     private ArrayList<Pregunta> listaPreguntas;
+
+    public ArrayList<Tema> getListaTemas() {
+        return listaTemas;
+    }
+
+    public void setListaTemas(ArrayList<Tema> listaTemas) {
+        this.listaTemas = listaTemas;
+    }
+
+    public ArrayList<Pregunta> getListaPreguntas() {
+        return listaPreguntas;
+    }
+
+    public void setListaPreguntas(ArrayList<Pregunta> listaPreguntas) {
+        this.listaPreguntas = listaPreguntas;
+    }
+    
+    
     
     public Tema CrearTema(String tema, String descripcion){
     Tema t = new Tema(tema, descripcion);
