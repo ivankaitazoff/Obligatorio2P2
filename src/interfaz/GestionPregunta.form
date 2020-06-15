@@ -24,8 +24,24 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="199" max="32767" attributes="0"/>
-              <Component id="cmbTemas" min="-2" pref="140" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="guardarPregunta" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="67" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="cmbTemas" pref="254" max="32767" attributes="0"/>
+                      <Component id="respuesta" alignment="0" max="32767" attributes="0"/>
+                      <Component id="pregunta" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="volverAMenu" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -34,8 +50,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-              <Component id="cmbTemas" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="221" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cmbTemas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pregunta" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="respuesta" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="161" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="volverAMenu" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="guardarPregunta" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,6 +88,44 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="volverAMenu">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Volver a menu principal"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="volverAMenuActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Seleccionar Tema"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar pregunta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar respuesta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="pregunta">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="preguntaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="respuesta">
+    </Component>
+    <Component class="javax.swing.JButton" name="guardarPregunta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Guardar Pregunta"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guardarPreguntaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

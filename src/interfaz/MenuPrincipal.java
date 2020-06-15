@@ -12,6 +12,7 @@ import dominio.Sistema;
  * @author ivan
  */
 public class MenuPrincipal extends javax.swing.JFrame {
+    
     Sistema sistema = new Sistema();
     /**
      * Creates new form MenuPrincipal
@@ -44,7 +45,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(GestionarTemas);
-        GestionarTemas.setBounds(136, 37, 250, 23);
+        GestionarTemas.setBounds(80, 40, 250, 23);
 
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
         GestionarPreguntasManualmente.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +54,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(GestionarPreguntasManualmente);
-        GestionarPreguntasManualmente.setBounds(80, 120, 250, 23);
+        GestionarPreguntasManualmente.setBounds(80, 90, 250, 23);
 
         CargaColectiva.setText("Carga De Preguntas En Forma Colectiva");
         CargaColectiva.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +63,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CargaColectiva);
-        CargaColectiva.setBounds(30, 230, 350, 23);
+        CargaColectiva.setBounds(30, 140, 350, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

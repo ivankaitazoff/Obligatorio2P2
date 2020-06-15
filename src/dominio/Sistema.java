@@ -18,6 +18,13 @@ public class Sistema {
     private ArrayList<Tema> listaTemas;
     private ArrayList<Pregunta> listaPreguntas;
 
+    public Sistema() {
+        this.listaTemas = new ArrayList<>();
+        this.listaPreguntas = new ArrayList<>();
+    }
+
+    
+    
     public ArrayList<Tema> getListaTemas() {
         return listaTemas;
     }
