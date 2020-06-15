@@ -9,15 +9,16 @@ package dominio;
  *
  * @author ivan
  */
-public class Preguntas extends Temas{
+public class Pregunta extends Tema{
     private String pregunta;
     private String respuesta;
 
-    public Preguntas(String pregunta, String respuesta, String nombre, String descripcion) {
+    public Pregunta(String pregunta, String respuesta, String nombre, String descripcion) {
         super(nombre, descripcion);
         this.pregunta = pregunta;
         this.respuesta = respuesta;
     }
+    
 
     public String getPregunta() {
         return pregunta;

@@ -41,7 +41,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(GestionarTemas);
-        GestionarTemas.setBounds(136, 37, 115, 23);
+        GestionarTemas.setBounds(136, 37, 250, 23);
 
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
         GestionarPreguntasManualmente.addActionListener(new java.awt.event.ActionListener() {
@@ -53,6 +53,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GestionarPreguntasManualmente.setBounds(80, 120, 250, 23);
 
         CargaColectiva.setText("Carga De Preguntas En Forma Colectiva");
+        CargaColectiva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CargaColectivaActionPerformed(evt);
+            }
+        });
         getContentPane().add(CargaColectiva);
         CargaColectiva.setBounds(30, 230, 350, 23);
 
@@ -60,14 +65,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GestionarTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarTemasActionPerformed
-        GestionTemas gestionP = new GestionTemas();
+        GestionTema gestionP = new GestionTema();
         gestionP.setVisible(true);
     }//GEN-LAST:event_GestionarTemasActionPerformed
 
     private void GestionarPreguntasManualmenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarPreguntasManualmenteActionPerformed
-        GestionPreguntas gestionP = new GestionPreguntas();
+        GestionPregunta gestionP = new GestionPregunta();
         gestionP.setVisible(true);
     }//GEN-LAST:event_GestionarPreguntasManualmenteActionPerformed
+
+    private void CargaColectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargaColectivaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CargaColectivaActionPerformed
 
     /**
      * @param args the command line arguments

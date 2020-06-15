@@ -9,11 +9,11 @@ package dominio;
  *
  * @author ivan
  */
-public class Temas {
+public class Tema {
     private String nombre;
     private String descripcion;
 
-    public Temas(String nombre, String descripcion) {
+    public Tema(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
