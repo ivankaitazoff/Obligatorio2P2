@@ -74,7 +74,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_GestionarTemasActionPerformed
 
     private void GestionarPreguntasManualmenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarPreguntasManualmenteActionPerformed
-        GestionPregunta gestionP = new GestionPregunta(sistema.getListaTemas());
+        GestionPregunta gestionP = new GestionPregunta(sistema.getListaTemas(),sistema.getListaPreguntas());
         gestionP.setVisible(true);
     }//GEN-LAST:event_GestionarPreguntasManualmenteActionPerformed
 

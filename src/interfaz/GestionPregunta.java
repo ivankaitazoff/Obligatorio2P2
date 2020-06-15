@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import dominio.Pregunta;
 import dominio.Tema;
 import java.util.ArrayList;
 
@@ -15,16 +16,17 @@ import java.util.ArrayList;
 public class GestionPregunta extends javax.swing.JFrame {
 
     ArrayList<Tema> temas;
+    ArrayList<Pregunta> preguntas = new ArrayList<>();
 
     /**
      * Creates new form GestionPreguntas
      */
-    public GestionPregunta(ArrayList<Tema> listaTemas) {
+    public GestionPregunta(ArrayList<Tema> listaTemas, ArrayList<Pregunta> listaPreguntas) {
         initComponents();
         temas = listaTemas;
         cargarTemas();
+        preguntas=listaPreguntas;
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -139,10 +141,18 @@ public class GestionPregunta extends javax.swing.JFrame {
     }//GEN-LAST:event_preguntaActionPerformed
 
     private void guardarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarPreguntaActionPerformed
-        // TODO add your handling code here:
+        if (pregunta.getText()!=""&&respuesta.getText()!="") {
+           String textoPregunta = pregunta.getText();
+           String textoRespuesta = respuesta.getText();
+           Tema t = (Tema) cmbTemas.getSelectedItem();
+           Pregunta p = new Pregunta( textoPregunta, textoRespuesta, t.getNombre(), t.getDescripcion() );
+           preguntas.add(p);
+            for (int i = 0; i < preguntas.size(); i++) {
+                System.out.println(preguntas.get(i));
+            }
+        }
         
-        String textoPregunta = pregunta.getText();
-        String textoRespuesta = respuesta.getText();
+        
         
     }//GEN-LAST:event_guardarPreguntaActionPerformed
 

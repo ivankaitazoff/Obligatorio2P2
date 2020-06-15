@@ -35,6 +35,11 @@ public class Pregunta extends Tema{
     public void setRespuesta(String respuesta) {
         this.respuesta = respuesta;
     }
+
+    @Override
+    public String toString() {
+        return "Pregunta{" + "pregunta=" + pregunta + ", respuesta=" + respuesta + ", tema=" + this.getNombre() + '}';
+    }
     
     
     
