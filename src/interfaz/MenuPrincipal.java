@@ -34,6 +34,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GestionarTemas = new javax.swing.JButton();
         GestionarPreguntasManualmente = new javax.swing.JButton();
         CargaColectiva = new javax.swing.JButton();
+        botonJugar = new javax.swing.JButton();
+        botonModoFlash = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -45,7 +47,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(GestionarTemas);
-        GestionarTemas.setBounds(80, 40, 250, 23);
+        GestionarTemas.setBounds(80, 40, 250, 25);
 
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
         GestionarPreguntasManualmente.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +56,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(GestionarPreguntasManualmente);
-        GestionarPreguntasManualmente.setBounds(80, 90, 250, 23);
+        GestionarPreguntasManualmente.setBounds(80, 90, 250, 25);
 
         CargaColectiva.setText("Carga De Preguntas En Forma Colectiva");
         CargaColectiva.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +65,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CargaColectiva);
-        CargaColectiva.setBounds(30, 140, 350, 23);
+        CargaColectiva.setBounds(80, 140, 250, 25);
+
+        botonJugar.setText("Jugar");
+        getContentPane().add(botonJugar);
+        botonJugar.setBounds(50, 210, 61, 25);
+
+        botonModoFlash.setText("Jugar en modo flash cards");
+        botonModoFlash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModoFlashActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonModoFlash);
+        botonModoFlash.setBounds(210, 210, 170, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -82,10 +97,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
+    private void botonModoFlashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModoFlashActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonModoFlashActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargaColectiva;
     private javax.swing.JButton GestionarPreguntasManualmente;
     private javax.swing.JButton GestionarTemas;
+    private javax.swing.JButton botonJugar;
+    private javax.swing.JButton botonModoFlash;
     // End of variables declaration//GEN-END:variables
 }
