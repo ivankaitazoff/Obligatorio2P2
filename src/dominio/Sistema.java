@@ -6,13 +6,16 @@
 package dominio;
 
 import interfaz.GestionTema;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author ivan
  */
-public class Sistema {
+public class Sistema implements Serializable{
     
     
     private ArrayList<Tema> listaTemas;
@@ -55,5 +58,10 @@ public class Sistema {
     listaPreguntas.add(p);
     return p;
     }
+    public 
+    FileOutputStream archivo = new FileOutputStream("Datos");
+    ObjectOutputStream datos = new ObjectOutputStream(archivo);
     
+    datos.writeObject(sistema);
+    datos.close();
 }
