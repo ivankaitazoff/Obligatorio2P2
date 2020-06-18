@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package obligatorio2p2;
 
 import dominio.Sistema;
@@ -14,26 +10,21 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author ivan
- */
+
 public class Obligatorio2P2 {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         Sistema sistema = new Sistema();
         sistema = cargarSistema();
-        MenuPrincipal menu= new MenuPrincipal();
+        MenuPrincipal menu= new MenuPrincipal(sistema);
         //menu.pack();
         menu.setSize(600, 400);
         menu.setVisible(true);
     }
     public static void guardarSistema(Sistema unSistema){
         try{
-            ObjectOutputStream out = new ObjectOutputStream(Files.newOutputStream(Paths.get("datos")));
+            ObjectOutputStream out = new ObjectOutputStream(Files.newOutputStream(Paths.get("datos.txt")));
             out.writeObject(unSistema);
             out.close();
         }catch(IOException e){
