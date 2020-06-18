@@ -5,6 +5,7 @@ import dominio.Sistema;
 import obligatorio2p2.Obligatorio2P2;
 
 public class MenuPrincipal extends javax.swing.JFrame {
+    
     private Sistema sistema;
     /**
      * Creates new form MenuPrincipal
@@ -12,6 +13,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal(Sistema unSistema) {
         initComponents();
         this.sistema= unSistema;
+        setTitle("Bienvenido");
     }
 
     @SuppressWarnings("unchecked")

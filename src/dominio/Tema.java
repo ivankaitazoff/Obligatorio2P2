@@ -5,11 +5,13 @@
  */
 package dominio;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ivan
  */
-public class Tema {
+public class Tema implements Serializable{
     private String nombre;
     private String descripcion;
 
