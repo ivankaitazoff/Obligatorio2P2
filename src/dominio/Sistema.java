@@ -15,7 +15,7 @@ import java.util.ArrayList;
  *
  * @author ivan
  */
-public class Sistema implements Serializable{
+public class Sistema {
     
     
     private ArrayList<Tema> listaTemas;
@@ -58,10 +58,5 @@ public class Sistema implements Serializable{
     listaPreguntas.add(p);
     return p;
     }
-    public 
-    FileOutputStream archivo = new FileOutputStream("Datos");
-    ObjectOutputStream datos = new ObjectOutputStream(archivo);
-    
-    datos.writeObject(sistema);
-    datos.close();
+   
 }
