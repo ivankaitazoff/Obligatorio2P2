@@ -5,6 +5,9 @@
  */
 package dominio;
 
+import interfaz.GestionTema;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -12,7 +15,7 @@ import java.util.ArrayList;
  *
  * @author ivan
  */
-public class Sistema implements Serializable{
+public class Sistema {
     
     
     private ArrayList<Tema> listaTemas;
