@@ -24,7 +24,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GestionarTemas = new javax.swing.JButton();
         GestionarPreguntasManualmente = new javax.swing.JButton();
         CargaColectiva = new javax.swing.JButton();
-        botonModoFlash = new javax.swing.JButton();
         botonJugar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -51,14 +50,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        botonModoFlash.setText("Jugar en modo flash cards");
-        botonModoFlash.addActionListener(new java.awt.event.ActionListener() {
+        botonJugar.setText("Jugar");
+        botonJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonModoFlashActionPerformed(evt);
+                botonJugarActionPerformed(evt);
             }
         });
-
-        botonJugar.setText("Jugar");
 
         jButton1.setText("salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,13 +69,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                        .addComponent(botonModoFlash)
-                        .addGap(29, 29, 29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonJugar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(91, 91, 91)
@@ -86,9 +81,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(CargaColectiva)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(GestionarPreguntasManualmente)
-                                .addGap(13, 13, 13)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGap(13, 13, 13)))))
+                .addContainerGap(76, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(GestionarTemas)
@@ -106,7 +100,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonJugar)
-                    .addComponent(botonModoFlash)
                     .addComponent(jButton1))
                 .addGap(30, 30, 30))
         );
@@ -139,15 +132,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
-    private void botonModoFlashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModoFlashActionPerformed
-        ModoFlashCard flashCards = new ModoFlashCard();
-        flashCards.setVisible(true);
-    }//GEN-LAST:event_botonModoFlashActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       Obligatorio2P2.guardarSistema(this.sistema);
       this.dispose();//cierra vetana
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void botonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonJugarActionPerformed
+        SeleccionarTemas select = new SeleccionarTemas(sistema);
+        select.setVisible(true);
+    }//GEN-LAST:event_botonJugarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -155,7 +148,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton GestionarPreguntasManualmente;
     private javax.swing.JButton GestionarTemas;
     private javax.swing.JButton botonJugar;
-    private javax.swing.JButton botonModoFlash;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
