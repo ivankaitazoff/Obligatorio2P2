@@ -17,12 +17,14 @@ import java.util.ArrayList;
  */
 public class SeleccionarTemas extends javax.swing.JFrame {
      private Sistema sist;
+     ArrayList<Pregunta> preguntas;
     /**
      * Creates new form JugarModoFlash
      */
     public SeleccionarTemas(Sistema sistema) {
         initComponents();
         this.sist = sistema;
+        preguntas = sist.getListaPreguntas();
         
     }
 
@@ -192,13 +194,13 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         
         return partida;
     }
-    /*private void cargarTemas() {
-        if (!temas.isEmpty()) {
-            for (Tema tema : temas) {
-                cmbTemas.addItem(tema);
+/*    private void cargarPreguntas() {
+        if (!preguntas.isEmpty()) {
+            for (Pregunta pregunta : preguntas) {
+                jComboBox1.addItem(pregunta);
             }
         }
-    }*/
+    } */
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton botonSeleccionarTema;

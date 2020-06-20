@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class GestionPregunta extends javax.swing.JFrame {
 
     ArrayList<Tema> temas;
-    ArrayList<Pregunta> preguntas = new ArrayList<>();
+    ArrayList<Pregunta> preguntas;
 
     /**
      * Creates new form GestionPreguntas
