@@ -140,7 +140,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
     private void botonModoFlashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModoFlashActionPerformed
-        // TODO add your handling code here:
+        ModoFlashCard flashCards = new ModoFlashCard();
+        flashCards.setVisible(true);
     }//GEN-LAST:event_botonModoFlashActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
