@@ -161,7 +161,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void botonSeleccionarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeleccionarTemaActionPerformed
-        jList1.addElement(jComboBox1.getSelectedObjects());
+        //jList1.addElement(jComboBox1.getSelectedObjects());
     }//GEN-LAST:event_botonSeleccionarTemaActionPerformed
 
     private void comenzarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarPartidaActionPerformed

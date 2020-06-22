@@ -1,6 +1,7 @@
 
 package interfaz;
 
+import Persis.ArchivoLectura;
 import dominio.Sistema;
 import obligatorio2p2.Obligatorio2P2;
 
@@ -129,7 +130,43 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_GestionarPreguntasManualmenteActionPerformed
 
     private void CargaColectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargaColectivaActionPerformed
-        // TODO add your handling code here:
+        ArchivoLectura arch = new ArchivoLectura("CargaDatos.txt");
+        int contador = 1;
+        while (arch.hayMasLineas()){
+            String[] datos = arch.linea().split("\\r?\\n");
+            String tema = datos[0];
+            System.out.println(tema);
+            String pregunta = datos;
+            if () {
+                String respuesta = datos;
+            }
+            
+            
+            System.out.println(pregunta);
+            System.out.println(respuesta);
+            // sumo partidos
+           //equipos[equipo1][0]++;
+            //equipos[equipo2][0]++;
+            // sumo puntaje
+            /*  if (golesEquipo1 > golesEquipo2){
+                equipos[equipo1][1]+=3;
+            }
+            else {
+                if (golesEquipo2 > golesEquipo1){
+                    equipos[equipo2][1]+=3;
+                }
+                else {
+                    equipos[equipo1][1]++;
+                    equipos[equipo2][1]++;    
+                }
+            }  */
+            contador++;
+        }
+        arch.cerrar();
+        System.out.println("Resultados");
+        for (int i = 1; i < 11; i++) {
+            System.out.println("Equipo "+" - Partidos: "+" Puntos: ");            
+        }
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
