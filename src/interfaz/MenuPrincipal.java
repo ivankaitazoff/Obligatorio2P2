@@ -133,40 +133,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ArchivoLectura arch = new ArchivoLectura("CargaDatos.txt");
         int contador = 1;
         while (arch.hayMasLineas()){
-            String[] datos = arch.linea().split("\\r?\\n");
+           /* String[] datos = arch.linea();
             String tema = datos[0];
             System.out.println(tema);
             String pregunta = datos;
-            if () {
+            if (contador%3 == ) {
                 String respuesta = datos;
             }
             
             
             System.out.println(pregunta);
             System.out.println(respuesta);
-            // sumo partidos
-           //equipos[equipo1][0]++;
-            //equipos[equipo2][0]++;
-            // sumo puntaje
-            /*  if (golesEquipo1 > golesEquipo2){
-                equipos[equipo1][1]+=3;
-            }
-            else {
-                if (golesEquipo2 > golesEquipo1){
-                    equipos[equipo2][1]+=3;
-                }
-                else {
-                    equipos[equipo1][1]++;
-                    equipos[equipo2][1]++;    
-                }
-            }  */
-            contador++;
+            
+            contador++;  */
         }
-        arch.cerrar();
-        System.out.println("Resultados");
-        for (int i = 1; i < 11; i++) {
-            System.out.println("Equipo "+" - Partidos: "+" Puntos: ");            
-        }
+        arch.cerrar(); 
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -179,6 +160,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         select.setVisible(true);
     }//GEN-LAST:event_botonJugarActionPerformed
 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargaColectiva;
