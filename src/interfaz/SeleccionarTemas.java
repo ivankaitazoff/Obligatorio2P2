@@ -17,16 +17,18 @@ import java.util.ArrayList;
  */
 public class SeleccionarTemas extends javax.swing.JFrame {
      private Sistema sist;
-     ArrayList<Pregunta> preguntas;
+     private Partida partida;
     /**
      * Creates new form JugarModoFlash
      */
     public SeleccionarTemas(Sistema sistema) {
+        
         initComponents();
         this.sist = sistema;
-        preguntas = sist.getListaPreguntas();
          ArrayList<Tema> temas = sist.getListaTemas();
-         jList2.setListData(temas.toArray());
+         jListaEleccionTemas.setListData(temas.toArray());
+         ArrayList<Tema> temasElegidosMenu = new ArrayList<>();
+         partida = new Partida(temasElegidosMenu, sistema.getListaPreguntas(), 0, 0, 1);
         
         
     }
@@ -43,19 +45,19 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jListaTemasElegidos = new javax.swing.JList();
         jLabel2 = new javax.swing.JLabel();
         botonSeleccionarTema = new javax.swing.JToggleButton();
         comenzarPartida = new javax.swing.JToggleButton();
         modoFlashCard = new javax.swing.JToggleButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
+        jListaEleccionTemas = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Selecciones el o los temas a utilizar ");
 
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(jListaTemasElegidos);
 
         jLabel2.setText("Temas Seleccionados");
 
@@ -80,7 +82,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane2.setViewportView(jList2);
+        jScrollPane2.setViewportView(jListaEleccionTemas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -90,8 +92,8 @@ public class SeleccionarTemas extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonSeleccionarTema)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(455, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(419, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +153,8 @@ public class SeleccionarTemas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonSeleccionarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeleccionarTemaActionPerformed
-        Tema temaS = (Tema)jList2.getSelectedValue();
+        Tema temaS = (Tema)jListaEleccionTemas.getSelectedValue();
+        agregarTema(sist, temaS);
         //jList1.addElement(jComboBox1.getSelectedObjects());
     }//GEN-LAST:event_botonSeleccionarTemaActionPerformed
 
@@ -163,12 +166,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         ArrayList<Tema> listaTemasElegidos;
         ArrayList<Pregunta> preguntasSeleccionadas;
           for (int i = 0; i < sist.getListaPreguntas().size(); i++) {
-               /*for (int j = 0; j < listaTemasElegidos.size(); j++) {
-                   if (listaTemasElegidos.get(i).getNombre()==
-                        sist.getListaPreguntas().get(i).getNombre()) {
-                    preguntasSeleccionadas.add(sist.getListaPreguntas().get(i));
-                }
-             }*/
+               
          }        
 //crearPartida(sistema, sistema.getListaTemas());
         ModoFlashCard flashCards = new ModoFlashCard(sist);
@@ -193,13 +191,19 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         }
     } */
    
+   public void agregarTema(Sistema sist, Tema tema){
+       partida.getListaTemasElegidos().add(tema);
+       
+        jListaTemasElegidos.setListData(partida.getListaTemasElegidos().toArray());
+   }
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton botonSeleccionarTema;
     private javax.swing.JToggleButton comenzarPartida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList jList1;
-    private javax.swing.JList jList2;
+    private javax.swing.JList jListaEleccionTemas;
+    private javax.swing.JList jListaTemasElegidos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
