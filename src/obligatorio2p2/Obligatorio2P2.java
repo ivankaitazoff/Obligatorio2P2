@@ -21,7 +21,7 @@ public class Obligatorio2P2 {
         sistema = cargarSistema();
         MenuPrincipal menu= new MenuPrincipal(sistema);
         //menu.pack();
-        menu.setSize(600, 400);
+      
         menu.setVisible(true);
     }
     public static void guardarSistema(Sistema unSistema){

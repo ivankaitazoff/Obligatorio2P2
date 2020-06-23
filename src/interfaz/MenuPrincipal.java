@@ -27,73 +27,95 @@ public class MenuPrincipal extends javax.swing.JFrame {
         CargaColectiva = new javax.swing.JButton();
         botonJugar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(600, 400));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 400));
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 600));
         jPanel1.setLayout(null);
 
+        GestionarTemas.setBackground(new java.awt.Color(187, 83, 70));
+        GestionarTemas.setForeground(new java.awt.Color(0, 0, 0));
         GestionarTemas.setText("Gestionar Temas");
+        GestionarTemas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        GestionarTemas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         GestionarTemas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GestionarTemasActionPerformed(evt);
             }
         });
         jPanel1.add(GestionarTemas);
-        GestionarTemas.setBounds(348, 101, 115, 23);
+        GestionarTemas.setBounds(10, 100, 210, 60);
 
+        GestionarPreguntasManualmente.setBackground(new java.awt.Color(187, 83, 70));
+        GestionarPreguntasManualmente.setForeground(new java.awt.Color(0, 0, 0));
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
+        GestionarPreguntasManualmente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         GestionarPreguntasManualmente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GestionarPreguntasManualmenteActionPerformed(evt);
             }
         });
         jPanel1.add(GestionarPreguntasManualmente);
-        GestionarPreguntasManualmente.setBounds(106, 50, 199, 23);
+        GestionarPreguntasManualmente.setBounds(10, 30, 210, 60);
 
+        CargaColectiva.setBackground(new java.awt.Color(187, 83, 70));
+        CargaColectiva.setForeground(new java.awt.Color(0, 0, 0));
         CargaColectiva.setText("Carga De Preguntas En Forma Colectiva");
+        CargaColectiva.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         CargaColectiva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CargaColectivaActionPerformed(evt);
             }
         });
         jPanel1.add(CargaColectiva);
-        CargaColectiva.setBounds(91, 154, 227, 23);
+        CargaColectiva.setBounds(10, 170, 210, 60);
 
+        botonJugar.setBackground(new java.awt.Color(187, 83, 70));
+        botonJugar.setForeground(new java.awt.Color(0, 0, 0));
         botonJugar.setText("Jugar");
+        botonJugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         botonJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonJugarActionPerformed(evt);
             }
         });
         jPanel1.add(botonJugar);
-        botonJugar.setBounds(257, 347, 61, 23);
+        botonJugar.setBounds(540, 360, 90, 19);
 
+        jButton1.setBackground(new java.awt.Color(187, 83, 70));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("salir");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(10, 347, 53, 23);
+        jButton1.setBounds(230, 350, 90, 19);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerebro.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, -20, 650, 450);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void GestionarTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarTemasActionPerformed
@@ -145,6 +167,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton GestionarTemas;
     private javax.swing.JButton botonJugar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

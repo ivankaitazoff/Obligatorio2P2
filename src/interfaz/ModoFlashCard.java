@@ -27,7 +27,7 @@ public class ModoFlashCard extends javax.swing.JFrame {
         btnSiguientePregunta = new javax.swing.JButton();
         btnTexto = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnPreguntaAnterior.setText("Anterior");
         btnPreguntaAnterior.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +89,7 @@ public class ModoFlashCard extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTextoActionPerformed
