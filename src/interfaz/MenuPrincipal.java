@@ -28,7 +28,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botonJugar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(600, 400));
+        setResizable(false);
+        setSize(new java.awt.Dimension(600, 400));
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
+        jPanel1.setLayout(null);
 
         GestionarTemas.setText("Gestionar Temas");
         GestionarTemas.addActionListener(new java.awt.event.ActionListener() {
@@ -36,6 +43,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 GestionarTemasActionPerformed(evt);
             }
         });
+        jPanel1.add(GestionarTemas);
+        GestionarTemas.setBounds(348, 101, 115, 23);
 
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
         GestionarPreguntasManualmente.addActionListener(new java.awt.event.ActionListener() {
@@ -43,6 +52,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 GestionarPreguntasManualmenteActionPerformed(evt);
             }
         });
+        jPanel1.add(GestionarPreguntasManualmente);
+        GestionarPreguntasManualmente.setBounds(106, 50, 199, 23);
 
         CargaColectiva.setText("Carga De Preguntas En Forma Colectiva");
         CargaColectiva.addActionListener(new java.awt.event.ActionListener() {
@@ -50,6 +61,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 CargaColectivaActionPerformed(evt);
             }
         });
+        jPanel1.add(CargaColectiva);
+        CargaColectiva.setBounds(91, 154, 227, 23);
 
         botonJugar.setText("Jugar");
         botonJugar.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +70,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 botonJugarActionPerformed(evt);
             }
         });
+        jPanel1.add(botonJugar);
+        botonJugar.setBounds(257, 347, 61, 23);
 
         jButton1.setText("salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,56 +79,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonJugar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CargaColectiva)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(GestionarPreguntasManualmente)
-                                .addGap(13, 13, 13)))))
-                .addContainerGap(76, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(GestionarTemas)
-                .addGap(137, 137, 137))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(GestionarPreguntasManualmente)
-                .addGap(28, 28, 28)
-                .addComponent(GestionarTemas)
-                .addGap(30, 30, 30)
-                .addComponent(CargaColectiva)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonJugar)
-                    .addComponent(jButton1))
-                .addGap(30, 30, 30))
-        );
+        jPanel1.add(jButton1);
+        jButton1.setBounds(10, 347, 53, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

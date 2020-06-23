@@ -21,6 +21,17 @@ public class Partida {
         this.turno = turno;
     }
 
+    public boolean aliasRepetidos(String nombre) {
+        //metodo que verifica que el alias no este repetido
+        boolean repetido = false;
+        for (int i = 0; i < listaPreguntasElegidas.size(); i++) {
+            if (listaPreguntasElegidas.get(i).getNombre().equals(nombre)) {
+                repetido = true;
+            }
+        }
+        return repetido;
+    }
+    
     public ArrayList<Tema> getListaTemasElegidos() {
         return listaTemasElegidos;
     }

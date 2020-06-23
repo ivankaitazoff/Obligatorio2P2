@@ -6,6 +6,7 @@
 package dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -35,6 +36,7 @@ public class Tema implements Serializable{
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    
 
     @Override
     public String toString() {
