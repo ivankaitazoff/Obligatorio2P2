@@ -43,6 +43,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
         jPanel1.setLayout(null);
 
         jLabel1.setText("Selecciones el o los temas a utilizar ");
@@ -74,7 +75,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(comenzarPartida);
-        comenzarPartida.setBounds(524, 265, 102, 25);
+        comenzarPartida.setBounds(430, 260, 102, 25);
 
         modoFlashCard.setText("Jugar modo flash cards");
         modoFlashCard.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +84,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(modoFlashCard);
-        modoFlashCard.setBounds(312, 265, 148, 25);
+        modoFlashCard.setBounds(210, 260, 148, 25);
 
         jScrollPane2.setViewportView(jListaEleccionTemas);
 

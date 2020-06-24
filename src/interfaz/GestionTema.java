@@ -13,7 +13,9 @@ public class GestionTema extends javax.swing.JFrame {
      */
     public GestionTema(ArrayList<Tema> listaTemas) {
         initComponents();
+        this.setLocationRelativeTo(null);
         lista = listaTemas;
+        setJListTema();
     }
 
     @SuppressWarnings("unchecked")
@@ -34,6 +36,7 @@ public class GestionTema extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
         jPanel1.setLayout(null);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -44,7 +47,6 @@ public class GestionTema extends javax.swing.JFrame {
         jPanel1.add(jTextField1);
         jTextField1.setBounds(190, 10, 188, 19);
 
-        jTextField2.setText("Descripcion");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -55,11 +57,11 @@ public class GestionTema extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre del tema");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(12, 14, 80, 15);
+        jLabel1.setBounds(12, 14, 120, 15);
 
         jLabel2.setText("Descripcion");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(12, 112, 57, 15);
+        jLabel2.setBounds(12, 112, 90, 15);
 
         jButton1.setText("Guardar tema");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +70,7 @@ public class GestionTema extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(12, 287, 100, 25);
+        jButton1.setBounds(12, 287, 130, 25);
 
         VolverAMenu.setText("Volver a menu principal");
         VolverAMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -91,11 +93,11 @@ public class GestionTema extends javax.swing.JFrame {
             }
         });
         jPanel1.add(botonEliminarTema);
-        botonEliminarTema.setBounds(460, 180, 110, 25);
+        botonEliminarTema.setBounds(440, 180, 150, 25);
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("Elija tema para eliminar");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(490, 10, 34, 15);
+        jLabel3.setBounds(450, 20, 150, 15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,6 +139,7 @@ public class GestionTema extends javax.swing.JFrame {
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).getNombre());
         }
+        setJListTema();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void VolverAMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverAMenuActionPerformed
@@ -144,7 +147,8 @@ public class GestionTema extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverAMenuActionPerformed
 
     private void botonEliminarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarTemaActionPerformed
-        // TODO add your handling code here:
+        lista.remove(jListTema.getSelectedValue());
+        setJListTema();
     }//GEN-LAST:event_botonEliminarTemaActionPerformed
 
     public boolean existeTema(Tema t) {
