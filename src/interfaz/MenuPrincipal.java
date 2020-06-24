@@ -159,7 +159,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         select.setVisible(true);
     }//GEN-LAST:event_botonJugarActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargaColectiva;

@@ -162,7 +162,9 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         ArrayList<Tema> listaTemasElegidos;
         ArrayList<Pregunta> preguntasSeleccionadas;
           for (int i = 0; i < sist.getListaPreguntas().size(); i++) {
-               
+               if (rootPaneCheckingEnabled) {
+                  
+              }
          }        
 //crearPartida(sistema, sistema.getListaTemas());
         ModoFlashCard flashCards = new ModoFlashCard(sist);
