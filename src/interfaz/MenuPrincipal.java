@@ -84,7 +84,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(botonJugar);
-        botonJugar.setBounds(540, 360, 90, 19);
+        botonJugar.setBounds(540, 350, 90, 19);
 
         jButton1.setBackground(new java.awt.Color(187, 83, 70));
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
