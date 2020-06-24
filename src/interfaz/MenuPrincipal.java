@@ -33,12 +33,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 400));
+        getContentPane().setLayout(null);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(700, 600));
         jPanel1.setLayout(null);
 
         GestionarTemas.setBackground(new java.awt.Color(187, 83, 70));
-        GestionarTemas.setForeground(new java.awt.Color(0, 0, 0));
         GestionarTemas.setText("Gestionar Temas");
         GestionarTemas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         GestionarTemas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -51,7 +51,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GestionarTemas.setBounds(10, 100, 210, 60);
 
         GestionarPreguntasManualmente.setBackground(new java.awt.Color(187, 83, 70));
-        GestionarPreguntasManualmente.setForeground(new java.awt.Color(0, 0, 0));
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
         GestionarPreguntasManualmente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         GestionarPreguntasManualmente.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +62,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GestionarPreguntasManualmente.setBounds(10, 30, 210, 60);
 
         CargaColectiva.setBackground(new java.awt.Color(187, 83, 70));
-        CargaColectiva.setForeground(new java.awt.Color(0, 0, 0));
         CargaColectiva.setText("Carga De Preguntas En Forma Colectiva");
         CargaColectiva.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         CargaColectiva.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +73,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         CargaColectiva.setBounds(10, 170, 210, 60);
 
         botonJugar.setBackground(new java.awt.Color(187, 83, 70));
-        botonJugar.setForeground(new java.awt.Color(0, 0, 0));
         botonJugar.setText("Jugar");
         botonJugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         botonJugar.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +84,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botonJugar.setBounds(540, 350, 90, 19);
 
         jButton1.setBackground(new java.awt.Color(187, 83, 70));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("salir");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -103,16 +99,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, -20, 650, 450);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 634, 417);
 
         pack();
         setLocationRelativeTo(null);

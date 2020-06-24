@@ -43,11 +43,20 @@ public class SeleccionarTemas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel1.setLayout(null);
+
         jLabel1.setText("Selecciones el o los temas a utilizar ");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(37, 12, 174, 15);
 
         jScrollPane1.setViewportView(jListaTemasElegidos);
 
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(378, 33, 200, 131);
+
         jLabel2.setText("Temas Seleccionados");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(428, 12, 106, 15);
 
         botonSeleccionarTema.setText("Seleccionar tema");
         botonSeleccionarTema.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +64,8 @@ public class SeleccionarTemas extends javax.swing.JFrame {
                 botonSeleccionarTemaActionPerformed(evt);
             }
         });
+        jPanel1.add(botonSeleccionarTema);
+        botonSeleccionarTema.setBounds(63, 180, 117, 25);
 
         comenzarPartida.setText("Jugar memory");
         comenzarPartida.addActionListener(new java.awt.event.ActionListener() {
@@ -62,6 +73,8 @@ public class SeleccionarTemas extends javax.swing.JFrame {
                 comenzarPartidaActionPerformed(evt);
             }
         });
+        jPanel1.add(comenzarPartida);
+        comenzarPartida.setBounds(524, 265, 102, 25);
 
         modoFlashCard.setText("Jugar modo flash cards");
         modoFlashCard.addActionListener(new java.awt.event.ActionListener() {
@@ -69,64 +82,13 @@ public class SeleccionarTemas extends javax.swing.JFrame {
                 modoFlashCardActionPerformed(evt);
             }
         });
+        jPanel1.add(modoFlashCard);
+        modoFlashCard.setBounds(312, 265, 148, 25);
 
         jScrollPane2.setViewportView(jListaEleccionTemas);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(botonSeleccionarTema)
-                        .addGap(25, 25, 25))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(modoFlashCard)
-                        .addGap(177, 177, 177))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(103, 103, 103))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(376, 376, Short.MAX_VALUE)
-                    .addComponent(comenzarPartida)
-                    .addContainerGap()))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2))
-                .addGap(16, 16, 16)
-                .addComponent(botonSeleccionarTema)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(modoFlashCard)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(265, Short.MAX_VALUE)
-                    .addComponent(comenzarPartida)
-                    .addContainerGap()))
-        );
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(25, 33, 200, 131);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,13 +143,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         
         return partida;
     }
-/*    private void cargarPreguntas() {
-        if (!preguntas.isEmpty()) {
-            for (Pregunta pregunta : preguntas) {
-                jComboBox1.addItem(pregunta);
-            }
-        }
-    } */
+
    
    public void agregarTema(Sistema sist, Tema tema){
        partida.getListaTemasElegidos().add(tema);
