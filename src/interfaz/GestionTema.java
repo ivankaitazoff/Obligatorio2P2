@@ -123,7 +123,7 @@ public class GestionTema extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nombreTema = jTextField1.getText();
+        String nombreTema = jTextField1.getText().toUpperCase();
         String descripcionTema = jTextField2.getText();
         Tema t = new Tema(nombreTema, descripcionTema);
         boolean temaExiste = existeTema(t);
