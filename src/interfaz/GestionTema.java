@@ -36,6 +36,7 @@ public class GestionTema extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
         jPanel1.setLayout(null);
 
@@ -132,7 +133,10 @@ public class GestionTema extends javax.swing.JFrame {
             for (Tema tema : lista) {
             if (tema.getNombre().equals(t.getNombre())) {
                 tema.setDescripcion(t.getDescripcion());
+                jTextField1.setText("");
+                jTextField2.setText("");
                 break;
+                
             }
             }
         }
@@ -140,6 +144,8 @@ public class GestionTema extends javax.swing.JFrame {
             System.out.println(lista.get(i).getNombre());
         }
         setJListTema();
+        jTextField1.setText("");
+        jTextField2.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void VolverAMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverAMenuActionPerformed
@@ -163,7 +169,7 @@ public class GestionTema extends javax.swing.JFrame {
     }
      public void setJListTema(){
         jListTema.setListData(lista.toArray());
-   }
+  }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton VolverAMenu;

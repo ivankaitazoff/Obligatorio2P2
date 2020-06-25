@@ -43,6 +43,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
         jPanel1.setLayout(null);
 
@@ -53,7 +54,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jListaTemasElegidos);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(378, 33, 200, 131);
+        jScrollPane1.setBounds(378, 33, 200, 230);
 
         jLabel2.setText("Temas Seleccionados");
         jPanel1.add(jLabel2);
@@ -66,7 +67,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(botonSeleccionarTema);
-        botonSeleccionarTema.setBounds(63, 180, 117, 25);
+        botonSeleccionarTema.setBounds(30, 280, 170, 25);
 
         comenzarPartida.setText("Jugar memory");
         comenzarPartida.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +76,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(comenzarPartida);
-        comenzarPartida.setBounds(430, 260, 102, 25);
+        comenzarPartida.setBounds(480, 360, 102, 25);
 
         modoFlashCard.setText("Jugar modo flash cards");
         modoFlashCard.addActionListener(new java.awt.event.ActionListener() {
@@ -84,12 +85,12 @@ public class SeleccionarTemas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(modoFlashCard);
-        modoFlashCard.setBounds(210, 260, 148, 25);
+        modoFlashCard.setBounds(270, 360, 190, 25);
 
         jScrollPane2.setViewportView(jListaEleccionTemas);
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(25, 33, 200, 131);
+        jScrollPane2.setBounds(20, 30, 200, 230);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,23 +115,19 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(null, "tema ya seleccionado", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        //jList1.addElement(jComboBox1.getSelectedObjects());
+       
     }//GEN-LAST:event_botonSeleccionarTemaActionPerformed
 
     private void comenzarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarPartidaActionPerformed
+        partida.cargarPreguntasPartida(sist.getListaPreguntas());
         JugarMemory memory = new JugarMemory();
+        
     }//GEN-LAST:event_comenzarPartidaActionPerformed
 
     private void modoFlashCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoFlashCardActionPerformed
-        ArrayList<Tema> listaTemasElegidos;
-        ArrayList<Pregunta> preguntasSeleccionadas;
-          for (int i = 0; i < sist.getListaPreguntas().size(); i++) {
-               if (rootPaneCheckingEnabled) {
-                  
-              }
-         }        
-//crearPartida(sistema, sistema.getListaTemas());
-        ModoFlashCard flashCards = new ModoFlashCard(sist);
+       partida.cargarPreguntasPartida(sist.getListaPreguntas());
+                
+        ModoFlashCard flashCards = new ModoFlashCard(partida);
         flashCards.setVisible(true);
         
     }//GEN-LAST:event_modoFlashCardActionPerformed

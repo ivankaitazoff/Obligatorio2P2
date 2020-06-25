@@ -20,14 +20,6 @@ public class Partida {
         this.puntajeJugador2 = puntajeJugador2;
         this.turno = turno;
     }
-
-    /*public boolean nombreIgual(String nombre) {
-        boolean igual = false;
-            if (listaPreguntasElegidas.get(i).getNombre().equals(nombre)) {
-                igual = true;
-        }
-        return igual;
-    }  */
     
     public ArrayList<Tema> getListaTemasElegidos() {
         return listaTemasElegidos;
@@ -68,5 +60,14 @@ public class Partida {
     public void setTurno(int turno) {
         this.turno = turno;
     }
-
+    public void cargarPreguntasPartida(ArrayList<Pregunta> listaPreguntasSis){
+        for (int i = 0; i < listaTemasElegidos.size(); i++) {
+            for (int j = 0; j<listaPreguntasSis.size(); j++) {
+                if (listaTemasElegidos.get(i).getNombre()==listaPreguntasSis.get(j).getNombre()) {
+                    listaPreguntasElegidas.add(listaPreguntasSis.get(j));
+                }
+                
+            }
+        }
+    }
 }
