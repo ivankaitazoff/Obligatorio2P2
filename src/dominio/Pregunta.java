@@ -5,6 +5,8 @@
  */
 package dominio;
 
+import java.util.Objects;
+
 /**
  *
  * @author ivan
@@ -39,6 +41,30 @@ public class Pregunta extends Tema{
     @Override
     public String toString() {
         return "Pregunta{" + "pregunta=" + pregunta + ", respuesta=" + respuesta + ", tema=" + this.getNombre() + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pregunta other = (Pregunta) obj;
+        if (!Objects.equals(this.pregunta, other.pregunta)) {
+            return false;
+        }
+        return true;
     }
     
     

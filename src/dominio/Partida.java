@@ -60,6 +60,8 @@ public class Partida {
     public void setTurno(int turno) {
         this.turno = turno;
     }
+    
+    
     public void cargarPreguntasPartida(ArrayList<Pregunta> listaPreguntasSis){
         for (int i = 0; i < listaTemasElegidos.size(); i++) {
             for (int j = 0; j<listaPreguntasSis.size(); j++) {
