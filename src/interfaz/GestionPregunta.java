@@ -105,7 +105,7 @@ public class GestionPregunta extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jListaPreguntas);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(460, 20, 110, 200);
+        jScrollPane1.setBounds(430, 10, 150, 200);
 
         jButton1.setText("Eliminar tema seleccionado");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
