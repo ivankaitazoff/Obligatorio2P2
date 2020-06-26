@@ -6,6 +6,9 @@ import dominio.Pregunta;
 import dominio.Sistema;
 import dominio.Tema;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 
@@ -121,7 +124,10 @@ public class SeleccionarTemas extends javax.swing.JFrame {
     private void comenzarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarPartidaActionPerformed
         partida.cargarPreguntasPartida(sist.getListaPreguntas());
         JugarMemory memory = new JugarMemory();
-        
+        memory.setVisible(true);
+        //List<Pregunta> preguntasMezcladas = partida.getListaPreguntasElegidas();
+        //Collections.shuffle(partida.getListaPreguntasElegidas());
+        //System.out.println(partida.getListaPreguntasElegidas());
     }//GEN-LAST:event_comenzarPartidaActionPerformed
 
     private void modoFlashCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoFlashCardActionPerformed

@@ -46,19 +46,16 @@ public class JugarMemory extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         btnPreg4.setForeground(new java.awt.Color(255, 51, 51));
-        btnPreg4.setText("Pregunta");
         btnPreg4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnPreg4);
         btnPreg4.setBounds(450, 240, 150, 78);
 
         btnResp2.setForeground(new java.awt.Color(0, 0, 255));
-        btnResp2.setText("Respuesta");
         btnResp2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnResp2);
         btnResp2.setBounds(450, 160, 150, 78);
 
         btnPreg2.setForeground(new java.awt.Color(255, 51, 51));
-        btnPreg2.setText("Pregunta");
         btnPreg2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnPreg2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,57 +66,53 @@ public class JugarMemory extends javax.swing.JFrame {
         btnPreg2.setBounds(300, 160, 150, 78);
 
         btnResp4.setForeground(new java.awt.Color(0, 0, 255));
-        btnResp4.setText("Respuesta");
         btnResp4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnResp4);
         btnResp4.setBounds(300, 240, 150, 78);
 
         btnPreg6.setForeground(new java.awt.Color(255, 51, 51));
-        btnPreg6.setText("Pregunta");
         btnPreg6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnPreg6.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnPreg6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPreg6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPreg6);
         btnPreg6.setBounds(300, 320, 150, 78);
 
         btnResp1.setForeground(new java.awt.Color(0, 0, 255));
-        btnResp1.setText("Respuesta");
         btnResp1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnResp1);
         btnResp1.setBounds(150, 160, 150, 78);
 
         btnPreg3.setForeground(new java.awt.Color(255, 51, 51));
-        btnPreg3.setText("Pregunta");
         btnPreg3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnPreg3);
         btnPreg3.setBounds(150, 240, 150, 78);
 
         btnResp5.setForeground(new java.awt.Color(0, 0, 255));
-        btnResp5.setText("Respuesta");
         btnResp5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnResp5);
         btnResp5.setBounds(150, 320, 150, 78);
 
         btnPreg1.setForeground(new java.awt.Color(255, 51, 51));
-        btnPreg1.setText("Prgunta");
         btnPreg1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnPreg1);
         btnPreg1.setBounds(0, 160, 150, 78);
 
         btnResp3.setForeground(new java.awt.Color(0, 0, 255));
-        btnResp3.setText("Respuesta");
         btnResp3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnResp3.setPreferredSize(new java.awt.Dimension(150, 25));
         jPanel1.add(btnResp3);
         btnResp3.setBounds(0, 240, 150, 78);
 
         btnPreg5.setForeground(new java.awt.Color(255, 51, 51));
-        btnPreg5.setText("Pregunta");
         btnPreg5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnPreg5);
         btnPreg5.setBounds(0, 320, 150, 78);
 
         btnResp6.setForeground(new java.awt.Color(0, 0, 255));
-        btnResp6.setText("Respuesta");
         btnResp6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnResp6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +124,11 @@ public class JugarMemory extends javax.swing.JFrame {
 
         btnAyudaParcial.setText("Ayuda Parcial");
         btnAyudaParcial.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAyudaParcial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAyudaParcialActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAyudaParcial);
         btnAyudaParcial.setBounds(90, 0, 80, 30);
 
@@ -141,6 +139,11 @@ public class JugarMemory extends javax.swing.JFrame {
 
         btnReset.setText("Reset");
         btnReset.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnReset);
         btnReset.setBounds(250, 0, 80, 30);
 
@@ -156,7 +159,7 @@ public class JugarMemory extends javax.swing.JFrame {
 
         jLabel1.setText("Puntos:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(450, 0, 40, 30);
+        jLabel1.setBounds(430, 0, 50, 30);
 
         jLabel2.setText("------");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -188,6 +191,31 @@ public class JugarMemory extends javax.swing.JFrame {
     private void btnSonidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSonidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSonidoActionPerformed
+
+    private void btnPreg6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreg6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPreg6ActionPerformed
+
+    private void btnAyudaParcialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaParcialActionPerformed
+        btnPreg1.setText("PREG");
+        btnResp2.setText("RESP");
+        btnPreg2.setText("PREG");
+        btnResp2.setText("RESP");
+        btnPreg3.setText("PREG");
+        btnResp3.setText("RESP"); 
+        btnPreg4.setText("PREG");
+        btnResp4.setText("RESP");
+        btnPreg5.setText("PREG");
+        btnResp5.setText("RESP");
+        btnPreg6.setText("PREG");
+        btnResp6.setText("RESP"); 
+       
+    }//GEN-LAST:event_btnAyudaParcialActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        btnPreg1.setText(null);
+        //sigo con los otros 
+    }//GEN-LAST:event_btnResetActionPerformed
 
     
     /* public static void music() 
