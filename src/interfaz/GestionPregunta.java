@@ -34,6 +34,7 @@ public class GestionPregunta extends javax.swing.JFrame {
         guardarPregunta = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListaPreguntas = new javax.swing.JList();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -106,6 +107,15 @@ public class GestionPregunta extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(460, 20, 110, 200);
 
+        jButton1.setText("Eliminar tema seleccionado");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(410, 240, 170, 23);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,10 +155,16 @@ public class GestionPregunta extends javax.swing.JFrame {
         jListaPreguntas.setListData(preguntas.toArray());        
     }//GEN-LAST:event_guardarPreguntaActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        preguntas.remove(jListaPreguntas.getSelectedIndex());
+        jListaPreguntas.setListData(preguntas.toArray());        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cmbTemas;
     private javax.swing.JButton guardarPregunta;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

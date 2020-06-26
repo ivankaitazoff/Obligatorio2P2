@@ -29,7 +29,6 @@ public class Obligatorio2P2 {
             FileOutputStream fileOut =  new FileOutputStream("datos.txt");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(unSistema);
-            System.out.println("done");
             out.close();
         }catch(IOException e){
             e.printStackTrace();
