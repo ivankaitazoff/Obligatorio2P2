@@ -40,7 +40,7 @@ public class Pregunta extends Tema{
 
     @Override
     public String toString() {
-        return "Pregunta{" + "pregunta=" + pregunta + ", respuesta=" + respuesta + ", tema=" + this.getNombre() + '}';
+        return pregunta + ", respuesta=" + respuesta + ", tema=" + this.getNombre();
     }
 
     @Override

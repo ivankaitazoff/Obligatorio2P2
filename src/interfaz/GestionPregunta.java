@@ -11,14 +11,12 @@ public class GestionPregunta extends javax.swing.JFrame {
     ArrayList<Tema> temas;
     ArrayList<Pregunta> preguntas;
 
-    /**
-     * Creates new form GestionPreguntas
-     */
     public GestionPregunta(ArrayList<Tema> listaTemas, ArrayList<Pregunta> listaPreguntas) {
         initComponents();
         temas = listaTemas;
         cargarTemas();
         preguntas=listaPreguntas;
+        jListaPreguntas.setListData(preguntas.toArray());
     }
     
     @SuppressWarnings("unchecked")
@@ -34,6 +32,8 @@ public class GestionPregunta extends javax.swing.JFrame {
         pregunta = new javax.swing.JTextField();
         respuesta = new javax.swing.JTextField();
         guardarPregunta = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListaPreguntas = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -49,7 +49,7 @@ public class GestionPregunta extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cmbTemas);
-        cmbTemas.setBounds(338, 12, 254, 24);
+        cmbTemas.setBounds(140, 10, 254, 22);
 
         volverAMenu.setBackground(new java.awt.Color(187, 83, 70));
         volverAMenu.setText("Volver a menu principal");
@@ -59,24 +59,24 @@ public class GestionPregunta extends javax.swing.JFrame {
             }
         });
         jPanel1.add(volverAMenu);
-        volverAMenu.setBounds(440, 310, 147, 25);
+        volverAMenu.setBounds(440, 310, 145, 23);
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 204));
         jLabel1.setForeground(new java.awt.Color(187, 83, 70));
         jLabel1.setText("Seleccionar Tema");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(40, 10, 110, 30);
+        jLabel1.setBounds(20, 10, 110, 30);
 
         jLabel2.setBackground(new java.awt.Color(187, 83, 70));
         jLabel2.setForeground(new java.awt.Color(187, 83, 70));
         jLabel2.setText("Ingresar pregunta");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(40, 80, 110, 40);
+        jLabel2.setBounds(20, 80, 110, 40);
 
         jLabel3.setForeground(new java.awt.Color(187, 83, 70));
         jLabel3.setText("Ingresar respuesta");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(40, 190, 92, 15);
+        jLabel3.setBounds(20, 190, 92, 14);
 
         pregunta.setBackground(new java.awt.Color(187, 83, 70));
         pregunta.addActionListener(new java.awt.event.ActionListener() {
@@ -85,11 +85,11 @@ public class GestionPregunta extends javax.swing.JFrame {
             }
         });
         jPanel1.add(pregunta);
-        pregunta.setBounds(338, 92, 254, 19);
+        pregunta.setBounds(140, 90, 254, 20);
 
         respuesta.setBackground(new java.awt.Color(187, 83, 70));
         jPanel1.add(respuesta);
-        respuesta.setBounds(338, 182, 254, 19);
+        respuesta.setBounds(140, 190, 254, 20);
 
         guardarPregunta.setBackground(new java.awt.Color(187, 83, 70));
         guardarPregunta.setText("Guardar Pregunta");
@@ -99,7 +99,12 @@ public class GestionPregunta extends javax.swing.JFrame {
             }
         });
         jPanel1.add(guardarPregunta);
-        guardarPregunta.setBounds(20, 310, 120, 25);
+        guardarPregunta.setBounds(20, 310, 121, 23);
+
+        jScrollPane1.setViewportView(jListaPreguntas);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(460, 20, 110, 200);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,7 +122,6 @@ public class GestionPregunta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTemasActionPerformed
-        // TODO add your handling code here:
 
     }//GEN-LAST:event_cmbTemasActionPerformed
 
@@ -137,13 +141,8 @@ public class GestionPregunta extends javax.swing.JFrame {
            Tema t = (Tema) cmbTemas.getSelectedItem();
            Pregunta p = new Pregunta( textoPregunta, textoRespuesta, t.getNombre(), t.getDescripcion() );
            preguntas.add(p);
-            for (int i = 0; i < preguntas.size(); i++) {
-                System.out.println(preguntas.get(i));
-            }
         }
-        
-        
-        
+        jListaPreguntas.setListData(preguntas.toArray());        
     }//GEN-LAST:event_guardarPreguntaActionPerformed
 
 
@@ -153,7 +152,9 @@ public class GestionPregunta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JList jListaPreguntas;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField pregunta;
     private javax.swing.JTextField respuesta;
     private javax.swing.JButton volverAMenu;
