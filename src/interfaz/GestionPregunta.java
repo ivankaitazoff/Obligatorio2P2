@@ -151,6 +151,8 @@ public class GestionPregunta extends javax.swing.JFrame {
             preguntas.add(p);
         }
         jListaPreguntas.setListData(preguntas.toArray());
+        pregunta.setText("");
+        respuesta.setText("");
     }//GEN-LAST:event_guardarPreguntaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
