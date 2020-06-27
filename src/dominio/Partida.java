@@ -65,7 +65,7 @@ public class Partida {
     public void cargarPreguntasPartida(ArrayList<Pregunta> listaPreguntasSis){
         for (int i = 0; i < listaTemasElegidos.size(); i++) {
             for (int j = 0; j<listaPreguntasSis.size(); j++) {
-                if (listaTemasElegidos.get(i).getNombre().equals(listaPreguntasSis.get(j).getNombre())) {
+                if (listaTemasElegidos.get(i).getNombre()==listaPreguntasSis.get(j).getNombre()) {
                     listaPreguntasElegidas.add(listaPreguntasSis.get(j));
                 }
                 

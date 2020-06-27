@@ -122,15 +122,12 @@ public class SeleccionarTemas extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeleccionarTemaActionPerformed
 
     private void comenzarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarPartidaActionPerformed
-       partida.cargarPreguntasPartida(sist.getListaPreguntas());
-        //ArrayList<Pregunta> preguntasMezcladas = partida.getListaPreguntasElegidas();
-        //Collections.shuffle(preguntasMezcladas);
-        //for (int i = 0; i <preguntasMezcladas.size() ; i++) {
-       //     System.out.println(preguntasMezcladas.get(i));
-       // }
+        partida.cargarPreguntasPartida(sist.getListaPreguntas());
         JugarMemory memory = new JugarMemory();
         memory.setVisible(true);
-        
+        //List<Pregunta> preguntasMezcladas = partida.getListaPreguntasElegidas();
+        //Collections.shuffle(partida.getListaPreguntasElegidas());
+        //System.out.println(partida.getListaPreguntasElegidas());
     }//GEN-LAST:event_comenzarPartidaActionPerformed
 
     private void modoFlashCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoFlashCardActionPerformed
