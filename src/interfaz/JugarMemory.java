@@ -1,15 +1,19 @@
 package interfaz;
 //import sun.audio.*;
 
+import dominio.Partida;
 import javax.swing.*;
 import java.awt.event.*;
 import java.io.*;
 
 public class JugarMemory extends javax.swing.JFrame {
 
+    private Partida partida;
     private JButton[][] botones;
+    //private int[][] posicionPreguntas= new int[6][4];
 
-    public JugarMemory() {
+    public JugarMemory(Partida partida) {
+        this.partida = partida;
         initComponents();
         this.setLocationRelativeTo(null);
         int cantColumnas = 4;
@@ -20,6 +24,7 @@ public class JugarMemory extends javax.swing.JFrame {
             for (int j = 0; j < cantColumnas; j++) {
                 JButton jButton = new JButton();
                 jButton.addActionListener(new ListenerBoton(i, j));
+
                 panelInferior.add(jButton);
                 botones[i][j] = jButton;
             }
@@ -143,7 +148,7 @@ public class JugarMemory extends javax.swing.JFrame {
         private int x;
         private int y;
 
-        public ListenerBoton(int i, int j) { 
+        public ListenerBoton(int i, int j) {
             // en el constructor se almacena la fila y columna que se presionó 
             x = i;
             y = j;
@@ -156,7 +161,16 @@ public class JugarMemory extends javax.swing.JFrame {
     }
 
     private void clickBoton(int fila, int columna) {
-        // Método a completar!. // En fila y columna se reciben las coordenas donde presionó el usuario, relativas al comienzo de la grilla
+        if (partida.getTurno() % 2 == 0) {
+            partida.setTurno(partida.getTurno() + 1);
+            botones[fila][columna].setText("primera clieckeada");
+        } else {
+            botones[fila][columna].setText("segunda clieckeada");
+            partida.setTurno(partida.getTurno() + 1);
+            //verificar si la pregunta corresponde con la respuesta
+        }
+
+// Método a completar!. // En fila y columna se reciben las coordenas donde presionó el usuario, relativas al comienzo de la grilla
         // fila 0 y columna 0 corresponden a la posición de arriba a la izquierda.
         // Debe indicarse cómo responder al click de ese botón. 
     }

@@ -123,7 +123,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         List<Pregunta> preguntasMezcladas = partida.getListaPreguntasElegidas();
         Collections.shuffle(preguntasMezcladas);
         System.out.println(preguntasMezcladas);
-        JugarMemory memory = new JugarMemory();
+        JugarMemory memory = new JugarMemory(partida);
         memory.setVisible(true);
     }//GEN-LAST:event_comenzarPartidaActionPerformed
 

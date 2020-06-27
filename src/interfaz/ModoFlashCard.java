@@ -9,7 +9,6 @@ public class ModoFlashCard extends javax.swing.JFrame {
     private Partida partida;
 
     int numero = 0;
-
     
     public ModoFlashCard(Partida partida) {
         this.partida = partida;
