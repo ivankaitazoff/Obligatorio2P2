@@ -1,12 +1,9 @@
-
 package dominio;
 
 import java.util.ArrayList;
 
-
-
 public class Partida {
-    
+
     private ArrayList<Tema> listaTemasElegidos;
     private ArrayList<Pregunta> listaPreguntasElegidas;
     private int puntajeJugador1;
@@ -20,7 +17,7 @@ public class Partida {
         this.puntajeJugador2 = puntajeJugador2;
         this.turno = turno;
     }
-    
+
     public ArrayList<Tema> getListaTemasElegidos() {
         return listaTemasElegidos;
     }
@@ -60,15 +57,16 @@ public class Partida {
     public void setTurno(int turno) {
         this.turno = turno;
     }
-    
-    
-    public void cargarPreguntasPartida(ArrayList<Pregunta> listaPreguntasSis){
-        for (int i = 0; i < listaTemasElegidos.size(); i++) {
-            for (int j = 0; j<listaPreguntasSis.size(); j++) {
-                if (listaTemasElegidos.get(i).getNombre()==listaPreguntasSis.get(j).getNombre()) {
-                    listaPreguntasElegidas.add(listaPreguntasSis.get(j));
+
+    public void cargarPreguntasPartida(ArrayList<Pregunta> listaPreguntasSis) {
+        if (!listaPreguntasSis.isEmpty()&& !listaTemasElegidos.isEmpty() ) {
+            for (int i = 0; i < listaTemasElegidos.size(); i++) {
+                for (int j = 0; j < listaPreguntasSis.size(); j++) {
+                    if (listaTemasElegidos.get(i).getNombre() == listaPreguntasSis.get(j).getNombre()) {
+                        listaPreguntasElegidas.add(listaPreguntasSis.get(j));
+                    }
+
                 }
-                
             }
         }
     }
