@@ -6,15 +6,14 @@ public class Partida {
 
     private ArrayList<Tema> listaTemasElegidos;
     private ArrayList<Pregunta> listaPreguntasElegidas;
-    private int puntajeJugador1;
-    private int puntajeJugador2;
+    private int puntajeJugador;
     private int turno;
 
-    public Partida(ArrayList<Tema> listaTemasElegidos, int puntajeJugador1, int puntajeJugador2, int turno) {
+    public Partida(ArrayList<Tema> listaTemasElegidos, int puntajeJugador, int turno) {
         this.listaTemasElegidos = listaTemasElegidos;
         this.listaPreguntasElegidas = new ArrayList();
-        this.puntajeJugador1 = puntajeJugador1;
-        this.puntajeJugador2 = puntajeJugador2;
+        this.puntajeJugador = puntajeJugador;
+       
         this.turno = turno;
     }
 
@@ -35,19 +34,11 @@ public class Partida {
     }
 
     public int getPuntajeJugador1() {
-        return puntajeJugador1;
+        return puntajeJugador;
     }
 
-    public void setPuntajeJugador1(int puntajeJugador1) {
-        this.puntajeJugador1 = puntajeJugador1;
-    }
-
-    public int getPuntajeJugador2() {
-        return puntajeJugador2;
-    }
-
-    public void setPuntajeJugador2(int puntajeJugador2) {
-        this.puntajeJugador2 = puntajeJugador2;
+    public void setPuntajeJugador1(int puntajeJugador) {
+        this.puntajeJugador = puntajeJugador;
     }
 
     public int getTurno() {
@@ -60,9 +51,9 @@ public class Partida {
 
     public void cargarPreguntasPartida(ArrayList<Pregunta> listaPreguntasSis) {
         if (!listaPreguntasSis.isEmpty() && !listaTemasElegidos.isEmpty()) {
-            for (Tema t:listaTemasElegidos) {
-                for (Pregunta p:listaPreguntasSis) {
-                    if (t.getNombre()==(p.getNombre())) {
+            for (Tema t : listaTemasElegidos) {
+                for (Pregunta p : listaPreguntasSis) {
+                    if (t.getNombre() == (p.getNombre())) {
                         listaPreguntasElegidas.add(p);
                     }
                 }

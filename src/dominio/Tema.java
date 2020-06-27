@@ -1,19 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-/**
- *
- * @author ivan
- */
-public class Tema implements Serializable{
+
+public class Tema implements Serializable {
+
     private String nombre;
     private String descripcion;
 
@@ -61,13 +55,10 @@ public class Tema implements Serializable{
         }
         return true;
     }
-    
-    
 
     @Override
     public String toString() {
         return nombre + ", " + descripcion;
     }
-    
-    
+
 }

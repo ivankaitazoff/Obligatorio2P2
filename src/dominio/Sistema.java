@@ -12,9 +12,8 @@ import java.util.ArrayList;
  *
  * @author ivan
  */
-public class Sistema implements Serializable{
-    
-    
+public class Sistema implements Serializable {
+
     private ArrayList<Tema> listaTemas;
     private ArrayList<Pregunta> listaPreguntas;
 
@@ -23,8 +22,6 @@ public class Sistema implements Serializable{
         this.listaPreguntas = new ArrayList<>();
     }
 
-    
-    
     public ArrayList<Tema> getListaTemas() {
         return listaTemas;
     }
@@ -40,23 +37,18 @@ public class Sistema implements Serializable{
     public void setListaPreguntas(ArrayList<Pregunta> listaPreguntas) {
         this.listaPreguntas = listaPreguntas;
     }
-    
-    
-    
-    public Tema CrearTema(String tema, String descripcion){
-    Tema t = new Tema(tema, descripcion);
-    listaTemas.add(t);
-    return t;
+
+    public Tema CrearTema(String tema, String descripcion) {
+        Tema t = new Tema(tema, descripcion);
+        listaTemas.add(t);
+        return t;
     }
-    
-    public Pregunta CrearPregunta(String pregunta, String respuesta, Tema t){
+
+    public Pregunta CrearPregunta(String pregunta, String respuesta, Tema t) {
         //Preguntas(String pregunta, String respuesta, String nombre, String descripcion)
-    Pregunta p = new Pregunta(pregunta, respuesta, t.getNombre(), t.getDescripcion());
-    listaPreguntas.add(p);
-    return p;
+        Pregunta p = new Pregunta(pregunta, respuesta, t.getNombre(), t.getDescripcion());
+        listaPreguntas.add(p);
+        return p;
     }
-    
-   
-    
-   
+
 }

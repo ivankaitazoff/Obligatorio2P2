@@ -129,15 +129,15 @@ public class GestionTema extends javax.swing.JFrame {
         boolean temaExiste = existeTema(t);
         if (!temaExiste) {
             lista.add(t);
-        }else{
+        } else {
             for (Tema tema : lista) {
-            if (tema.getNombre().equals(t.getNombre())) {
-                tema.setDescripcion(t.getDescripcion());
-                jTextField1.setText("");
-                jTextField2.setText("");
-                break;
-                
-            }
+                if (tema.getNombre().equals(t.getNombre())) {
+                    tema.setDescripcion(t.getDescripcion());
+                    jTextField1.setText("");
+                    jTextField2.setText("");
+                    break;
+
+                }
             }
         }
         for (int i = 0; i < lista.size(); i++) {
@@ -167,9 +167,10 @@ public class GestionTema extends javax.swing.JFrame {
         }
         return yaExiste;
     }
-     public void setJListTema(){
+
+    public void setJListTema() {
         jListTema.setListData(lista.toArray());
-  }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton VolverAMenu;

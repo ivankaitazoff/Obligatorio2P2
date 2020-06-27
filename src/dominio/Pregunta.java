@@ -11,7 +11,8 @@ import java.util.Objects;
  *
  * @author ivan
  */
-public class Pregunta extends Tema{
+public class Pregunta extends Tema {
+
     private String pregunta;
     private String respuesta;
 
@@ -20,7 +21,6 @@ public class Pregunta extends Tema{
         this.pregunta = pregunta;
         this.respuesta = respuesta;
     }
-    
 
     public String getPregunta() {
         return pregunta;
@@ -66,8 +66,5 @@ public class Pregunta extends Tema{
         }
         return true;
     }
-    
-    
-    
-    
+
 }

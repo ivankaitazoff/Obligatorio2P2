@@ -1,10 +1,8 @@
-
 package interfaz;
 
 import dominio.Pregunta;
 import dominio.Tema;
 import java.util.ArrayList;
-
 
 public class GestionPregunta extends javax.swing.JFrame {
 
@@ -15,10 +13,10 @@ public class GestionPregunta extends javax.swing.JFrame {
         initComponents();
         temas = listaTemas;
         cargarTemas();
-        preguntas=listaPreguntas;
+        preguntas = listaPreguntas;
         jListaPreguntas.setListData(preguntas.toArray());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -145,19 +143,19 @@ public class GestionPregunta extends javax.swing.JFrame {
     }//GEN-LAST:event_preguntaActionPerformed
 
     private void guardarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarPreguntaActionPerformed
-        if (pregunta.getText()!=""&&respuesta.getText()!="") {
-           String textoPregunta = pregunta.getText();
-           String textoRespuesta = respuesta.getText();
-           Tema t = (Tema) cmbTemas.getSelectedItem();
-           Pregunta p = new Pregunta( textoPregunta, textoRespuesta, t.getNombre(), t.getDescripcion() );
-           preguntas.add(p);
+        if (pregunta.getText() != "" && respuesta.getText() != "") {
+            String textoPregunta = pregunta.getText();
+            String textoRespuesta = respuesta.getText();
+            Tema t = (Tema) cmbTemas.getSelectedItem();
+            Pregunta p = new Pregunta(textoPregunta, textoRespuesta, t.getNombre(), t.getDescripcion());
+            preguntas.add(p);
         }
-        jListaPreguntas.setListData(preguntas.toArray());        
+        jListaPreguntas.setListData(preguntas.toArray());
     }//GEN-LAST:event_guardarPreguntaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         preguntas.remove(jListaPreguntas.getSelectedIndex());
-        jListaPreguntas.setListData(preguntas.toArray());        
+        jListaPreguntas.setListData(preguntas.toArray());
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

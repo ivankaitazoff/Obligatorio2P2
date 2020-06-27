@@ -1,33 +1,29 @@
-
 package interfaz;
 
 import dominio.Partida;
 import java.util.Collection;
 import javax.swing.JOptionPane;
 
-
-
 public class ModoFlashCard extends javax.swing.JFrame {
-        private Partida partida;
-       
-        int numero = 0;
-    /**
-     * Creates new form ModoFlashCard
-     */
-    public ModoFlashCard(Partida partida) {
-       this.partida= partida;
-        initComponents();
-        if (partida.getListaPreguntasElegidas().size()>0) {
-            btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
 
-        }else{
-            JOptionPane.showMessageDialog(null, "No hay preguntas cargadas", "Error", JOptionPane.ERROR_MESSAGE);
-           
-        }
-       
-    }
+    private Partida partida;
+
+    int numero = 0;
 
     
+    public ModoFlashCard(Partida partida) {
+        this.partida = partida;
+        initComponents();
+        if (partida.getListaPreguntasElegidas().size() > 0) {
+            btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
+
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay preguntas cargadas", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
+
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -77,7 +73,7 @@ public class ModoFlashCard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSalir);
-        btnSalir.setBounds(0, 170, 55, 25);
+        btnSalir.setBounds(0, 170, 90, 25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,32 +91,32 @@ public class ModoFlashCard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTextoActionPerformed
-        
-        if (btnTexto.getText()==partida.getListaPreguntasElegidas().get(numero).getRespuesta()) {
+
+        if (btnTexto.getText() == partida.getListaPreguntasElegidas().get(numero).getRespuesta()) {
             btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
-        }else {
+        } else {
             btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getRespuesta());
         }
     }//GEN-LAST:event_btnTextoActionPerformed
 
     private void btnSiguientePreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguientePreguntaActionPerformed
-        if(partida.getListaPreguntasElegidas().size()>1){
-        if (numero == partida.getListaPreguntasElegidas().size()-1) {
-           numero = 0;
-        }else{
-           numero++;
-       }
-       btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
+        if (partida.getListaPreguntasElegidas().size() > 1) {
+            if (numero == partida.getListaPreguntasElegidas().size() - 1) {
+                numero = 0;
+            } else {
+                numero++;
+            }
+            btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
     }//GEN-LAST:event_btnSiguientePreguntaActionPerformed
     }
     private void btnPreguntaAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreguntaAnteriorActionPerformed
-         if(partida.getListaPreguntasElegidas().size()>1){
-        if (numero == 0) {
-            numero = partida.getListaPreguntasElegidas().size()-1;
-        }else{
-            numero--;
-        }
-        btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
+        if (partida.getListaPreguntasElegidas().size() > 1) {
+            if (numero == 0) {
+                numero = partida.getListaPreguntasElegidas().size() - 1;
+            } else {
+                numero--;
+            }
+            btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
     }//GEN-LAST:event_btnPreguntaAnteriorActionPerformed
     }
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed

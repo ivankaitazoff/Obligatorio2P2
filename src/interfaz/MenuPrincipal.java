@@ -1,4 +1,3 @@
-
 package interfaz;
 
 import Persis.ArchivoLectura;
@@ -6,14 +5,15 @@ import dominio.Sistema;
 import obligatorio2p2.Obligatorio2P2;
 
 public class MenuPrincipal extends javax.swing.JFrame {
-    
+
     private Sistema sistema;
+
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal(Sistema unSistema) {
         initComponents();
-        this.sistema= unSistema;
+        this.sistema = unSistema;
         setTitle("Bienvenido");
     }
 
@@ -122,15 +122,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_GestionarTemasActionPerformed
 
     private void GestionarPreguntasManualmenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarPreguntasManualmenteActionPerformed
-        GestionPregunta gestionP = new GestionPregunta(sistema.getListaTemas(),sistema.getListaPreguntas());
+        GestionPregunta gestionP = new GestionPregunta(sistema.getListaTemas(), sistema.getListaPreguntas());
         gestionP.setVisible(true);
     }//GEN-LAST:event_GestionarPreguntasManualmenteActionPerformed
 
     private void CargaColectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargaColectivaActionPerformed
         ArchivoLectura arch = new ArchivoLectura("CargaDatos.txt");
         int contador = 1;
-        while (arch.hayMasLineas()){
-           /* String[] datos = arch.linea();
+        while (arch.hayMasLineas()) {
+            /* String[] datos = arch.linea();
             String tema = datos[0];
             System.out.println(tema);
             String pregunta = datos;
@@ -144,12 +144,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             
             contador++;  */
         }
-        arch.cerrar(); 
+        arch.cerrar();
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      Obligatorio2P2.guardarSistema(this.sistema);
-      this.dispose();//cierra vetana
+        Obligatorio2P2.guardarSistema(this.sistema);
+        this.dispose();//cierra vetana
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void botonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonJugarActionPerformed

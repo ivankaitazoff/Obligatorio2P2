@@ -1,4 +1,3 @@
-
 package interfaz;
 
 import dominio.Partida;
@@ -11,24 +10,22 @@ import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-
 public class SeleccionarTemas extends javax.swing.JFrame {
-     private Sistema sist;
-     private Partida partida;
-   
+
+    private Sistema sist;
+    private Partida partida;
+
     public SeleccionarTemas(Sistema sistema) {
-        
+
         initComponents();
         this.sist = sistema;
-         ArrayList<Tema> temas = sist.getListaTemas();
-         jListaEleccionTemas.setListData(temas.toArray());
-         ArrayList<Tema> temasElegidosMenu = new ArrayList<>();
-         partida = new Partida(temasElegidosMenu, 0, 0, 1);
-        
-        
+        ArrayList<Tema> temas = sist.getListaTemas();
+        jListaEleccionTemas.setListData(temas.toArray());
+        ArrayList<Tema> temasElegidosMenu = new ArrayList<>();
+        partida = new Partida(temasElegidosMenu, 0,0);
+
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -111,49 +108,47 @@ public class SeleccionarTemas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonSeleccionarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeleccionarTemaActionPerformed
-       Tema temaS = (Tema)jListaEleccionTemas.getSelectedValue();
+        Tema temaS = (Tema) jListaEleccionTemas.getSelectedValue();
         if (!partida.getListaTemasElegidos().contains(temaS)) {
-             agregarTema(sist, temaS);
-        }
-        else{
+            agregarTema(sist, temaS);
+        } else {
             JOptionPane.showMessageDialog(null, "tema ya seleccionado", "Error", JOptionPane.ERROR_MESSAGE);
         }
-       
+
     }//GEN-LAST:event_botonSeleccionarTemaActionPerformed
 
     private void comenzarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarPartidaActionPerformed
         partida.cargarPreguntasPartida(sist.getListaPreguntas());
+
+        List<Pregunta> preguntasMezcladas = partida.getListaPreguntasElegidas();
+        Collections.shuffle(preguntasMezcladas);
+        System.out.println(preguntasMezcladas);
         JugarMemory memory = new JugarMemory();
         memory.setVisible(true);
-        //List<Pregunta> preguntasMezcladas = partida.getListaPreguntasElegidas();
-        //Collections.shuffle(partida.getListaPreguntasElegidas());
-        //System.out.println(partida.getListaPreguntasElegidas());
     }//GEN-LAST:event_comenzarPartidaActionPerformed
 
     private void modoFlashCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoFlashCardActionPerformed
-       partida.cargarPreguntasPartida(sist.getListaPreguntas());
-                
+        partida.cargarPreguntasPartida(sist.getListaPreguntas());
+
         ModoFlashCard flashCards = new ModoFlashCard(partida);
         flashCards.setVisible(true);
-        
+
     }//GEN-LAST:event_modoFlashCardActionPerformed
 
-   public Partida crearPartida(Sistema sist, ArrayList<Tema> listaTemasElegidos){
-       
- 
-       Partida partida = new Partida(listaTemasElegidos,0,0,0);
+    public Partida crearPartida(Sistema sist, ArrayList<Tema> listaTemasElegidos) {
+
+        Partida partida = new Partida(listaTemasElegidos, 0,0);
         partida.cargarPreguntasPartida(sist.getListaPreguntas());
-        
+
         return partida;
     }
 
-   
-   public void agregarTema(Sistema sist, Tema tema){
-       partida.getListaTemasElegidos().add(tema);
-       
+    public void agregarTema(Sistema sist, Tema tema) {
+        partida.getListaTemasElegidos().add(tema);
+
         jListaTemasElegidos.setListData(partida.getListaTemasElegidos().toArray());
-   }
-   
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton botonSeleccionarTema;
     private javax.swing.JToggleButton comenzarPartida;
