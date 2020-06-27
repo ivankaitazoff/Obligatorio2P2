@@ -23,7 +23,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
          ArrayList<Tema> temas = sist.getListaTemas();
          jListaEleccionTemas.setListData(temas.toArray());
          ArrayList<Tema> temasElegidosMenu = new ArrayList<>();
-         partida = new Partida(temasElegidosMenu, sistema.getListaPreguntas(), 0, 0, 1);
+         partida = new Partida(temasElegidosMenu, 0, 0, 1);
         
         
     }
@@ -141,9 +141,8 @@ public class SeleccionarTemas extends javax.swing.JFrame {
    public Partida crearPartida(Sistema sist, ArrayList<Tema> listaTemasElegidos){
        
  
-       Partida partida = new Partida(sist.getListaTemas(),
-                sist.getListaPreguntas(),0,0,0);
-        
+       Partida partida = new Partida(listaTemasElegidos,0,0,0);
+        partida.cargarPreguntasPartida(sist.getListaPreguntas());
         
         return partida;
     }
