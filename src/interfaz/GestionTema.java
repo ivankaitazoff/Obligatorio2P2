@@ -3,15 +3,17 @@ package interfaz;
 import dominio.Sistema;
 import dominio.Tema;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class GestionTema extends javax.swing.JFrame {
-
+    Sistema sistema;
     ArrayList<Tema> lista = new ArrayList();
 
     /**
      * Creates new form GestionTemas
      */
-    public GestionTema(ArrayList<Tema> listaTemas) {
+    public GestionTema(ArrayList<Tema> listaTemas, Sistema sistema) {
+        this.sistema = sistema;
         initComponents();
         this.setLocationRelativeTo(null);
         lista = listaTemas;
@@ -153,8 +155,13 @@ public class GestionTema extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverAMenuActionPerformed
 
     private void botonEliminarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarTemaActionPerformed
+        if (sistema.tienePreguntas((Tema) jListTema.getSelectedValue())>0) {
+            JOptionPane.showMessageDialog(null, "Este tema no se puede eliminar, tiene preguntas", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
         lista.remove(jListTema.getSelectedValue());
         setJListTema();
+        }
     }//GEN-LAST:event_botonEliminarTemaActionPerformed
 
     public boolean existeTema(Tema t) {

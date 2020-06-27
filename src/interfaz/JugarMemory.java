@@ -1,16 +1,20 @@
 package interfaz;
 //import sun.audio.*;
 
+import dominio.Casillero;
 import dominio.Partida;
+import dominio.Pregunta;
 import javax.swing.*;
 import java.awt.event.*;
-import java.io.*;
+import java.util.ArrayList;
 
 public class JugarMemory extends javax.swing.JFrame {
 
+    private Casillero casillero;
     private Partida partida;
     private JButton[][] botones;
-    //private int[][] posicionPreguntas= new int[6][4];
+    private int[][] posicionPreguntas = new int[6][4];
+    ArrayList<Pregunta> lista = partida.getListaPreguntasMezcladas();
 
     public JugarMemory(Partida partida) {
         this.partida = partida;
@@ -24,9 +28,9 @@ public class JugarMemory extends javax.swing.JFrame {
             for (int j = 0; j < cantColumnas; j++) {
                 JButton jButton = new JButton();
                 jButton.addActionListener(new ListenerBoton(i, j));
-
                 panelInferior.add(jButton);
                 botones[i][j] = jButton;
+                casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(1), true);
             }
         }
     }
@@ -161,19 +165,46 @@ public class JugarMemory extends javax.swing.JFrame {
     }
 
     private void clickBoton(int fila, int columna) {
+        int x = 0;
+        int y = 0;
         if (partida.getTurno() % 2 == 0) {
             partida.setTurno(partida.getTurno() + 1);
             botones[fila][columna].setText("primera clieckeada");
+            x = fila;
+            y = columna;
         } else {
-            botones[fila][columna].setText("segunda clieckeada");
+            botones[fila][columna].setText(partida.devolverCasillero(fila, columna).getPregunta().getPregunta());
             partida.setTurno(partida.getTurno() + 1);
+            
+            //cargarMatriz();
             //verificar si la pregunta corresponde con la respuesta
+            
+            
+            
         }
 
 // Método a completar!. // En fila y columna se reciben las coordenas donde presionó el usuario, relativas al comienzo de la grilla
         // fila 0 y columna 0 corresponden a la posición de arriba a la izquierda.
         // Debe indicarse cómo responder al click de ese botón. 
     }
+
+    public void cargarMatriz() {
+
+        //quiero que en cada boton haya una pregunta
+        //dos botones tienen misma pregunta
+        //uno tiene pregunta pregunta
+        //otro tiene pregunta respuesta
+    }
+
+    /* public int[][] shuffle(int[][] a) {
+    Random random = new Random();
+
+     List<int[]> pair=new ArrayList<int[]>();
+    pair.addAll(Arrays.asList(rooms));
+
+    Collections.shuffle(pair);
+    return a;
+}*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAyudaParcial;

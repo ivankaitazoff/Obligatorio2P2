@@ -51,4 +51,14 @@ public class Sistema implements Serializable {
         return p;
     }
 
+    public int tienePreguntas(Tema t){
+        int contador=0;
+        for (Pregunta p: listaPreguntas) {
+            if (p.getNombre().equals(t.getNombre())) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+    
 }

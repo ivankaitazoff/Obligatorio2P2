@@ -117,7 +117,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GestionarTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarTemasActionPerformed
-        GestionTema gestionT = new GestionTema(sistema.getListaTemas());
+        GestionTema gestionT = new GestionTema(sistema.getListaTemas(), sistema);
         gestionT.setVisible(true);
     }//GEN-LAST:event_GestionarTemasActionPerformed
 

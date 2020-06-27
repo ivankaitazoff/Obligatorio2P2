@@ -22,7 +22,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         ArrayList<Tema> temas = sist.getListaTemas();
         jListaEleccionTemas.setListData(temas.toArray());
         ArrayList<Tema> temasElegidosMenu = new ArrayList<>();
-        partida = new Partida(temasElegidosMenu, 0,0);
+        partida = new Partida(temasElegidosMenu, 0, 0);
 
     }
 
@@ -119,12 +119,17 @@ public class SeleccionarTemas extends javax.swing.JFrame {
 
     private void comenzarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comenzarPartidaActionPerformed
         partida.cargarPreguntasPartida(sist.getListaPreguntas());
-
         List<Pregunta> preguntasMezcladas = partida.getListaPreguntasElegidas();
-        Collections.shuffle(preguntasMezcladas);
-        System.out.println(preguntasMezcladas);
-        JugarMemory memory = new JugarMemory(partida);
-        memory.setVisible(true);
+        if (partida.getListaPreguntasElegidas().size() >= 6) {
+            Collections.shuffle(preguntasMezcladas);
+            partida.setListaPreguntasMezcladas((ArrayList<Pregunta>) preguntasMezcladas);
+            System.out.println(preguntasMezcladas);
+            JugarMemory memory = new JugarMemory(partida);
+            memory.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Debe haber al menos 6 preguntas cargadas para que comience la partida", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_comenzarPartidaActionPerformed
 
     private void modoFlashCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoFlashCardActionPerformed
@@ -137,7 +142,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
 
     public Partida crearPartida(Sistema sist, ArrayList<Tema> listaTemasElegidos) {
 
-        Partida partida = new Partida(listaTemasElegidos, 0,0);
+        Partida partida = new Partida(listaTemasElegidos, 0, 0);
         partida.cargarPreguntasPartida(sist.getListaPreguntas());
 
         return partida;

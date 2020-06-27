@@ -6,8 +6,10 @@ public class Partida {
 
     private ArrayList<Tema> listaTemasElegidos;
     private ArrayList<Pregunta> listaPreguntasElegidas;
+    private ArrayList<Pregunta> listaPreguntasMezcladas;
     private int puntajeJugador;
     private int turno;
+    ArrayList<Casillero> listaCasilleros;
 
     public Partida(ArrayList<Tema> listaTemasElegidos, int puntajeJugador, int turno) {
         this.listaTemasElegidos = listaTemasElegidos;
@@ -17,6 +19,23 @@ public class Partida {
         this.turno = turno;
     }
 
+    public ArrayList<Pregunta> getListaPreguntasMezcladas() {
+        return listaPreguntasMezcladas;
+    }
+
+    public void setListaPreguntasMezcladas(ArrayList<Pregunta> listaPreguntasMezcladas) {
+        this.listaPreguntasMezcladas = listaPreguntasMezcladas;
+    }
+
+    public int getPuntajeJugador() {
+        return puntajeJugador;
+    }
+
+    public void setPuntajeJugador(int puntajeJugador) {
+        this.puntajeJugador = puntajeJugador;
+    }
+
+    
     public ArrayList<Tema> getListaTemasElegidos() {
         return listaTemasElegidos;
     }
@@ -60,4 +79,15 @@ public class Partida {
             }
         }
     }
+    
+    public Casillero devolverCasillero(int x, int y){
+        Casillero c=null;
+        for (int i = 0; i < listaCasilleros.size(); i++) {
+            if (listaCasilleros.get(i).getPosicionX()== x && listaCasilleros.get(i).getPosicionY()== y) {
+                c=listaCasilleros.get(i);
+            }
+        }
+        return c;
+    }
+    
 }
