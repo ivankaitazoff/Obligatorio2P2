@@ -7,9 +7,7 @@ import java.io.*;
 
 public class JugarMemory extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Jugar
-     */
+    
     public JugarMemory() {
         initComponents();
     }
@@ -214,7 +212,20 @@ public class JugarMemory extends javax.swing.JFrame {
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         btnPreg1.setText(null);
-        //sigo con los otros 
+        btnPreg2.setText(null);
+        btnPreg3.setText(null);
+        btnPreg4.setText(null);
+        btnPreg5.setText(null);
+        btnPreg6.setText(null);
+        btnResp1.setText(null);
+        btnResp1.setText(null);
+        btnResp1.setText(null);
+        btnResp1.setText(null);
+        btnResp1.setText(null);
+        btnResp1.setText(null);
+        
+        
+        
     }//GEN-LAST:event_btnResetActionPerformed
 
     
