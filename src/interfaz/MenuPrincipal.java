@@ -1,21 +1,19 @@
+
 package interfaz;
 
 import Persis.ArchivoLectura;
-import dominio.Pregunta;
 import dominio.Sistema;
-import dominio.Tema;
 import obligatorio2p2.Obligatorio2P2;
 
 public class MenuPrincipal extends javax.swing.JFrame {
-
+    
     private Sistema sistema;
-
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal(Sistema unSistema) {
         initComponents();
-        this.sistema = unSistema;
+        this.sistema= unSistema;
         setTitle("Bienvenido");
     }
 
@@ -124,42 +122,34 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_GestionarTemasActionPerformed
 
     private void GestionarPreguntasManualmenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestionarPreguntasManualmenteActionPerformed
-        GestionPregunta gestionP = new GestionPregunta(sistema.getListaTemas(), sistema.getListaPreguntas());
+        GestionPregunta gestionP = new GestionPregunta(sistema.getListaTemas(),sistema.getListaPreguntas());
         gestionP.setVisible(true);
     }//GEN-LAST:event_GestionarPreguntasManualmenteActionPerformed
 
     private void CargaColectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargaColectivaActionPerformed
-        String temaTXT = "";
-        String pregunta = "";
-        String respuesta;
         ArchivoLectura arch = new ArchivoLectura("CargaDatos.txt");
         int contador = 1;
-        while (arch.hayMasLineas()) {
-            if (contador % 3 == 1) {
-                temaTXT = arch.getLinea().toUpperCase();
+        while (arch.hayMasLineas()){
+           /* String[] datos = arch.linea();
+            String tema = datos[0];
+            System.out.println(tema);
+            String pregunta = datos;
+            if (contador%3 == ) {
+                String respuesta = datos;
             }
-            if (contador % 3 == 2) {
-                pregunta = arch.getLinea();
-            }
-            if (contador % 3 == 0) {
-                respuesta = arch.getLinea();
-                if (arch.devolverIndiceTema(sistema.getListaTemas(), temaTXT) >= 0) {
-                    Pregunta p = new Pregunta(pregunta, respuesta,
-                            sistema.getListaTemas().get(arch.devolverIndiceTema(sistema.getListaTemas(), temaTXT)).getNombre(),
-                            sistema.getListaTemas().get(arch.devolverIndiceTema(sistema.getListaTemas(), temaTXT)).getDescripcion());
-                    sistema.getListaPreguntas().add(p);
-                }else{
-                    System.out.println("El tema del TXT no coincide con ningun tema del sistema");}
-
-            }
-            contador++;
+            
+            
+            System.out.println(pregunta);
+            System.out.println(respuesta);
+            
+            contador++;  */
         }
-        arch.cerrar();
+        arch.cerrar(); 
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Obligatorio2P2.guardarSistema(this.sistema);
-        this.dispose();//cierra vetana
+      Obligatorio2P2.guardarSistema(this.sistema);
+      this.dispose();//cierra vetana
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void botonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonJugarActionPerformed
