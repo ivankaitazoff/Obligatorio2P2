@@ -52,6 +52,17 @@ public class Sistema implements Serializable {
         return p;
     }
 
+    public void setearNumeroDePreguntas(Tema t){
+        int indexTema = 0;
+        for (int i = 0; i < listaTemas.size(); i++) {
+            if (t.getNombre().equals(listaTemas.get(i).getNombre())) {
+                indexTema = i;
+                break;
+            }
+        }
+        int preguntas = tienePreguntas(t);
+        listaPreguntas.get(indexTema).setCantidadPreguntas(preguntas);
+    }
     public int tienePreguntas(Tema t){
         int contador=0;
         try{

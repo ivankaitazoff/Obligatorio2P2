@@ -7,17 +7,13 @@ import java.util.ArrayList;
 
 public class GestionPregunta extends javax.swing.JFrame {
 
-    ArrayList<Tema> temas;
-    ArrayList<Pregunta> preguntas;
     Sistema sistema;
 
-    public GestionPregunta(ArrayList<Tema> listaTemas, ArrayList<Pregunta> listaPreguntas) {
+    public GestionPregunta(Sistema sistema) {
         this.sistema = sistema;
         initComponents();
-        temas = listaTemas;
         cargarTemas();
-        preguntas = listaPreguntas;
-        jListaPreguntas.setListData(preguntas.toArray());
+        jListaPreguntas.setListData(sistema.getListaPreguntas().toArray());
     }
 
     @SuppressWarnings("unchecked")
@@ -151,18 +147,27 @@ public class GestionPregunta extends javax.swing.JFrame {
             String textoRespuesta = respuesta.getText();
             Tema t = (Tema) cmbTemas.getSelectedItem();
             Pregunta p = new Pregunta(textoPregunta, textoRespuesta, t.getNombre(), t.getDescripcion());
-            preguntas.add(p);
-            t.setCantidadPreguntas(sistema.tienePreguntas(t));
+            sistema.getListaPreguntas().add(p);
+            t.setCantidadPreguntas(t.getCantidadPreguntas()+1);
         }
        
-        jListaPreguntas.setListData(preguntas.toArray());
+        jListaPreguntas.setListData(sistema.getListaPreguntas().toArray());
         pregunta.setText("");
         respuesta.setText("");
     }//GEN-LAST:event_guardarPreguntaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        preguntas.remove(jListaPreguntas.getSelectedIndex());
-        jListaPreguntas.setListData(preguntas.toArray());
+        Tema t = sistema.getListaTemas().get(0);
+        System.out.println(jListaPreguntas.getSelectedIndex());
+        for (int i = 0; i < sistema.getListaTemas().size(); i++) {
+            if (sistema.getListaTemas().get(i).getNombre().equals(sistema.getListaPreguntas().get(jListaPreguntas.getSelectedIndex()).getNombre())) {
+                t = sistema.getListaTemas().get(i);
+            }
+        }
+        t.setCantidadPreguntas(t.getCantidadPreguntas()-1);
+        sistema.getListaPreguntas().remove(jListaPreguntas.getSelectedIndex());
+        jListaPreguntas.setListData(sistema.getListaPreguntas().toArray());
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -182,8 +187,8 @@ public class GestionPregunta extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void cargarTemas() {
-        if (!temas.isEmpty()) {
-            for (Tema tema : temas) {
+        if (!sistema.getListaTemas().isEmpty()) {
+            for (Tema tema : sistema.getListaTemas()) {
                 cmbTemas.addItem(tema);
             }
         }
