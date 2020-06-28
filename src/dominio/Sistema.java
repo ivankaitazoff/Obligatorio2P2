@@ -7,6 +7,7 @@ package dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -53,11 +54,16 @@ public class Sistema implements Serializable {
 
     public int tienePreguntas(Tema t){
         int contador=0;
+        try{
         for (Pregunta p: listaPreguntas) {
             if (p.getNombre().equals(t.getNombre())) {
                 contador++;
             }
         }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error leyendo preguntas", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
         return contador;
     }
     

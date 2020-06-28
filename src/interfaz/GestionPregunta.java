@@ -1,6 +1,7 @@
 package interfaz;
 
 import dominio.Pregunta;
+import dominio.Sistema;
 import dominio.Tema;
 import java.util.ArrayList;
 
@@ -8,8 +9,10 @@ public class GestionPregunta extends javax.swing.JFrame {
 
     ArrayList<Tema> temas;
     ArrayList<Pregunta> preguntas;
+    Sistema sistema;
 
     public GestionPregunta(ArrayList<Tema> listaTemas, ArrayList<Pregunta> listaPreguntas) {
+        this.sistema = sistema;
         initComponents();
         temas = listaTemas;
         cargarTemas();
@@ -149,7 +152,9 @@ public class GestionPregunta extends javax.swing.JFrame {
             Tema t = (Tema) cmbTemas.getSelectedItem();
             Pregunta p = new Pregunta(textoPregunta, textoRespuesta, t.getNombre(), t.getDescripcion());
             preguntas.add(p);
+            t.setCantidadPreguntas(sistema.tienePreguntas(t));
         }
+       
         jListaPreguntas.setListData(preguntas.toArray());
         pregunta.setText("");
         respuesta.setText("");

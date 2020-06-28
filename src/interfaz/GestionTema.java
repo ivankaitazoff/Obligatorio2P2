@@ -174,9 +174,11 @@ public class GestionTema extends javax.swing.JFrame {
         }
         return yaExiste;
     }
+    
 
     public void setJListTema() {
         jListTema.setListData(lista.toArray());
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

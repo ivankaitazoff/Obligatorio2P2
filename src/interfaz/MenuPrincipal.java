@@ -2,6 +2,7 @@ package interfaz;
 
 import Persis.ArchivoLectura;
 import dominio.Sistema;
+import java.util.ArrayList;
 import obligatorio2p2.Obligatorio2P2;
 
 public class MenuPrincipal extends javax.swing.JFrame {
@@ -127,22 +128,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void CargaColectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargaColectivaActionPerformed
         ArchivoLectura arch = new ArchivoLectura("CargaDatos.txt");
         int contador = 1;
+        int contadorpos = 0 ;
+        ArrayList <String> listaCargados= new ArrayList <>();
         while (arch.hayMasLineas()) {
-            /* String[] datos = arch.linea();
-            String tema = datos[0];
-            System.out.println(tema);
-            String pregunta = datos;
-            if (contador%3 == ) {
-                String respuesta = datos;
-            }
-            
-            
-            System.out.println(pregunta);
-            System.out.println(respuesta);
-            
-            contador++;  */
+          
+            listaCargados.add(arch.linea());
         }
         arch.cerrar();
+        for (int i = 0; i < listaCargados.size(); i++) {
+            
+        }
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

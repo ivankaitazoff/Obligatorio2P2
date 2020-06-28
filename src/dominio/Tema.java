@@ -10,6 +10,7 @@ public class Tema implements Serializable {
 
     private String nombre;
     private String descripcion;
+    private int cantidadPreguntas;
 
     public Tema(String nombre, String descripcion) {
         this.nombre = nombre;
@@ -32,6 +33,14 @@ public class Tema implements Serializable {
         this.descripcion = descripcion;
     }
 
+    public int getCantidadPreguntas() {
+        return cantidadPreguntas;
+    }
+
+    public void setCantidadPreguntas(int cantidadPreguntas) {
+        this.cantidadPreguntas = cantidadPreguntas;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -58,7 +67,7 @@ public class Tema implements Serializable {
 
     @Override
     public String toString() {
-        return nombre + ", " + descripcion;
+        return nombre + "," +cantidadPreguntas +"cantidad preguntas";
     }
 
 }
