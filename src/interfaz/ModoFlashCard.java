@@ -9,14 +9,16 @@ public class ModoFlashCard extends javax.swing.JFrame {
     private Partida partida;
 
     int numero = 0;
-    
+
     public ModoFlashCard(Partida partida) {
         this.partida = partida;
         initComponents();
+
         if (partida.getListaPreguntasElegidas().size() > 0) {
             btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
 
         } else {
+
             JOptionPane.showMessageDialog(null, "No hay preguntas cargadas", "Error", JOptionPane.ERROR_MESSAGE);
 
         }
@@ -90,14 +92,14 @@ public class ModoFlashCard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTextoActionPerformed
-
-        if (btnTexto.getText() == partida.getListaPreguntasElegidas().get(numero).getRespuesta()) {
-            btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
-        } else {
-            btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getRespuesta());
-        }
+        if (partida.getListaPreguntasElegidas().size() > 0) {
+            if (btnTexto.getText() == partida.getListaPreguntasElegidas().get(numero).getRespuesta()) {
+                btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
+            } else {
+                btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getRespuesta());
+            }
     }//GEN-LAST:event_btnTextoActionPerformed
-
+    }
     private void btnSiguientePreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguientePreguntaActionPerformed
         if (partida.getListaPreguntasElegidas().size() > 1) {
             if (numero == partida.getListaPreguntasElegidas().size() - 1) {

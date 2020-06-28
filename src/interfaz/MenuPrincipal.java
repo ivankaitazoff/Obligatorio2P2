@@ -8,9 +8,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private Sistema sistema;
 
-    /**
-     * Creates new form MenuPrincipal
-     */
+    
     public MenuPrincipal(Sistema unSistema) {
         initComponents();
         this.sistema = unSistema;
