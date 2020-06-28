@@ -167,7 +167,6 @@ public class GestionPregunta extends javax.swing.JFrame {
         t.setCantidadPreguntas(t.getCantidadPreguntas()-1);
         sistema.getListaPreguntas().remove(jListaPreguntas.getSelectedIndex());
         jListaPreguntas.setListData(sistema.getListaPreguntas().toArray());
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

@@ -13,8 +13,7 @@ public class JugarMemory extends javax.swing.JFrame {
     private Casillero casillero;
     private Partida partida;
     private JButton[][] botones;
-    private int[][] posicionPreguntas = new int[6][4];
-    ArrayList<Pregunta> lista = partida.getListaPreguntasMezcladas();
+    ArrayList<Pregunta> lista;
 
     public JugarMemory(Partida partida) {
         this.partida = partida;
@@ -30,7 +29,15 @@ public class JugarMemory extends javax.swing.JFrame {
                 jButton.addActionListener(new ListenerBoton(i, j));
                 panelInferior.add(jButton);
                 botones[i][j] = jButton;
-                casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(1), true);
+                if (j % 2 == 0) {
+                    Casillero casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(0), true);
+                    partida.getListaCasilleros().add(casillero);
+                } else {
+                    Casillero casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(0), false);
+                    partida.getListaCasilleros().add(casillero);
+                    partida.getListaPreguntasMezcladas().remove(0);
+                }
+
             }
         }
     }
@@ -45,7 +52,7 @@ public class JugarMemory extends javax.swing.JFrame {
         btnReset = new javax.swing.JButton();
         btnSonido = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        muestroPuntaje = new javax.swing.JLabel();
         panelInferior = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -94,10 +101,10 @@ public class JugarMemory extends javax.swing.JFrame {
         panelSuperior.add(jLabel1);
         jLabel1.setBounds(430, 0, 50, 30);
 
-        jLabel2.setText("------");
-        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        panelSuperior.add(jLabel2);
-        jLabel2.setBounds(490, 10, 50, 20);
+        muestroPuntaje.setText("------");
+        muestroPuntaje.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        panelSuperior.add(muestroPuntaje);
+        muestroPuntaje.setBounds(490, 10, 50, 30);
 
         getContentPane().add(panelSuperior);
 
@@ -121,6 +128,69 @@ public class JugarMemory extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnResetActionPerformed
 
+    private class ListenerBoton implements ActionListener {
+
+        private int x;
+        private int y;
+
+        public ListenerBoton(int i, int j) {
+            // en el constructor se almacena la fila y columna que se presionó 
+            x = i;
+            y = j;
+        }
+
+        public void actionPerformed(ActionEvent e) {
+            // cuando se presiona un botón, se ejecutará este método 
+            clickBoton(x, y);
+        }
+    }
+
+    private void clickBoton(int fila, int columna) {
+        // Método a completar!. // En fila y columna se reciben las coordenas donde presionó el usuario, relativas al comienzo de la grilla
+        // fila 0 y columna 0 corresponden a la posición de arriba a la izquierda.
+        // Debe indicarse cómo responder al click de ese botón. 
+        Casillero c1 = partida.getListaCasilleros().get(0);
+        if (partida.getTurno() % 2 == 0) {
+            partida.setTurno(partida.getTurno() + 1);
+            for (int i = 0; i < partida.getListaCasilleros().size(); i++) {
+                if (fila == partida.getListaCasilleros().get(i).getPosicionX() && columna == partida.getListaCasilleros().get(i).getPosicionY()) {
+                    c1 = partida.getListaCasilleros().get(i);
+                    break;
+                }
+            }
+            if (c1.getEsPregunta()) {
+                botones[fila][columna].setText(c1.getPregunta().getPregunta());
+            } else if (!c1.getEsPregunta()) {
+                botones[fila][columna].setText(c1.getPregunta().getRespuesta());
+            }
+        } else if (partida.getTurno() % 2 == 1) {
+            partida.setTurno(partida.getTurno() + 1);
+            //botones[fila][columna].setText("hola");
+
+            Casillero c2 = partida.getListaCasilleros().get(0);
+            if (partida.getTurno() % 2 == 0) {
+
+                for (int i = 0; i < partida.getListaCasilleros().size(); i++) {
+                    if (fila == partida.getListaCasilleros().get(i).getPosicionX() && columna == partida.getListaCasilleros().get(i).getPosicionY()) {
+                        c2 = partida.getListaCasilleros().get(i);
+                        break;
+                    }
+                }
+                if (c2.getEsPregunta()) {
+                    botones[fila][columna].setText(c2.getPregunta().getPregunta());
+                } else if (!c2.getEsPregunta()) {
+                    botones[fila][columna].setText(c2.getPregunta().getRespuesta());
+                }
+            }
+            if (c1.getPregunta().getPregunta().equals(c2.getPregunta().getPregunta())) {
+                JOptionPane.showMessageDialog(null, "le embocaste", "Error", JOptionPane.ERROR_MESSAGE);
+                partida.setPuntajeJugador(partida.getPuntajeJugador()+50);
+                muestroPuntaje.setText(String.valueOf(partida.getPuntajeJugador()));
+            }
+        }
+    }
+
+    //PARA AGREGARLE AUDIO
     /* public static void music() 
     {       
         AudioPlayer MGP = AudioPlayer.player;
@@ -147,64 +217,6 @@ public class JugarMemory extends javax.swing.JFrame {
         }
         MGP.start(loop);
     }*/
-    private class ListenerBoton implements ActionListener {
-
-        private int x;
-        private int y;
-
-        public ListenerBoton(int i, int j) {
-            // en el constructor se almacena la fila y columna que se presionó 
-            x = i;
-            y = j;
-        }
-
-        public void actionPerformed(ActionEvent e) {
-            // cuando se presiona un botón, se ejecutará este método 
-            clickBoton(x, y);
-        }
-    }
-
-    private void clickBoton(int fila, int columna) {
-        int x = 0;
-        int y = 0;
-        if (partida.getTurno() % 2 == 0) {
-            partida.setTurno(partida.getTurno() + 1);
-            botones[fila][columna].setText("primera clieckeada");
-            x = fila;
-            y = columna;
-        } else {
-            botones[fila][columna].setText(partida.devolverCasillero(fila, columna).getPregunta().getPregunta());
-            partida.setTurno(partida.getTurno() + 1);
-            
-            //cargarMatriz();
-            //verificar si la pregunta corresponde con la respuesta
-            
-            
-            
-        }
-
-// Método a completar!. // En fila y columna se reciben las coordenas donde presionó el usuario, relativas al comienzo de la grilla
-        // fila 0 y columna 0 corresponden a la posición de arriba a la izquierda.
-        // Debe indicarse cómo responder al click de ese botón. 
-    }
-
-    public void cargarMatriz() {
-
-        //quiero que en cada boton haya una pregunta
-        //dos botones tienen misma pregunta
-        //uno tiene pregunta pregunta
-        //otro tiene pregunta respuesta
-    }
-
-    /* public int[][] shuffle(int[][] a) {
-    Random random = new Random();
-
-     List<int[]> pair=new ArrayList<int[]>();
-    pair.addAll(Arrays.asList(rooms));
-
-    Collections.shuffle(pair);
-    return a;
-}*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAyudaParcial;
@@ -212,7 +224,7 @@ public class JugarMemory extends javax.swing.JFrame {
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSonido;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel muestroPuntaje;
     private javax.swing.JPanel panelInferior;
     private javax.swing.JPanel panelSuperior;
     // End of variables declaration//GEN-END:variables

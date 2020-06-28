@@ -123,7 +123,6 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         if (partida.getListaPreguntasElegidas().size() >= 6) {
             Collections.shuffle(preguntasMezcladas);
             partida.setListaPreguntasMezcladas((ArrayList<Pregunta>) preguntasMezcladas);
-            System.out.println(preguntasMezcladas);
             JugarMemory memory = new JugarMemory(partida);
             memory.setVisible(true);
         }

@@ -15,8 +15,8 @@ public class Partida {
         this.listaTemasElegidos = listaTemasElegidos;
         this.listaPreguntasElegidas = new ArrayList();
         this.puntajeJugador = puntajeJugador;
-       
         this.turno = turno;
+        this.listaCasilleros = new ArrayList<>();
     }
 
     public ArrayList<Pregunta> getListaPreguntasMezcladas() {
@@ -52,14 +52,6 @@ public class Partida {
         this.listaPreguntasElegidas = listaPreguntasElegidas;
     }
 
-    public int getPuntajeJugador1() {
-        return puntajeJugador;
-    }
-
-    public void setPuntajeJugador1(int puntajeJugador) {
-        this.puntajeJugador = puntajeJugador;
-    }
-
     public int getTurno() {
         return turno;
     }
@@ -68,6 +60,16 @@ public class Partida {
         this.turno = turno;
     }
 
+    public ArrayList<Casillero> getListaCasilleros() {
+        return listaCasilleros;
+    }
+
+    public void setListaCasilleros(ArrayList<Casillero> listaCasilleros) {
+        this.listaCasilleros = listaCasilleros;
+    }
+
+    
+    
     public void cargarPreguntasPartida(ArrayList<Pregunta> listaPreguntasSis) {
         if (!listaPreguntasSis.isEmpty() && !listaTemasElegidos.isEmpty()) {
             for (Tema t : listaTemasElegidos) {

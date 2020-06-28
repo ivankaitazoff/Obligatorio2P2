@@ -13,7 +13,6 @@ import javax.swing.JButton;
  * @author ivan
  */
 public class Casillero {
-
     private int posicionX;
     private int posicionY;
     private boolean esPregunta;
@@ -42,7 +41,7 @@ public class Casillero {
         this.posicionY = posicionY;
     }
 
-    public boolean isEsPregunta() {
+    public boolean getEsPregunta() {
         return esPregunta;
     }
 
