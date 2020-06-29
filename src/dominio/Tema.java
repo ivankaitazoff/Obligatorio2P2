@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-
 public class Tema implements Serializable {
 
     private String nombre;
@@ -42,7 +41,7 @@ public class Tema implements Serializable {
     public void setCantidadPreguntas(int cantidadPreguntas) {
         this.cantidadPreguntas = cantidadPreguntas;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 3;
@@ -69,7 +68,7 @@ public class Tema implements Serializable {
 
     @Override
     public String toString() {
-        return nombre + "," +cantidadPreguntas +"(cantidad preguntas)";
+        return nombre + "," + cantidadPreguntas + "(cantidad preguntas)";
     }
 
 }

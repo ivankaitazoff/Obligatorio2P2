@@ -9,6 +9,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class ArchivoLectura {
+
     private Scanner in;
     private String linea;
 
@@ -16,14 +17,14 @@ public class ArchivoLectura {
         try {
             in = new Scanner(Paths.get(unNombre));
         } catch (IOException e) {
-           JOptionPane.showMessageDialog(null, "No se pudo leer el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No se pudo leer el archivo", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     public boolean hayMasLineas() {
         boolean hay = false;
         linea = null;
-        if (in.hasNext()){
+        if (in.hasNext()) {
             linea = in.nextLine();
             hay = true;
         }
@@ -39,4 +40,3 @@ public class ArchivoLectura {
         in.close();
     }
 }
-

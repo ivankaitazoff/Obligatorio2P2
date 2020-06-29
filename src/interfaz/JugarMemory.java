@@ -161,9 +161,9 @@ public class JugarMemory extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSonidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSonidoActionPerformed
-        String cancion="src\\musica\\musica.mp3";
-            MP3Player mp3 = new MP3Player(new File(cancion));
-            mp3.play();
+        String cancion = "src\\musica\\musica.mp3";
+        MP3Player mp3 = new MP3Player(new File(cancion));
+        mp3.play();
     }//GEN-LAST:event_btnSonidoActionPerformed
 
     private void btnAyudaParcialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaParcialActionPerformed

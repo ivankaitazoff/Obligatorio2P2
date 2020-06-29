@@ -29,5 +29,3 @@ public class ArchivoGrabacion {
         out.close();
     }
 }
-
-

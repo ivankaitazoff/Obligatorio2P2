@@ -41,6 +41,7 @@ public class Sistema implements Serializable {
     public void setPath(String path) {
         this.path = path;
     }
+
     public Tema CrearTema(String tema, String descripcion) {
         Tema t = new Tema(tema, descripcion);
         listaTemas.add(t);
@@ -54,7 +55,7 @@ public class Sistema implements Serializable {
         return p;
     }
 
-    public void setearNumeroDePreguntas(Tema t){
+    public void setearNumeroDePreguntas(Tema t) {
         int indexTema = 0;
         for (int i = 0; i < listaTemas.size(); i++) {
             if (t.getNombre().equals(listaTemas.get(i).getNombre())) {
@@ -65,19 +66,20 @@ public class Sistema implements Serializable {
         int preguntas = tienePreguntas(t);
         listaPreguntas.get(indexTema).setCantidadPreguntas(preguntas);
     }
-    public int tienePreguntas(Tema t){
-        int contador=0;
-        try{
-        for (Pregunta p: listaPreguntas) {
-            if (p.getNombre().equals(t.getNombre())) {
-                contador++;
+
+    public int tienePreguntas(Tema t) {
+        int contador = 0;
+        try {
+            for (Pregunta p : listaPreguntas) {
+                if (p.getNombre().equals(t.getNombre())) {
+                    contador++;
+                }
             }
-        }
-        }catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error leyendo preguntas", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         return contador;
     }
-    
+
 }

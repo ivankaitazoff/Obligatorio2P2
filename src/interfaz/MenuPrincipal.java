@@ -137,11 +137,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonJugarActionPerformed
 
     private void guardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDatosActionPerformed
-            CargaDatosVentanaAuxiliar c= new CargaDatosVentanaAuxiliar(sistema);
-            c.setVisible(true);
+        CargaDatosVentanaAuxiliar c = new CargaDatosVentanaAuxiliar(sistema);
+        c.setVisible(true);
     }//GEN-LAST:event_guardarDatosActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton GestionarPreguntasManualmente;

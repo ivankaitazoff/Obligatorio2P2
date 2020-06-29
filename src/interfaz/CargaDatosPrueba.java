@@ -7,19 +7,17 @@ import dominio.Pregunta;
 import dominio.Sistema;
 import dominio.Tema;
 
-
 public class CargaDatosPrueba extends javax.swing.JFrame {
 
     private Sistema sistema;
     private int cantPreguntas;
     private int cantTemas;
-    
+
     public CargaDatosPrueba(Sistema sistema) {
         initComponents();
-        this.sistema=sistema;
+        this.sistema = sistema;
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -89,17 +87,17 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
     private void btnCrearDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearDatosActionPerformed
         sistema.getListaPreguntas().clear();
         sistema.getListaTemas().clear();
-        cantTemas=Integer.parseInt(jTextCantTemas.getText());
-        cantPreguntas=Integer.parseInt(jTextCantPreguntas.getText());
+        cantTemas = Integer.parseInt(jTextCantTemas.getText());
+        cantPreguntas = Integer.parseInt(jTextCantPreguntas.getText());
         for (int i = 0; i < cantTemas; i++) {
-            Tema t = new Tema("TEMA"+(i+1),", Descripcion de T"+(i+1));
+            Tema t = new Tema("TEMA" + (i + 1), ", Descripcion de T" + (i + 1));
             sistema.getListaTemas().add(t);
             for (int j = 0; j < cantPreguntas; j++) {
-                Pregunta p = new Pregunta("P"+(j+1)+"TEMA"+(i+1), "Respuesta P"+(j+1)+"TEMA"+(i+1), t.getNombre(), t.getDescripcion());
+                Pregunta p = new Pregunta("P" + (j + 1) + "TEMA" + (i + 1), "Respuesta P" + (j + 1) + "TEMA" + (i + 1), t.getNombre(), t.getDescripcion());
                 sistema.getListaPreguntas().add(p);
-                t.setCantidadPreguntas(t.getCantidadPreguntas()+1);
+                t.setCantidadPreguntas(t.getCantidadPreguntas() + 1);
             }
-            
+
         }
         this.dispose();
     }//GEN-LAST:event_btnCrearDatosActionPerformed
@@ -108,7 +106,6 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearDatos;

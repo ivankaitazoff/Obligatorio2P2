@@ -5,22 +5,20 @@ package interfaz;
 
 import dominio.Sistema;
 import java.awt.event.WindowEvent;
-import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-
 public class BuscarDocumento extends javax.swing.JFrame {
+
     private String path;
     private Sistema sistema;
-    
+
     public BuscarDocumento(Sistema sistema) {
         initComponents();
         this.sistema = sistema;
         this.setLocationRelativeTo(null);
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -53,10 +51,10 @@ public class BuscarDocumento extends javax.swing.JFrame {
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
         try {
             this.setPath(jFileChooser1.getSelectedFile().toString());
-        System.out.println(path);
-        sistema.setPath(this.getPath());
-        
-        } catch (Exception e){
+            System.out.println(path);
+            sistema.setPath(this.getPath());
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error cargando el path", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jFileChooser1ActionPerformed
@@ -77,10 +75,10 @@ public class BuscarDocumento extends javax.swing.JFrame {
         this.jFileChooser1 = jFileChooser1;
     }
 
-    public void windowClosing(WindowEvent e){
+    public void windowClosing(WindowEvent e) {
         System.out.println("cerro la ventana");
     }
-  
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser jFileChooser1;

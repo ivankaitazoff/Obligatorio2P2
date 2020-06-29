@@ -38,7 +38,6 @@ public class Partida {
         this.puntajeJugador = puntajeJugador;
     }
 
-    
     public ArrayList<Tema> getListaTemasElegidos() {
         return listaTemasElegidos;
     }
@@ -71,8 +70,6 @@ public class Partida {
         this.listaCasilleros = listaCasilleros;
     }
 
-    
-    
     public void cargarPreguntasPartida(ArrayList<Pregunta> listaPreguntasSis) {
         if (!listaPreguntasSis.isEmpty() && !listaTemasElegidos.isEmpty()) {
             for (Tema t : listaTemasElegidos) {
@@ -84,15 +81,15 @@ public class Partida {
             }
         }
     }
-    
-    public Casillero devolverCasillero(int x, int y){
-        Casillero c=null;
+
+    public Casillero devolverCasillero(int x, int y) {
+        Casillero c = null;
         for (int i = 0; i < listaCasilleros.size(); i++) {
-            if (listaCasilleros.get(i).getPosicionX()== x && listaCasilleros.get(i).getPosicionY()== y) {
-                c=listaCasilleros.get(i);
+            if (listaCasilleros.get(i).getPosicionX() == x && listaCasilleros.get(i).getPosicionY() == y) {
+                c = listaCasilleros.get(i);
             }
         }
         return c;
     }
-    
+
 }

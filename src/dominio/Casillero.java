@@ -7,6 +7,7 @@ import java.awt.Button;
 import javax.swing.JButton;
 
 public class Casillero {
+
     private int posicionX;
     private int posicionY;
     private boolean esPregunta;
@@ -60,5 +61,5 @@ public class Casillero {
     public void setUsado(boolean usado) {
         this.usado = usado;
     }
-    
+
 }

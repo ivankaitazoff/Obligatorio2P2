@@ -6,7 +6,6 @@ package interfaz;
 import dominio.Pregunta;
 import dominio.Sistema;
 import dominio.Tema;
-import java.util.ArrayList;
 
 public class GestionPregunta extends javax.swing.JFrame {
 
@@ -133,9 +132,9 @@ public class GestionPregunta extends javax.swing.JFrame {
 
     private void guardarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarPreguntaActionPerformed
         String textoPregunta = pregunta.getText();
-            String textoRespuesta = respuesta.getText();
-            Tema t = (Tema) cmbTemas.getSelectedItem();
-            boolean repetido = false;
+        String textoRespuesta = respuesta.getText();
+        Tema t = (Tema) cmbTemas.getSelectedItem();
+        boolean repetido = false;
         if (!pregunta.getText().equals("") && !respuesta.getText().equals("")) {
             for (int i = 0; i < sistema.getListaPreguntas().size(); i++) {
                 if (sistema.getListaPreguntas().get(i).getPregunta().equals(textoPregunta) && sistema.getListaPreguntas().get(i).getNombre().equals(t.getNombre())) {
@@ -144,9 +143,9 @@ public class GestionPregunta extends javax.swing.JFrame {
                 }
             }
             if (!repetido) {
-            Pregunta p = new Pregunta(textoPregunta, textoRespuesta, t.getNombre(), t.getDescripcion());
-            sistema.getListaPreguntas().add(p);
-            t.setCantidadPreguntas(t.getCantidadPreguntas() + 1);
+                Pregunta p = new Pregunta(textoPregunta, textoRespuesta, t.getNombre(), t.getDescripcion());
+                sistema.getListaPreguntas().add(p);
+                t.setCantidadPreguntas(t.getCantidadPreguntas() + 1);
             }
         }
 
