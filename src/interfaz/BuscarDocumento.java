@@ -23,6 +23,7 @@ public class BuscarDocumento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnSalir = new javax.swing.JToggleButton();
         jFileChooser1 = new javax.swing.JFileChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -30,6 +31,15 @@ public class BuscarDocumento extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(600, 400));
         setPreferredSize(new java.awt.Dimension(730, 450));
         getContentPane().setLayout(null);
+
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir);
+        btnSalir.setBounds(430, 360, 90, 30);
 
         jFileChooser1.setBackground(new java.awt.Color(187, 83, 70));
         jFileChooser1.setDialogTitle("");
@@ -50,18 +60,19 @@ public class BuscarDocumento extends javax.swing.JFrame {
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
         try {
-            if (jFileChooser1.CANCEL_OPTION) {
                 this.setPath(jFileChooser1.getSelectedFile().toString());
                 System.out.println(path);
                 sistema.setPath(this.getPath());
-            }else{
-                this.dispose();
-            }
+          
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error cargando el path", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_jFileChooser1ActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     public String getPath() {
         return path;
@@ -85,6 +96,7 @@ public class BuscarDocumento extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnSalir;
     private javax.swing.JFileChooser jFileChooser1;
     // End of variables declaration//GEN-END:variables
 }
