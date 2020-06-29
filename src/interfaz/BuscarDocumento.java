@@ -5,14 +5,17 @@
  */
 package interfaz;
 
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
-public class GuardarTxt extends javax.swing.JFrame {
 
+public class BuscarDocumento extends javax.swing.JFrame {
+    private String path;
     
-    public GuardarTxt() {
+    public BuscarDocumento() {
         initComponents();
         this.setLocationRelativeTo(null);
-        //String path= file.getCanonicalPath();
     }
 
     
@@ -20,23 +23,13 @@ public class GuardarTxt extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnGuardar = new javax.swing.JButton();
         jFileChooser1 = new javax.swing.JFileChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 400));
-        setPreferredSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(730, 450));
         getContentPane().setLayout(null);
-
-        btnGuardar.setText("Guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnGuardar);
-        btnGuardar.setBounds(430, 360, 90, 30);
 
         jFileChooser1.setBackground(new java.awt.Color(187, 83, 70));
         jFileChooser1.setDialogTitle("");
@@ -56,18 +49,34 @@ public class GuardarTxt extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            this.setPath(jFileChooser1.getSelectedFile().toString());
+        System.out.println(path);
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Error cargando el path", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public JFileChooser getjFileChooser1() {
+        return jFileChooser1;
+    }
+
+    public void setjFileChooser1(JFileChooser jFileChooser1) {
+        this.jFileChooser1 = jFileChooser1;
+    }
 
     
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGuardar;
     private javax.swing.JFileChooser jFileChooser1;
     // End of variables declaration//GEN-END:variables
 }

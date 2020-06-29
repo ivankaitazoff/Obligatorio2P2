@@ -1,20 +1,22 @@
 package interfaz;
 
 import Persis.ArchivoLectura;
+import dominio.Pregunta;
 import dominio.Sistema;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import obligatorio2p2.Obligatorio2P2;
 
 public class MenuPrincipal extends javax.swing.JFrame {
-    
+
     private Sistema sistema;
-    
+
     public MenuPrincipal(Sistema unSistema) {
         initComponents();
         this.sistema = unSistema;
         setTitle("Bienvenido");
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -40,7 +42,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         GestionarTemas.setBackground(new java.awt.Color(187, 83, 70));
-        GestionarTemas.setForeground(new java.awt.Color(0, 0, 0));
         GestionarTemas.setText("Gestionar Temas");
         GestionarTemas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         GestionarTemas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -53,7 +54,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GestionarTemas.setBounds(10, 100, 210, 60);
 
         GestionarPreguntasManualmente.setBackground(new java.awt.Color(187, 83, 70));
-        GestionarPreguntasManualmente.setForeground(new java.awt.Color(0, 0, 0));
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
         GestionarPreguntasManualmente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         GestionarPreguntasManualmente.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +65,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GestionarPreguntasManualmente.setBounds(10, 30, 210, 60);
 
         CargaColectiva.setBackground(new java.awt.Color(187, 83, 70));
-        CargaColectiva.setForeground(new java.awt.Color(0, 0, 0));
         CargaColectiva.setText("Carga De Preguntas En Forma Colectiva");
         CargaColectiva.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         CargaColectiva.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +76,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         CargaColectiva.setBounds(10, 170, 210, 60);
 
         botonJugar.setBackground(new java.awt.Color(187, 83, 70));
-        botonJugar.setForeground(new java.awt.Color(0, 0, 0));
         botonJugar.setText("Jugar");
         botonJugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         botonJugar.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +87,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botonJugar.setBounds(540, 350, 90, 19);
 
         btnSalir.setBackground(new java.awt.Color(187, 83, 70));
-        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("salir");
         btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -101,8 +98,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnSalir.setBounds(230, 350, 90, 19);
 
         guardarDatos.setBackground(new java.awt.Color(187, 83, 70));
-        guardarDatos.setForeground(new java.awt.Color(0, 0, 0));
-        guardarDatos.setText("jButton2");
+        guardarDatos.setText("Guardar");
         guardarDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
         guardarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,17 +152,38 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_GestionarPreguntasManualmenteActionPerformed
 
     private void CargaColectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargaColectivaActionPerformed
-        ArchivoLectura arch = new ArchivoLectura("CargaDatos.txt");
+        BuscarDocumento busqueda = new BuscarDocumento();
+        busqueda.setVisible(true);
+        String pathAUsar = busqueda.getPath();
+        
+        while (!busqueda.isShowing()) {
+        ArchivoLectura arch = new ArchivoLectura(pathAUsar);
         int contador = 1;
-        int contadorpos = 0;
         ArrayList<String> listaCargados = new ArrayList<>();
         while (arch.hayMasLineas()) {
-            
             listaCargados.add(arch.linea());
         }
         arch.cerrar();
-        for (int i = 0; i < listaCargados.size(); i++) {
-            
+        boolean sePuedeAgregar = false;
+        for (int i = 0; i < listaCargados.size(); i += 3) {
+            System.out.println(listaCargados.get(i));
+            System.out.println(listaCargados.get(i+1));
+            System.out.println(listaCargados.get(i+2));
+            for (int j = 0; j < sistema.getListaTemas().size(); j++) {
+                if (listaCargados.get(i+1)!= "" && listaCargados.get(i+2)!="") {
+                    if (sistema.getListaTemas().get(j).getNombre() == listaCargados.get(i).toString() && i / 3 == 0) {
+                        System.out.println("entro");
+                        Pregunta p = new Pregunta(listaCargados.get(i + 1).toString(), listaCargados.get(i + 2).toString(),
+                            sistema.getListaTemas().get(j).getNombre(), sistema.getListaTemas().get(j).getDescripcion());
+                    sistema.getListaPreguntas().add(p);
+                    System.out.println(p.toString());
+                }
+                }
+                
+            }
+
+        }
+        JOptionPane.showMessageDialog(null, "Termino la carga", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
@@ -185,8 +202,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_CargaColectiva1ActionPerformed
 
     private void guardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDatosActionPerformed
-        GuardarTxt guardarTxt = new GuardarTxt();
-        guardarTxt.setVisible(true);
+        BuscarDocumento busqueda = new BuscarDocumento();
+        busqueda.setVisible(true);
+        //Hay que seleccionar en esa ventana el documento
+        String path = busqueda.getPath().toString();
+        //usar este path
     }//GEN-LAST:event_guardarDatosActionPerformed
 
 
