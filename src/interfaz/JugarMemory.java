@@ -4,9 +4,11 @@ package interfaz;
 import dominio.Casillero;
 import dominio.Partida;
 import dominio.Pregunta;
+import jaco.mp3.player.MP3Player;
 import java.awt.Color;
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.File;
 import java.util.ArrayList;
 
 public class JugarMemory extends javax.swing.JFrame {
@@ -75,7 +77,6 @@ public class JugarMemory extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelInferior = new javax.swing.JPanel();
         panelSuperior = new javax.swing.JPanel();
         btnAyudaParcial = new javax.swing.JButton();
         btnAyudaTotal = new javax.swing.JButton();
@@ -84,22 +85,17 @@ public class JugarMemory extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         muestroPuntaje = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        panelInferior = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
-
-        panelInferior.setBackground(new java.awt.Color(255, 255, 255));
-        panelInferior.setForeground(new java.awt.Color(187, 83, 70));
-        panelInferior.setPreferredSize(new java.awt.Dimension(500, 400));
-        panelInferior.setLayout(new java.awt.GridLayout(3, 4));
 
         panelSuperior.setBackground(new java.awt.Color(255, 255, 255));
         panelSuperior.setPreferredSize(new java.awt.Dimension(600, 400));
         panelSuperior.setLayout(null);
 
         btnAyudaParcial.setBackground(new java.awt.Color(187, 83, 70));
-        btnAyudaParcial.setForeground(new java.awt.Color(0, 0, 0));
         btnAyudaParcial.setText("Ayuda Parcial");
         btnAyudaParcial.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
         btnAyudaParcial.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +107,6 @@ public class JugarMemory extends javax.swing.JFrame {
         btnAyudaParcial.setBounds(90, 0, 80, 30);
 
         btnAyudaTotal.setBackground(new java.awt.Color(187, 83, 70));
-        btnAyudaTotal.setForeground(new java.awt.Color(0, 0, 0));
         btnAyudaTotal.setText("Ayuda Total");
         btnAyudaTotal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnAyudaTotal.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +118,6 @@ public class JugarMemory extends javax.swing.JFrame {
         btnAyudaTotal.setBounds(170, 0, 80, 30);
 
         btnReset.setBackground(new java.awt.Color(187, 83, 70));
-        btnReset.setForeground(new java.awt.Color(0, 0, 0));
         btnReset.setText("Reset");
         btnReset.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnReset.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +129,6 @@ public class JugarMemory extends javax.swing.JFrame {
         btnReset.setBounds(250, 0, 80, 30);
 
         btnSonido.setBackground(new java.awt.Color(187, 83, 70));
-        btnSonido.setForeground(new java.awt.Color(0, 0, 0));
         btnSonido.setText("Sonido");
         btnSonido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSonido.addActionListener(new java.awt.event.ActionListener() {
@@ -146,19 +139,16 @@ public class JugarMemory extends javax.swing.JFrame {
         panelSuperior.add(btnSonido);
         btnSonido.setBounds(330, 0, 80, 30);
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Puntos:");
         panelSuperior.add(jLabel1);
         jLabel1.setBounds(430, 0, 50, 30);
 
-        muestroPuntaje.setForeground(new java.awt.Color(0, 0, 0));
         muestroPuntaje.setText("------");
         muestroPuntaje.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panelSuperior.add(muestroPuntaje);
         muestroPuntaje.setBounds(490, 10, 50, 30);
 
         btnSalir.setBackground(new java.awt.Color(187, 83, 70));
-        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
         btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -169,15 +159,21 @@ public class JugarMemory extends javax.swing.JFrame {
         panelSuperior.add(btnSalir);
         btnSalir.setBounds(10, 0, 80, 30);
 
-        panelInferior.add(panelSuperior);
+        getContentPane().add(panelSuperior);
 
+        panelInferior.setBackground(new java.awt.Color(255, 255, 255));
+        panelInferior.setForeground(new java.awt.Color(187, 83, 70));
+        panelInferior.setPreferredSize(new java.awt.Dimension(416, 339));
+        panelInferior.setLayout(new java.awt.GridLayout(3, 4));
         getContentPane().add(panelInferior);
 
         setBounds(0, 0, 584, 361);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSonidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSonidoActionPerformed
-        // TODO add your handling code here:
+        String cancion="src\\musica\\musica.mp3";
+            MP3Player mp3 = new MP3Player(new File(cancion));
+            mp3.play();
     }//GEN-LAST:event_btnSonidoActionPerformed
 
     private void btnAyudaParcialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaParcialActionPerformed
