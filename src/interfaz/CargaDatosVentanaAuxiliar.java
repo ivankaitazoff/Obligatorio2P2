@@ -3,6 +3,7 @@
 //Sebastian Romelli: 222405
 package interfaz;
 
+import Persis.ArchivoGrabacion;
 import Persis.ArchivoLectura;
 import dominio.Pregunta;
 import dominio.Sistema;
@@ -93,7 +94,7 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSalir);
-        btnSalir.setBounds(160, 270, 55, 23);
+        btnSalir.setBounds(150, 260, 100, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -137,7 +138,22 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
     }//GEN-LAST:event_cargaDatosActionPerformed
 
     private void guardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDatosActionPerformed
-
+        try{ 
+            ArchivoGrabacion out = new ArchivoGrabacion(sistema.getPath()); 
+            for (int i = 0; i < sistema.getListaTemas().size(); i++) {
+                    out.grabarLinea("Tema "+(i+1)+":"+sistema.getListaTemas().get(i).getNombre() +"\n");
+                for (int j = 0; j < sistema.getListaPreguntas().size(); j++) {
+                    if (sistema.getListaPreguntas().get(j).getNombre().equals(sistema.getListaTemas().get(i).getNombre())) {
+                        out.grabarLinea("Pregunta: " + sistema.getListaPreguntas().get(j).getPregunta()+"\n");
+                        out.grabarLinea("Respuesta: " + sistema.getListaPreguntas().get(j).getRespuesta()+"\n");
+                    }
+                }
+            }
+            
+            out.cerrar();
+    }catch(Exception e) {
+            System.out.println("error");
+    }
     }//GEN-LAST:event_guardarDatosActionPerformed
 
     private void cargaPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaPruebaActionPerformed

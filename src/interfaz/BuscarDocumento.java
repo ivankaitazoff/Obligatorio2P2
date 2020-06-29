@@ -29,6 +29,7 @@ public class BuscarDocumento extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 400));
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(730, 450));
         getContentPane().setLayout(null);
 
@@ -39,7 +40,7 @@ public class BuscarDocumento extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSalir);
-        btnSalir.setBounds(430, 360, 90, 30);
+        btnSalir.setBounds(610, 360, 80, 30);
 
         jFileChooser1.setBackground(new java.awt.Color(187, 83, 70));
         jFileChooser1.setDialogTitle("");
