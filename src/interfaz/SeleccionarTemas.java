@@ -165,7 +165,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
 
     private void modoFlashCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoFlashCardActionPerformed
         partida.cargarPreguntasPartida(sist.getListaPreguntas());
-
+        this.dispose();
         ModoFlashCard flashCards = new ModoFlashCard(partida);
         flashCards.setVisible(true);
 

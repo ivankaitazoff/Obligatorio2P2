@@ -48,7 +48,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(GestionarTemas);
-        GestionarTemas.setBounds(10, 90, 210, 60);
+        GestionarTemas.setBounds(10, 80, 210, 60);
 
         GestionarPreguntasManualmente.setBackground(new java.awt.Color(187, 83, 70));
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
@@ -92,7 +92,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(guardarDatos);
-        guardarDatos.setBounds(10, 170, 210, 60);
+        guardarDatos.setBounds(10, 150, 210, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerebro.png"))); // NOI18N
         jLabel1.setText("jLabel1");
