@@ -33,6 +33,7 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(450, 300));
         getContentPane().setLayout(null);
 

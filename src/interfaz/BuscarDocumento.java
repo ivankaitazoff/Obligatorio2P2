@@ -50,13 +50,17 @@ public class BuscarDocumento extends javax.swing.JFrame {
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
         try {
-            this.setPath(jFileChooser1.getSelectedFile().toString());
-            System.out.println(path);
-            sistema.setPath(this.getPath());
-
+            if (jFileChooser1.CANCEL_OPTION) {
+                this.setPath(jFileChooser1.getSelectedFile().toString());
+                System.out.println(path);
+                sistema.setPath(this.getPath());
+            }else{
+                this.dispose();
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error cargando el path", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
     public String getPath() {

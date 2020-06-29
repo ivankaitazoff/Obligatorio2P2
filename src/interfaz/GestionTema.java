@@ -52,10 +52,9 @@ public class GestionTema extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(190, 10, 188, 19);
+        jTextField1.setBounds(190, 10, 188, 18);
 
         jTextField2.setBackground(new java.awt.Color(187, 83, 70));
-        jTextField2.setForeground(new java.awt.Color(187, 83, 70));
         jTextField2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,19 +65,16 @@ public class GestionTema extends javax.swing.JFrame {
         jTextField2.setBounds(190, 90, 188, 60);
 
         jLabel1.setBackground(new java.awt.Color(187, 83, 70));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nombre del tema");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(12, 14, 120, 15);
+        jLabel1.setBounds(12, 14, 120, 14);
 
         jLabel2.setBackground(new java.awt.Color(187, 83, 70));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Descripcion");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(12, 112, 90, 15);
+        jLabel2.setBounds(12, 112, 90, 14);
 
         jButton1.setBackground(new java.awt.Color(187, 83, 70));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Guardar tema");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +86,6 @@ public class GestionTema extends javax.swing.JFrame {
         jButton1.setBounds(12, 287, 130, 19);
 
         VolverAMenu.setBackground(new java.awt.Color(187, 83, 70));
-        VolverAMenu.setForeground(new java.awt.Color(0, 0, 0));
         VolverAMenu.setText("Volver a menu principal");
         VolverAMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         VolverAMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -108,10 +103,9 @@ public class GestionTema extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jListTema);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(460, 40, 110, 131);
+        jScrollPane1.setBounds(460, 40, 110, 132);
 
         botonEliminarTema.setBackground(new java.awt.Color(187, 83, 70));
-        botonEliminarTema.setForeground(new java.awt.Color(0, 0, 0));
         botonEliminarTema.setText("Eliminar Tema");
         botonEliminarTema.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         botonEliminarTema.addActionListener(new java.awt.event.ActionListener() {
@@ -122,10 +116,9 @@ public class GestionTema extends javax.swing.JFrame {
         jPanel1.add(botonEliminarTema);
         botonEliminarTema.setBounds(440, 180, 150, 19);
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Elija tema para eliminar");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(450, 20, 150, 15);
+        jLabel3.setBounds(450, 20, 150, 14);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

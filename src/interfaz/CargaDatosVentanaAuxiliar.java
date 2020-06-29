@@ -29,8 +29,10 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         cargaDatos = new javax.swing.JButton();
         guardarDatos = new javax.swing.JButton();
         cargaPrueba = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(600, 400));
         getContentPane().setLayout(null);
 
@@ -82,7 +84,16 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cargaPrueba);
-        cargaPrueba.setBounds(60, 250, 290, 23);
+        cargaPrueba.setBounds(60, 220, 290, 23);
+
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir);
+        btnSalir.setBounds(160, 270, 55, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -134,8 +145,13 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         c.setVisible(true);
     }//GEN-LAST:event_cargaPruebaActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+            this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton abrirNavegador;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JButton cargaDatos;
     private javax.swing.JButton cargaPrueba;
     private javax.swing.JButton guardarDatos;
