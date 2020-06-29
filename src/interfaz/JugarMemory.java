@@ -23,6 +23,7 @@ public class JugarMemory extends javax.swing.JFrame {
     private Casillero c2;
     private int[] preguntasUsadas = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
     private int numeroDePregunta = 0;
+    private MP3Player mp3;
 
     public JugarMemory(Partida partida) {
         this.partida = partida;
@@ -31,6 +32,8 @@ public class JugarMemory extends javax.swing.JFrame {
         int cantColumnas = 4;
         int cantFilas = 3;
         botones = new JButton[cantFilas][cantColumnas];
+        String cancion = "src\\musica\\musica.mp3";
+        mp3 = new MP3Player(new File(cancion));
 
         for (int i = 0; i < cantFilas; i++) {
             for (int j = 0; j < cantColumnas; j++) {
@@ -168,9 +171,11 @@ public class JugarMemory extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSonidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSonidoActionPerformed
-        String cancion = "src\\musica\\musica.mp3";
-        MP3Player mp3 = new MP3Player(new File(cancion));
+        if (mp3.isStopped()) {
         mp3.play();
+        }else{
+        mp3.stop();        
+        }
     }//GEN-LAST:event_btnSonidoActionPerformed
 
     private void btnAyudaParcialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaParcialActionPerformed
