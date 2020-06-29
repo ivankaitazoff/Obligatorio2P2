@@ -39,7 +39,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         GestionarTemas.setBackground(new java.awt.Color(187, 83, 70));
-        GestionarTemas.setForeground(new java.awt.Color(0, 0, 0));
         GestionarTemas.setText("Gestionar Temas");
         GestionarTemas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         GestionarTemas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -49,10 +48,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(GestionarTemas);
-        GestionarTemas.setBounds(10, 80, 210, 60);
+        GestionarTemas.setBounds(10, 90, 210, 60);
 
         GestionarPreguntasManualmente.setBackground(new java.awt.Color(187, 83, 70));
-        GestionarPreguntasManualmente.setForeground(new java.awt.Color(0, 0, 0));
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
         GestionarPreguntasManualmente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         GestionarPreguntasManualmente.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +62,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GestionarPreguntasManualmente.setBounds(10, 10, 210, 60);
 
         botonJugar.setBackground(new java.awt.Color(187, 83, 70));
-        botonJugar.setForeground(new java.awt.Color(0, 0, 0));
         botonJugar.setText("Jugar");
         botonJugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         botonJugar.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +73,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botonJugar.setBounds(540, 350, 90, 19);
 
         btnSalir.setBackground(new java.awt.Color(187, 83, 70));
-        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("salir");
         btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +84,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnSalir.setBounds(230, 350, 90, 19);
 
         guardarDatos.setBackground(new java.awt.Color(187, 83, 70));
-        guardarDatos.setForeground(new java.awt.Color(0, 0, 0));
         guardarDatos.setText("Opciones Generacion Datos");
         guardarDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
         guardarDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +92,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(guardarDatos);
-        guardarDatos.setBounds(10, 160, 210, 60);
+        guardarDatos.setBounds(10, 170, 210, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerebro.png"))); // NOI18N
         jLabel1.setText("jLabel1");
