@@ -9,19 +9,23 @@ import Persis.ArchivoLectura;
 import dominio.Pregunta;
 import dominio.Sistema;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author seba
  */
 public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
+
     Sistema sistema;
+
     /**
      * Creates new form CargaDatosVentanaAuxiliar
      */
     public CargaDatosVentanaAuxiliar(Sistema sistema) {
         initComponents();
         this.sistema = sistema;
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -44,9 +48,10 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(600, 400));
         getContentPane().setLayout(null);
 
+        labelPath.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelPath.setText("Path");
         getContentPane().add(labelPath);
-        labelPath.setBounds(30, 10, 360, 15);
+        labelPath.setBounds(10, 10, 380, 15);
 
         abrirNavegador.setText("Abrir navegador");
         abrirNavegador.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +112,6 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
 
     private void cargaDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaDatosActionPerformed
         ArchivoLectura arch = new ArchivoLectura(sistema.getPath());
-        int contador = 1;
         ArrayList<String> listaCargados = new ArrayList<>();
         while (arch.hayMasLineas()) {
             listaCargados.add(arch.linea());
@@ -115,27 +119,28 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         arch.cerrar();
         boolean sePuedeAgregar = false;
         for (int i = 0; i < listaCargados.size(); i += 3) {
-            System.out.println(listaCargados.get(i));
-            System.out.println(listaCargados.get(i+1));
-            System.out.println(listaCargados.get(i+2));
-            for (int j = 0; j < sistema.getListaTemas().size(); j++) {
-                if (listaCargados.get(i+1)!= "" && listaCargados.get(i+2)!="") {
-                    if (sistema.getListaTemas().get(j).getNombre() == listaCargados.get(i).toString() && i / 3 == 0) {
-                        System.out.println("entro");
-                        Pregunta p = new Pregunta(listaCargados.get(i + 1).toString(), listaCargados.get(i + 2).toString(),
-                            sistema.getListaTemas().get(j).getNombre(), sistema.getListaTemas().get(j).getDescripcion());
-                    sistema.getListaPreguntas().add(p);
-                    System.out.println(p.toString());
-                }
-                }
-                
-            }
+            if (listaCargados.get(i) == "" || listaCargados.get(i + 1) == "" || listaCargados.get(i + 2) == "") {
+                JOptionPane.showMessageDialog(null, "Hay espacios en blanco, no se pudo agregar la pregunta", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                for (int j = 0; j < sistema.getListaTemas().size(); j++) {
+                    if (listaCargados.get(i + 1) != "" && listaCargados.get(i + 2) != "") {
+                        if (sistema.getListaTemas().get(j).getNombre().equals(listaCargados.get(i).toUpperCase())) {
+                            Pregunta p = new Pregunta(listaCargados.get(i + 1).toString(), listaCargados.get(i + 2).toString(),
+                                    sistema.getListaTemas().get(j).getNombre(), sistema.getListaTemas().get(j).getDescripcion());
+                            sistema.getListaPreguntas().add(p);
+                            sistema.getListaTemas().get(j).setCantidadPreguntas(sistema.getListaTemas().get(j).getCantidadPreguntas() + 1);
+                            System.out.println(p.toString());
+                        }
+                    }
 
+                }
+
+            }
         }
     }//GEN-LAST:event_cargaDatosActionPerformed
 
     private void guardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDatosActionPerformed
-        
+
     }//GEN-LAST:event_guardarDatosActionPerformed
 
     private void cargaPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaPruebaActionPerformed

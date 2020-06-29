@@ -29,11 +29,12 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="labelPath">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Path"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="10" width="360" height="-1"/>
+          <AbsoluteConstraints x="10" y="10" width="380" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
