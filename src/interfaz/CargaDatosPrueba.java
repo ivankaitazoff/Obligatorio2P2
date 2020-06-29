@@ -36,7 +36,8 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
         jTextCantPreguntas = new javax.swing.JTextField();
         btnCrearDatos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        btnBorrarDatosDelSistema = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(450, 300));
@@ -63,7 +64,7 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCrearDatos);
-        btnCrearDatos.setBounds(240, 170, 130, 23);
+        btnCrearDatos.setBounds(230, 140, 130, 23);
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -72,16 +73,17 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSalir);
-        btnSalir.setBounds(50, 170, 120, 23);
+        btnSalir.setBounds(40, 140, 120, 23);
 
-        btnBorrarDatosDelSistema.setText("Borrar datos!(CUIDADO)");
-        btnBorrarDatosDelSistema.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarDatosDelSistemaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnBorrarDatosDelSistema);
-        btnBorrarDatosDelSistema.setBounds(90, 220, 220, 23);
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("AVISO, AL CREAR DATOS USANDO ESTA VENTANA SE BORRARAN");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 190, 400, 20);
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText(" TODOS LOS DATOS QUE HAY EN EL SISTEMA");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(0, 220, 400, 14);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 400, 270);
@@ -109,19 +111,15 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void btnBorrarDatosDelSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarDatosDelSistemaActionPerformed
-        sistema.getListaPreguntas().clear();
-        sistema.getListaTemas().clear();
-    }//GEN-LAST:event_btnBorrarDatosDelSistemaActionPerformed
-
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBorrarDatosDelSistema;
     private javax.swing.JButton btnCrearDatos;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextCantPreguntas;
     private javax.swing.JTextField jTextCantTemas;
