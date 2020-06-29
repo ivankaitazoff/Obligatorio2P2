@@ -13,7 +13,10 @@ public class JugarMemory extends javax.swing.JFrame {
     private Casillero casillero;
     private Partida partida;
     private JButton[][] botones;
-    ArrayList<Pregunta> lista;
+    private ArrayList<Pregunta> lista;
+    private Casillero c1;
+    private Casillero c2;
+    private int[] preguntasUsadas = new int[12];
 
     public JugarMemory(Partida partida) {
         this.partida = partida;
@@ -74,6 +77,11 @@ public class JugarMemory extends javax.swing.JFrame {
 
         btnAyudaTotal.setText("Ayuda Total");
         btnAyudaTotal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAyudaTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAyudaTotalActionPerformed(evt);
+            }
+        });
         panelSuperior.add(btnAyudaTotal);
         btnAyudaTotal.setBounds(170, 0, 80, 30);
 
@@ -120,13 +128,54 @@ public class JugarMemory extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSonidoActionPerformed
 
     private void btnAyudaParcialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaParcialActionPerformed
-
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                for (int k = 0; k < partida.getListaCasilleros().size(); k++) {
+                    Casillero c=partida.getListaCasilleros().get(k);
+                    if (c.getPosicionX() == i && c.getPosicionY() == j
+                            && c.getEsPregunta() && !c.isUsado()) {
+                        botones[i][j].setText("Pregunta");
+                    }
+                    else if (c.getPosicionX() == i && c.getPosicionY() == j
+                            && !c.getEsPregunta() && !c.isUsado()) {
+                        botones[i][j].setText("Respuesta");
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_btnAyudaParcialActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                for (int k = 0; k < partida.getListaCasilleros().size(); k++) {
+                    Casillero c=partida.getListaCasilleros().get(k);
+                    if (c.getPosicionX() == i && c.getPosicionY() == j && !c.isUsado()) {
+                        botones[i][j].setText("");
+                    }
+                }
+            }
+        }
 
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void btnAyudaTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaTotalActionPerformed
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                for (int k = 0; k < partida.getListaCasilleros().size(); k++) {
+                    Casillero c=partida.getListaCasilleros().get(k);
+                    if (c.getPosicionX() == i && c.getPosicionY() == j
+                            && c.getEsPregunta() && !c.isUsado()) {
+                        botones[i][j].setText(c.getPregunta().getPregunta());
+                    }
+                    else if (c.getPosicionX() == i && c.getPosicionY() == j
+                            && !c.getEsPregunta() && !c.isUsado()) {
+                        botones[i][j].setText(c.getPregunta().getRespuesta());
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_btnAyudaTotalActionPerformed
 
     private class ListenerBoton implements ActionListener {
 
@@ -149,47 +198,66 @@ public class JugarMemory extends javax.swing.JFrame {
         // Método a completar!. // En fila y columna se reciben las coordenas donde presionó el usuario, relativas al comienzo de la grilla
         // fila 0 y columna 0 corresponden a la posición de arriba a la izquierda.
         // Debe indicarse cómo responder al click de ese botón. 
-        Casillero c1 = partida.getListaCasilleros().get(0);
-        if (partida.getTurno() % 2 == 0) {
-            partida.setTurno(partida.getTurno() + 1);
-            for (int i = 0; i < partida.getListaCasilleros().size(); i++) {
-                if (fila == partida.getListaCasilleros().get(i).getPosicionX() && columna == partida.getListaCasilleros().get(i).getPosicionY()) {
-                    c1 = partida.getListaCasilleros().get(i);
-                    break;
-                }
-            }
-            if (c1.getEsPregunta()) {
-                botones[fila][columna].setText(c1.getPregunta().getPregunta());
-            } else if (!c1.getEsPregunta()) {
-                botones[fila][columna].setText(c1.getPregunta().getRespuesta());
-            }
-        } else if (partida.getTurno() % 2 == 1) {
-            partida.setTurno(partida.getTurno() + 1);
-            //botones[fila][columna].setText("hola");
-
-            Casillero c2 = partida.getListaCasilleros().get(0);
+        if (!preguntaYaUsada(fila, columna)) {
             if (partida.getTurno() % 2 == 0) {
-
+                partida.setTurno(partida.getTurno() + 1);
                 for (int i = 0; i < partida.getListaCasilleros().size(); i++) {
                     if (fila == partida.getListaCasilleros().get(i).getPosicionX() && columna == partida.getListaCasilleros().get(i).getPosicionY()) {
-                        c2 = partida.getListaCasilleros().get(i);
+                        c1 = partida.getListaCasilleros().get(i);
                         break;
                     }
                 }
-                if (c2.getEsPregunta()) {
-                    botones[fila][columna].setText(c2.getPregunta().getPregunta());
-                } else if (!c2.getEsPregunta()) {
-                    botones[fila][columna].setText(c2.getPregunta().getRespuesta());
+                if (c1.getEsPregunta()) {
+                    botones[fila][columna].setText(c1.getPregunta().getPregunta());
+                } else if (!c1.getEsPregunta()) {
+                    botones[fila][columna].setText(c1.getPregunta().getRespuesta());
                 }
+            } else if (partida.getTurno() % 2 == 1) {
+                partida.setTurno(partida.getTurno() + 1);
+
+                if (partida.getTurno() % 2 == 0) {
+                    for (int i = 0; i < partida.getListaCasilleros().size(); i++) {
+                        if (fila == partida.getListaCasilleros().get(i).getPosicionX() && columna == partida.getListaCasilleros().get(i).getPosicionY()) {
+                            c2 = partida.getListaCasilleros().get(i);
+                            break;
+                        }
+                    }
+                    if (c2.getEsPregunta()) {
+                        botones[fila][columna].setText(c2.getPregunta().getPregunta());
+                    } else if (!c2.getEsPregunta()) {
+                        botones[fila][columna].setText(c2.getPregunta().getRespuesta());
+                    }
+                    if (c1.getPregunta().getPregunta() == c2.getPregunta().getPregunta() && c1 != c2) {
+                        JOptionPane.showMessageDialog(null, "le embocaste", "Error", JOptionPane.ERROR_MESSAGE);
+                        partida.setPuntajeJugador(partida.getPuntajeJugador() + 50);
+                        muestroPuntaje.setText(String.valueOf(partida.getPuntajeJugador()));
+                        c1.setUsado(true);
+                        c2.setUsado(true);
+                    } else {
+                        partida.setPuntajeJugador(partida.getPuntajeJugador() - 10);
+                        muestroPuntaje.setText(String.valueOf(partida.getPuntajeJugador()));
+                        JOptionPane.showMessageDialog(null, "le erraste", "Error", JOptionPane.ERROR_MESSAGE);
+                        botones[c1.getPosicionX()][c1.getPosicionY()].setText("");
+                        botones[c2.getPosicionX()][c2.getPosicionY()].setText("");
+
+                    }
+                }
+
             }
-            if (c1.getPregunta().getPregunta().equals(c2.getPregunta().getPregunta())) {
-                JOptionPane.showMessageDialog(null, "le embocaste", "Error", JOptionPane.ERROR_MESSAGE);
-                partida.setPuntajeJugador(partida.getPuntajeJugador()+50);
-                muestroPuntaje.setText(String.valueOf(partida.getPuntajeJugador()));
-            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Ya usaste este boton", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
+    private boolean preguntaYaUsada(int fila, int columna) {
+        boolean usado = false;
+        for (int i = 0; i < partida.getListaCasilleros().size(); i++) {
+            if (fila == partida.getListaCasilleros().get(i).getPosicionX() && columna == partida.getListaCasilleros().get(i).getPosicionY()) {
+                usado = partida.getListaCasilleros().get(i).isUsado();
+            }
+        }
+        return usado;
+    }
     //PARA AGREGARLE AUDIO
     /* public static void music() 
     {       

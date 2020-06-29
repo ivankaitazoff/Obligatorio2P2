@@ -23,7 +23,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         jListaEleccionTemas.setListData(temas.toArray());
         ArrayList<Tema> temasElegidosMenu = new ArrayList<>();
         partida = new Partida(temasElegidosMenu, 0, 0);
-
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -125,10 +125,12 @@ public class SeleccionarTemas extends javax.swing.JFrame {
             partida.setListaPreguntasMezcladas((ArrayList<Pregunta>) preguntasMezcladas);
             JugarMemory memory = new JugarMemory(partida);
             memory.setVisible(true);
+             this.dispose();
         }
         else{
             JOptionPane.showMessageDialog(null, "Debe haber al menos 6 preguntas cargadas para que comience la partida", "Error", JOptionPane.ERROR_MESSAGE);
         }
+       
     }//GEN-LAST:event_comenzarPartidaActionPerformed
 
     private void modoFlashCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoFlashCardActionPerformed
