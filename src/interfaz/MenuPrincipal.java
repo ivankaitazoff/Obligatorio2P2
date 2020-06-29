@@ -51,7 +51,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(GestionarTemas);
-        GestionarTemas.setBounds(10, 100, 210, 60);
+        GestionarTemas.setBounds(10, 80, 210, 60);
 
         GestionarPreguntasManualmente.setBackground(new java.awt.Color(187, 83, 70));
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
@@ -62,7 +62,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(GestionarPreguntasManualmente);
-        GestionarPreguntasManualmente.setBounds(10, 30, 210, 60);
+        GestionarPreguntasManualmente.setBounds(10, 10, 210, 60);
 
         CargaColectiva.setBackground(new java.awt.Color(187, 83, 70));
         CargaColectiva.setText("Carga De Preguntas Desde TXT");
@@ -73,7 +73,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(CargaColectiva);
-        CargaColectiva.setBounds(10, 170, 210, 60);
+        CargaColectiva.setBounds(10, 150, 210, 60);
 
         botonJugar.setBackground(new java.awt.Color(187, 83, 70));
         botonJugar.setText("Jugar");
@@ -106,10 +106,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(guardarDatos);
-        guardarDatos.setBounds(10, 250, 130, 60);
+        guardarDatos.setBounds(10, 290, 140, 60);
 
         btnCargaPrueba.setBackground(new java.awt.Color(187, 83, 70));
         btnCargaPrueba.setText("Carga datos de prueba");
+        btnCargaPrueba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnCargaPrueba.setPreferredSize(new java.awt.Dimension(169, 19));
         btnCargaPrueba.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +118,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCargaPrueba);
-        btnCargaPrueba.setBounds(460, 20, 210, 60);
+        btnCargaPrueba.setBounds(10, 220, 210, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerebro.png"))); // NOI18N
         jLabel1.setText("jLabel1");
