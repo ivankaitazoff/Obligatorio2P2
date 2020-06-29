@@ -65,7 +65,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GestionarPreguntasManualmente.setBounds(10, 30, 210, 60);
 
         CargaColectiva.setBackground(new java.awt.Color(187, 83, 70));
-        CargaColectiva.setText("Carga De Preguntas En Forma Colectiva");
+        CargaColectiva.setText("Carga De Preguntas Desde TXT");
         CargaColectiva.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         CargaColectiva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,14 +108,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.add(guardarDatos);
         guardarDatos.setBounds(10, 250, 130, 60);
 
+        btnCargaPrueba.setBackground(new java.awt.Color(187, 83, 70));
         btnCargaPrueba.setText("Carga datos de prueba");
+        btnCargaPrueba.setPreferredSize(new java.awt.Dimension(169, 19));
         btnCargaPrueba.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargaPruebaActionPerformed(evt);
             }
         });
         jPanel1.add(btnCargaPrueba);
-        btnCargaPrueba.setBounds(540, 30, 145, 23);
+        btnCargaPrueba.setBounds(460, 20, 210, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerebro.png"))); // NOI18N
         jLabel1.setText("jLabel1");
