@@ -17,6 +17,7 @@ public class Sistema implements Serializable {
 
     private ArrayList<Tema> listaTemas;
     private ArrayList<Pregunta> listaPreguntas;
+    private String path;
 
     public Sistema() {
         this.listaTemas = new ArrayList<>();
@@ -39,6 +40,13 @@ public class Sistema implements Serializable {
         this.listaPreguntas = listaPreguntas;
     }
 
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
     public Tema CrearTema(String tema, String descripcion) {
         Tema t = new Tema(tema, descripcion);
         listaTemas.add(t);

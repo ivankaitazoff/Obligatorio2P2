@@ -153,39 +153,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_GestionarPreguntasManualmenteActionPerformed
 
     private void CargaColectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargaColectivaActionPerformed
-        BuscarDocumento busqueda = new BuscarDocumento();
-        busqueda.setVisible(true);
-        String pathAUsar = busqueda.getPath();
-        
-        while (!busqueda.isShowing()) {
-        ArchivoLectura arch = new ArchivoLectura(pathAUsar);
-        int contador = 1;
-        ArrayList<String> listaCargados = new ArrayList<>();
-        while (arch.hayMasLineas()) {
-            listaCargados.add(arch.linea());
-        }
-        arch.cerrar();
-        boolean sePuedeAgregar = false;
-        for (int i = 0; i < listaCargados.size(); i += 3) {
-            System.out.println(listaCargados.get(i));
-            System.out.println(listaCargados.get(i+1));
-            System.out.println(listaCargados.get(i+2));
-            for (int j = 0; j < sistema.getListaTemas().size(); j++) {
-                if (listaCargados.get(i+1)!= "" && listaCargados.get(i+2)!="") {
-                    if (sistema.getListaTemas().get(j).getNombre() == listaCargados.get(i).toString() && i / 3 == 0) {
-                        System.out.println("entro");
-                        Pregunta p = new Pregunta(listaCargados.get(i + 1).toString(), listaCargados.get(i + 2).toString(),
-                            sistema.getListaTemas().get(j).getNombre(), sistema.getListaTemas().get(j).getDescripcion());
-                    sistema.getListaPreguntas().add(p);
-                    System.out.println(p.toString());
-                }
-                }
-                
-            }
-
-        }
-        JOptionPane.showMessageDialog(null, "Termino la carga", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+   
+    
     }//GEN-LAST:event_CargaColectivaActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -199,11 +168,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonJugarActionPerformed
 
     private void guardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDatosActionPerformed
-        BuscarDocumento busqueda = new BuscarDocumento();
-        busqueda.setVisible(true);
-        //Hay que seleccionar en esa ventana el documento
-        String path = busqueda.getPath().toString();
-        //usar este path
+            CargaDatosVentanaAuxiliar c= new CargaDatosVentanaAuxiliar(sistema);
+            c.setVisible(true);
+        
     }//GEN-LAST:event_guardarDatosActionPerformed
 
     private void btnCargaPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaPruebaActionPerformed
@@ -211,6 +178,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         c.setVisible(true);
     }//GEN-LAST:event_btnCargaPruebaActionPerformed
 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargaColectiva;

@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import dominio.Sistema;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import javax.swing.JFileChooser;
@@ -13,9 +14,11 @@ import javax.swing.JOptionPane;
 
 public class BuscarDocumento extends javax.swing.JFrame {
     private String path;
+    private Sistema sistema;
     
-    public BuscarDocumento() {
+    public BuscarDocumento(Sistema sistema) {
         initComponents();
+        this.sistema = sistema;
         this.setLocationRelativeTo(null);
     }
 
@@ -53,6 +56,8 @@ public class BuscarDocumento extends javax.swing.JFrame {
         try {
             this.setPath(jFileChooser1.getSelectedFile().toString());
         System.out.println(path);
+        sistema.setPath(this.getPath());
+        
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "Error cargando el path", "Error", JOptionPane.ERROR_MESSAGE);
         }
