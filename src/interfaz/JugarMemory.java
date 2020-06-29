@@ -1,5 +1,7 @@
+//Nombres y numeros de estudiantes
+//Ivan kaitazoff: 233940
+//Sebastian Romelli: 222405
 package interfaz;
-//import sun.audio.*;
 
 import dominio.Casillero;
 import dominio.Partida;
@@ -56,20 +58,7 @@ public class JugarMemory extends javax.swing.JFrame {
                         agrego = false;
                     }
                 }
-
-                /*  if (j % 2 == 0) {
-                    Casillero casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(0), true);
-                    partida.getListaCasilleros().add(casillero);
-                } else {
-                    Casillero casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(0), false);
-                    partida.getListaCasilleros().add(casillero);
-                  
-                }*/
             }
-        }
-        for (int k = 0; k < 12; k++) {
-            System.out.println(preguntasUsadas[k]);
-
         }
     }
 
@@ -231,21 +220,16 @@ public class JugarMemory extends javax.swing.JFrame {
         private int y;
 
         public ListenerBoton(int i, int j) {
-            // en el constructor se almacena la fila y columna que se presionó 
             x = i;
             y = j;
         }
 
         public void actionPerformed(ActionEvent e) {
-            // cuando se presiona un botón, se ejecutará este método 
             clickBoton(x, y);
         }
     }
 
     private void clickBoton(int fila, int columna) {
-        // Método a completar!. // En fila y columna se reciben las coordenas donde presionó el usuario, relativas al comienzo de la grilla
-        // fila 0 y columna 0 corresponden a la posición de arriba a la izquierda.
-        // Debe indicarse cómo responder al click de ese botón. 
         if (!preguntaYaUsada(fila, columna)) {
             if (partida.getTurno() % 2 == 0) {
                 partida.setTurno(partida.getTurno() + 1);
@@ -321,34 +305,6 @@ public class JugarMemory extends javax.swing.JFrame {
         }
         return contador;
     }
-
-    //PARA AGREGARLE AUDIO
-    /* public static void music() 
-    {       
-        AudioPlayer MGP = AudioPlayer.player;
-        AudioStream BGM;
-        AudioData MD;
-
-        ContinuousAudioDataStream loop = null;
-
-        try
-        {
-            InputStream test = new FileInputStream("musica.mp3");
-            BGM = new AudioStream(test);
-            AudioPlayer.player.start(BGM);
-            //MD = BGM.getData();
-            //loop = new ContinuousAudioDataStream(MD);
-
-        }
-        catch(FileNotFoundException e){
-            System.out.print(e.toString());
-        }
-        catch(IOException error)
-        {
-            System.out.print(error.toString());
-        }
-        MGP.start(loop);
-    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAyudaParcial;

@@ -1,4 +1,6 @@
-
+//Nombres y numeros de estudiantes
+//Ivan kaitazoff: 233940
+//Sebastian Romelli: 222405
 package dominio;
 
 import java.io.Serializable;

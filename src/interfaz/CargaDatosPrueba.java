@@ -1,18 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Nombres y numeros de estudiantes
+//Ivan kaitazoff: 233940
+//Sebastian Romelli: 222405
 package interfaz;
 
 import dominio.Pregunta;
 import dominio.Sistema;
 import dominio.Tema;
 
-/**
- *
- * @author ivan
- */
+
 public class CargaDatosPrueba extends javax.swing.JFrame {
 
     private Sistema sistema;
@@ -45,17 +40,17 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
         jPanel1.add(jTextCantTemas);
-        jTextCantTemas.setBounds(215, 35, 167, 19);
+        jTextCantTemas.setBounds(215, 35, 167, 20);
 
         jLabel1.setText("Cantidad de temas");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(43, 38, 89, 15);
+        jLabel1.setBounds(43, 38, 90, 14);
 
         jLabel2.setText("Cantidad de preguntas en cada tema");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(0, 82, 190, 15);
+        jLabel2.setBounds(0, 82, 190, 14);
         jPanel1.add(jTextCantPreguntas);
-        jTextCantPreguntas.setBounds(215, 79, 167, 19);
+        jTextCantPreguntas.setBounds(215, 79, 167, 20);
 
         btnCrearDatos.setText("Crear Datos");
         btnCrearDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +59,7 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnCrearDatos);
-        btnCrearDatos.setBounds(230, 140, 130, 25);
+        btnCrearDatos.setBounds(230, 140, 130, 23);
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +68,7 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSalir);
-        btnSalir.setBounds(40, 140, 120, 25);
+        btnSalir.setBounds(40, 140, 120, 23);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("AVISO, AL CREAR DATOS USANDO ESTA VENTANA SE BORRARAN");
@@ -83,7 +78,7 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText(" TODOS LOS DATOS QUE HAY EN EL SISTEMA");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(0, 220, 400, 15);
+        jLabel4.setBounds(0, 220, 400, 14);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 400, 270);

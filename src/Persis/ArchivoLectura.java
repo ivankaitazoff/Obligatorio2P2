@@ -1,3 +1,6 @@
+//Nombres y numeros de estudiantes
+//Ivan kaitazoff: 233940
+//Sebastian Romelli: 222405
 package Persis;
 
 import java.io.*;

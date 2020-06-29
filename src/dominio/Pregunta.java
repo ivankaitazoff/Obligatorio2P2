@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Nombres y numeros de estudiantes
+//Ivan kaitazoff: 233940
+//Sebastian Romelli: 222405
 package dominio;
 
 import java.util.Objects;
 
-/**
- *
- * @author ivan
- */
 public class Pregunta extends Tema {
 
     private String pregunta;

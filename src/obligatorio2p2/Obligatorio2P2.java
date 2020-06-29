@@ -1,4 +1,6 @@
-
+//Nombres y numeros de estudiantes
+//Ivan kaitazoff: 233940
+//Sebastian Romelli: 222405
 package obligatorio2p2;
 
 import dominio.Sistema;
@@ -20,7 +22,6 @@ public class Obligatorio2P2 {
         Sistema sistema = new Sistema();
         sistema = cargarSistema();
         MenuPrincipal menu= new MenuPrincipal(sistema);
-        //menu.pack();
       
         menu.setVisible(true);
     }
@@ -32,7 +33,6 @@ public class Obligatorio2P2 {
             out.close();
         }catch(IOException e){
             e.printStackTrace();
-            //JOptionPane.showMessageDialog(null, "Error al guardar el archivo ", "Error", JOptionPane.ERROR_MESSAGE);
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
