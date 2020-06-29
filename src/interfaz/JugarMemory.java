@@ -16,7 +16,8 @@ public class JugarMemory extends javax.swing.JFrame {
     private ArrayList<Pregunta> lista;
     private Casillero c1;
     private Casillero c2;
-    private int[] preguntasUsadas = new int[12];
+    private int[] preguntasUsadas = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+    private int numeroDePregunta = 0;
 
     public JugarMemory(Partida partida) {
         this.partida = partida;
@@ -32,16 +33,40 @@ public class JugarMemory extends javax.swing.JFrame {
                 jButton.addActionListener(new ListenerBoton(i, j));
                 panelInferior.add(jButton);
                 botones[i][j] = jButton;
-                if (j % 2 == 0) {
+
+                boolean agrego = false;
+                while (!agrego) {
+                    int numeroRandom = setNumeroRandom();
+                    if (contadorPreguntas(numeroRandom) == 0) {
+                        Casillero casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(numeroRandom), true);
+                        partida.getListaCasilleros().add(casillero);
+                        agrego = true;
+                        preguntasUsadas[numeroDePregunta] = numeroRandom;
+                        numeroDePregunta++;
+                    } else if (contadorPreguntas(numeroRandom) == 1) {
+                        Casillero casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(numeroRandom), false);
+                        partida.getListaCasilleros().add(casillero);
+                        agrego = true;
+                        preguntasUsadas[numeroDePregunta] = numeroRandom;
+                        numeroDePregunta++;
+                    } else if (contadorPreguntas(numeroRandom) == 2) {
+                        agrego = false;
+                    }
+                }
+
+                /*  if (j % 2 == 0) {
                     Casillero casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(0), true);
                     partida.getListaCasilleros().add(casillero);
                 } else {
                     Casillero casillero = new Casillero(i, j, partida.getListaPreguntasMezcladas().get(0), false);
                     partida.getListaCasilleros().add(casillero);
-                    partida.getListaPreguntasMezcladas().remove(0);
-                }
-
+                  
+                }*/
             }
+        }
+        for (int k = 0; k < 12; k++) {
+            System.out.println(preguntasUsadas[k]);
+
         }
     }
 
@@ -131,11 +156,10 @@ public class JugarMemory extends javax.swing.JFrame {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 4; j++) {
                 for (int k = 0; k < partida.getListaCasilleros().size(); k++) {
-                    Casillero c=partida.getListaCasilleros().get(k);
+                    Casillero c = partida.getListaCasilleros().get(k);
                     if (c.getPosicionX() == i && c.getPosicionY() == j && c.getEsPregunta() && !c.isUsado()) {
                         botones[i][j].setText("Pregunta");
-                    }
-                    else if (c.getPosicionX() == i && c.getPosicionY() == j && !c.getEsPregunta() && !c.isUsado()) {
+                    } else if (c.getPosicionX() == i && c.getPosicionY() == j && !c.getEsPregunta() && !c.isUsado()) {
                         botones[i][j].setText("Respuesta");
                     }
                 }
@@ -147,7 +171,7 @@ public class JugarMemory extends javax.swing.JFrame {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 4; j++) {
                 for (int k = 0; k < partida.getListaCasilleros().size(); k++) {
-                    Casillero c=partida.getListaCasilleros().get(k);
+                    Casillero c = partida.getListaCasilleros().get(k);
                     if (c.getPosicionX() == i && c.getPosicionY() == j && !c.isUsado()) {
                         botones[i][j].setText("");
                     }
@@ -161,11 +185,10 @@ public class JugarMemory extends javax.swing.JFrame {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 4; j++) {
                 for (int k = 0; k < partida.getListaCasilleros().size(); k++) {
-                    Casillero c=partida.getListaCasilleros().get(k);
+                    Casillero c = partida.getListaCasilleros().get(k);
                     if (c.getPosicionX() == i && c.getPosicionY() == j && c.getEsPregunta() && !c.isUsado()) {
                         botones[i][j].setText(c.getPregunta().getPregunta());
-                    }
-                    else if (c.getPosicionX() == i && c.getPosicionY() == j && !c.getEsPregunta() && !c.isUsado()) {
+                    } else if (c.getPosicionX() == i && c.getPosicionY() == j && !c.getEsPregunta() && !c.isUsado()) {
                         botones[i][j].setText(c.getPregunta().getRespuesta());
                     }
                 }
@@ -240,7 +263,7 @@ public class JugarMemory extends javax.swing.JFrame {
                 }
 
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Ya usaste este boton", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -254,11 +277,22 @@ public class JugarMemory extends javax.swing.JFrame {
         }
         return usado;
     }
-    
-     public int setNumeroRandom() {
-             int num = (int) (Math.floor(Math.random() * 6));
+
+    public int setNumeroRandom() {
+        int num = (int) (Math.floor(Math.random() * 6));
         return num;
     }
+
+    public int contadorPreguntas(int numero) {
+        int contador = 0;
+        for (int i = 0; i < preguntasUsadas.length; i++) {
+            if (numero == preguntasUsadas[i]) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
     //PARA AGREGARLE AUDIO
     /* public static void music() 
     {       
