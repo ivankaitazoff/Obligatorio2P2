@@ -6,12 +6,10 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class GestionTema extends javax.swing.JFrame {
+
     Sistema sistema;
     ArrayList<Tema> lista = new ArrayList();
 
-    /**
-     * Creates new form GestionTemas
-     */
     public GestionTema(ArrayList<Tema> listaTemas, Sistema sistema) {
         this.sistema = sistema;
         initComponents();
@@ -37,11 +35,14 @@ public class GestionTema extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
         jPanel1.setLayout(null);
 
+        jTextField1.setBackground(new java.awt.Color(187, 83, 70));
+        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -50,6 +51,9 @@ public class GestionTema extends javax.swing.JFrame {
         jPanel1.add(jTextField1);
         jTextField1.setBounds(190, 10, 188, 19);
 
+        jTextField2.setBackground(new java.awt.Color(187, 83, 70));
+        jTextField2.setForeground(new java.awt.Color(187, 83, 70));
+        jTextField2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -58,46 +62,64 @@ public class GestionTema extends javax.swing.JFrame {
         jPanel1.add(jTextField2);
         jTextField2.setBounds(190, 90, 188, 60);
 
+        jLabel1.setBackground(new java.awt.Color(187, 83, 70));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nombre del tema");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(12, 14, 120, 15);
 
+        jLabel2.setBackground(new java.awt.Color(187, 83, 70));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Descripcion");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(12, 112, 90, 15);
 
+        jButton1.setBackground(new java.awt.Color(187, 83, 70));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Guardar tema");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(12, 287, 130, 25);
+        jButton1.setBounds(12, 287, 130, 19);
 
+        VolverAMenu.setBackground(new java.awt.Color(187, 83, 70));
+        VolverAMenu.setForeground(new java.awt.Color(0, 0, 0));
         VolverAMenu.setText("Volver a menu principal");
+        VolverAMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        VolverAMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         VolverAMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VolverAMenuActionPerformed(evt);
             }
         });
         jPanel1.add(VolverAMenu);
-        VolverAMenu.setBounds(240, 287, 192, 25);
+        VolverAMenu.setBounds(240, 287, 192, 19);
 
+        jListTema.setBackground(new java.awt.Color(187, 83, 70));
+        jListTema.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jListTema.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jListTema);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(460, 40, 110, 131);
 
+        botonEliminarTema.setBackground(new java.awt.Color(187, 83, 70));
+        botonEliminarTema.setForeground(new java.awt.Color(0, 0, 0));
         botonEliminarTema.setText("Eliminar Tema");
+        botonEliminarTema.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         botonEliminarTema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEliminarTemaActionPerformed(evt);
             }
         });
         jPanel1.add(botonEliminarTema);
-        botonEliminarTema.setBounds(440, 180, 150, 25);
+        botonEliminarTema.setBounds(440, 180, 150, 19);
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Elija tema para eliminar");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(450, 20, 150, 15);
@@ -155,12 +177,11 @@ public class GestionTema extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverAMenuActionPerformed
 
     private void botonEliminarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarTemaActionPerformed
-        if (sistema.tienePreguntas((Tema) jListTema.getSelectedValue())>0) {
+        if (sistema.tienePreguntas((Tema) jListTema.getSelectedValue()) > 0) {
             JOptionPane.showMessageDialog(null, "Este tema no se puede eliminar, tiene preguntas", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-        lista.remove(jListTema.getSelectedValue());
-        setJListTema();
+        } else {
+            lista.remove(jListTema.getSelectedValue());
+            setJListTema();
         }
     }//GEN-LAST:event_botonEliminarTemaActionPerformed
 
@@ -174,11 +195,10 @@ public class GestionTema extends javax.swing.JFrame {
         }
         return yaExiste;
     }
-    
 
     public void setJListTema() {
         jListTema.setListData(lista.toArray());
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

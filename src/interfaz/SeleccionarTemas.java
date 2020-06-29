@@ -5,7 +5,6 @@ import dominio.Pregunta;
 import dominio.Sistema;
 import dominio.Tema;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -23,7 +22,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         jListaEleccionTemas.setListData(temas.toArray());
         ArrayList<Tema> temasElegidosMenu = new ArrayList<>();
         partida = new Partida(temasElegidosMenu, 0, 0);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -40,57 +39,84 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         modoFlashCard = new javax.swing.JToggleButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jListaEleccionTemas = new javax.swing.JList();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
         jPanel1.setLayout(null);
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Selecciones el o los temas a utilizar ");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(37, 12, 174, 15);
 
+        jListaTemasElegidos.setBackground(new java.awt.Color(187, 83, 70));
         jScrollPane1.setViewportView(jListaTemasElegidos);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(378, 33, 200, 230);
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Temas Seleccionados");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(428, 12, 106, 15);
 
+        botonSeleccionarTema.setBackground(new java.awt.Color(187, 83, 70));
+        botonSeleccionarTema.setForeground(new java.awt.Color(0, 0, 0));
         botonSeleccionarTema.setText("Seleccionar tema");
+        botonSeleccionarTema.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         botonSeleccionarTema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSeleccionarTemaActionPerformed(evt);
             }
         });
         jPanel1.add(botonSeleccionarTema);
-        botonSeleccionarTema.setBounds(30, 280, 170, 25);
+        botonSeleccionarTema.setBounds(30, 280, 170, 19);
 
+        comenzarPartida.setBackground(new java.awt.Color(187, 83, 70));
+        comenzarPartida.setForeground(new java.awt.Color(0, 0, 0));
         comenzarPartida.setText("Jugar memory");
+        comenzarPartida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         comenzarPartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comenzarPartidaActionPerformed(evt);
             }
         });
         jPanel1.add(comenzarPartida);
-        comenzarPartida.setBounds(480, 360, 102, 25);
+        comenzarPartida.setBounds(480, 349, 100, 30);
 
+        modoFlashCard.setBackground(new java.awt.Color(187, 83, 70));
+        modoFlashCard.setForeground(new java.awt.Color(0, 0, 0));
         modoFlashCard.setText("Jugar modo flash cards");
+        modoFlashCard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, new java.awt.Color(0, 0, 0), java.awt.Color.black));
         modoFlashCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modoFlashCardActionPerformed(evt);
             }
         });
         jPanel1.add(modoFlashCard);
-        modoFlashCard.setBounds(270, 360, 190, 25);
+        modoFlashCard.setBounds(270, 349, 190, 30);
 
+        jListaEleccionTemas.setBackground(new java.awt.Color(187, 83, 70));
         jScrollPane2.setViewportView(jListaEleccionTemas);
 
         jPanel1.add(jScrollPane2);
         jScrollPane2.setBounds(20, 30, 200, 230);
+
+        btnSalir.setBackground(new java.awt.Color(187, 83, 70));
+        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSalir);
+        btnSalir.setBounds(10, 349, 90, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,12 +151,11 @@ public class SeleccionarTemas extends javax.swing.JFrame {
             partida.setListaPreguntasMezcladas((ArrayList<Pregunta>) preguntasMezcladas);
             JugarMemory memory = new JugarMemory(partida);
             memory.setVisible(true);
-             this.dispose();
-        }
-        else{
+            this.dispose();
+        } else {
             JOptionPane.showMessageDialog(null, "Debe haber al menos 6 preguntas cargadas para que comience la partida", "Error", JOptionPane.ERROR_MESSAGE);
         }
-       
+
     }//GEN-LAST:event_comenzarPartidaActionPerformed
 
     private void modoFlashCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoFlashCardActionPerformed
@@ -140,6 +165,10 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         flashCards.setVisible(true);
 
     }//GEN-LAST:event_modoFlashCardActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     public Partida crearPartida(Sistema sist, ArrayList<Tema> listaTemasElegidos) {
 
@@ -157,6 +186,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton botonSeleccionarTema;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JToggleButton comenzarPartida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -36,29 +36,37 @@ public class ModoFlashCard extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(415, 200));
         jPanel1.setLayout(null);
 
+        btnPreguntaAnterior.setBackground(new java.awt.Color(187, 83, 70));
+        btnPreguntaAnterior.setForeground(new java.awt.Color(0, 0, 0));
         btnPreguntaAnterior.setText("Anterior");
+        btnPreguntaAnterior.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, new java.awt.Color(0, 0, 0)));
         btnPreguntaAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPreguntaAnteriorActionPerformed(evt);
             }
         });
         jPanel1.add(btnPreguntaAnterior);
-        btnPreguntaAnterior.setBounds(12, 66, 73, 25);
+        btnPreguntaAnterior.setBounds(12, 66, 43, 19);
 
+        btnSiguientePregunta.setBackground(new java.awt.Color(187, 83, 70));
+        btnSiguientePregunta.setForeground(new java.awt.Color(0, 0, 0));
         btnSiguientePregunta.setText("Siguiente");
+        btnSiguientePregunta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSiguientePregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguientePreguntaActionPerformed(evt);
             }
         });
         jPanel1.add(btnSiguientePregunta);
-        btnSiguientePregunta.setBounds(323, 66, 78, 25);
+        btnSiguientePregunta.setBounds(323, 66, 48, 19);
 
+        btnTexto.setBackground(new java.awt.Color(187, 83, 70));
         btnTexto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTextoActionPerformed(evt);
@@ -67,14 +75,17 @@ public class ModoFlashCard extends javax.swing.JFrame {
         jPanel1.add(btnTexto);
         btnTexto.setBounds(99, 27, 213, 128);
 
+        btnSalir.setBackground(new java.awt.Color(187, 83, 70));
+        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
+        btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, new java.awt.Color(0, 0, 0), java.awt.Color.black));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
         jPanel1.add(btnSalir);
-        btnSalir.setBounds(0, 170, 90, 25);
+        btnSalir.setBounds(0, 170, 90, 19);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

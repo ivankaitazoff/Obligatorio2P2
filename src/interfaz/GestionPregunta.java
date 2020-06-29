@@ -34,6 +34,7 @@ public class GestionPregunta extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
@@ -41,77 +42,88 @@ public class GestionPregunta extends javax.swing.JFrame {
 
         cmbTemas.setBackground(new java.awt.Color(187, 83, 70));
         cmbTemas.setToolTipText("");
+        cmbTemas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cmbTemas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbTemasActionPerformed(evt);
             }
         });
         jPanel1.add(cmbTemas);
-        cmbTemas.setBounds(140, 10, 254, 22);
+        cmbTemas.setBounds(140, 10, 254, 24);
 
         volverAMenu.setBackground(new java.awt.Color(187, 83, 70));
+        volverAMenu.setForeground(new java.awt.Color(0, 0, 0));
         volverAMenu.setText("Volver a menu principal");
+        volverAMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         volverAMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 volverAMenuActionPerformed(evt);
             }
         });
         jPanel1.add(volverAMenu);
-        volverAMenu.setBounds(440, 310, 145, 23);
+        volverAMenu.setBounds(440, 310, 140, 19);
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 204));
-        jLabel1.setForeground(new java.awt.Color(187, 83, 70));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Seleccionar Tema");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(20, 10, 110, 30);
 
         jLabel2.setBackground(new java.awt.Color(187, 83, 70));
-        jLabel2.setForeground(new java.awt.Color(187, 83, 70));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ingresar pregunta");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(20, 80, 110, 40);
 
-        jLabel3.setForeground(new java.awt.Color(187, 83, 70));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ingresar respuesta");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 190, 92, 14);
+        jLabel3.setBounds(20, 190, 92, 15);
 
         pregunta.setBackground(new java.awt.Color(187, 83, 70));
+        pregunta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 preguntaActionPerformed(evt);
             }
         });
         jPanel1.add(pregunta);
-        pregunta.setBounds(140, 90, 254, 20);
+        pregunta.setBounds(140, 90, 254, 19);
 
         respuesta.setBackground(new java.awt.Color(187, 83, 70));
+        respuesta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(respuesta);
-        respuesta.setBounds(140, 190, 254, 20);
+        respuesta.setBounds(140, 190, 254, 19);
 
         guardarPregunta.setBackground(new java.awt.Color(187, 83, 70));
+        guardarPregunta.setForeground(new java.awt.Color(0, 0, 0));
         guardarPregunta.setText("Guardar Pregunta");
+        guardarPregunta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         guardarPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guardarPreguntaActionPerformed(evt);
             }
         });
         jPanel1.add(guardarPregunta);
-        guardarPregunta.setBounds(20, 310, 121, 23);
+        guardarPregunta.setBounds(20, 310, 140, 19);
 
+        jListaPreguntas.setBackground(new java.awt.Color(187, 83, 70));
         jScrollPane1.setViewportView(jListaPreguntas);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(460, 20, 110, 200);
 
+        jButton1.setBackground(new java.awt.Color(187, 83, 70));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Eliminar tema seleccionado");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(410, 240, 170, 23);
+        jButton1.setBounds(410, 240, 170, 19);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,7 +145,6 @@ public class GestionPregunta extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbTemasActionPerformed
 
     private void volverAMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAMenuActionPerformed
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_volverAMenuActionPerformed
 
@@ -148,9 +159,9 @@ public class GestionPregunta extends javax.swing.JFrame {
             Tema t = (Tema) cmbTemas.getSelectedItem();
             Pregunta p = new Pregunta(textoPregunta, textoRespuesta, t.getNombre(), t.getDescripcion());
             sistema.getListaPreguntas().add(p);
-            t.setCantidadPreguntas(t.getCantidadPreguntas()+1);
+            t.setCantidadPreguntas(t.getCantidadPreguntas() + 1);
         }
-       
+
         jListaPreguntas.setListData(sistema.getListaPreguntas().toArray());
         pregunta.setText("");
         respuesta.setText("");
@@ -164,7 +175,7 @@ public class GestionPregunta extends javax.swing.JFrame {
                 t = sistema.getListaTemas().get(i);
             }
         }
-        t.setCantidadPreguntas(t.getCantidadPreguntas()-1);
+        t.setCantidadPreguntas(t.getCantidadPreguntas() - 1);
         sistema.getListaPreguntas().remove(jListaPreguntas.getSelectedIndex());
         jListaPreguntas.setListData(sistema.getListaPreguntas().toArray());
         cargarTemas();
