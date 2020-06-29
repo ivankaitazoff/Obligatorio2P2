@@ -3,11 +3,7 @@
 //Sebastian Romelli: 222405
 package interfaz;
 
-import Persis.ArchivoLectura;
-import dominio.Pregunta;
 import dominio.Sistema;
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import obligatorio2p2.Obligatorio2P2;
 
 public class MenuPrincipal extends javax.swing.JFrame {
@@ -132,7 +128,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         Obligatorio2P2.guardarSistema(this.sistema);
-        this.dispose();//cierra vetana
+        this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void botonJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonJugarActionPerformed
@@ -143,7 +139,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void guardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDatosActionPerformed
             CargaDatosVentanaAuxiliar c= new CargaDatosVentanaAuxiliar(sistema);
             c.setVisible(true);
-        
     }//GEN-LAST:event_guardarDatosActionPerformed
 
     

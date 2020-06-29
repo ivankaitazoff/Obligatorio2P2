@@ -10,22 +10,15 @@ import javax.swing.JOptionPane;
 public class ModoFlashCard extends javax.swing.JFrame {
 
     private Partida partida;
-
     int numero = 0;
-
     public ModoFlashCard(Partida partida) {
         this.partida = partida;
         initComponents();
-
         if (partida.getListaPreguntasElegidas().size() > 0) {
             btnTexto.setText(partida.getListaPreguntasElegidas().get(numero).getPregunta());
-
         } else {
-
             JOptionPane.showMessageDialog(null, "No hay preguntas cargadas", "Error", JOptionPane.ERROR_MESSAGE);
-
         }
-
     }
 
     @SuppressWarnings("unchecked")
