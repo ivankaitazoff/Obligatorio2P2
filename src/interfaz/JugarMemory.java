@@ -86,6 +86,7 @@ public class JugarMemory extends javax.swing.JFrame {
         panelSuperior.setLayout(null);
 
         btnAyudaParcial.setBackground(new java.awt.Color(187, 83, 70));
+        btnAyudaParcial.setForeground(new java.awt.Color(0, 0, 0));
         btnAyudaParcial.setText("Ayuda Parcial");
         btnAyudaParcial.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
         btnAyudaParcial.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +98,7 @@ public class JugarMemory extends javax.swing.JFrame {
         btnAyudaParcial.setBounds(280, 0, 80, 30);
 
         btnAyudaTotal.setBackground(new java.awt.Color(187, 83, 70));
+        btnAyudaTotal.setForeground(new java.awt.Color(0, 0, 0));
         btnAyudaTotal.setText("Ayuda Total");
         btnAyudaTotal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnAyudaTotal.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +110,7 @@ public class JugarMemory extends javax.swing.JFrame {
         btnAyudaTotal.setBounds(360, 0, 80, 30);
 
         btnReset.setBackground(new java.awt.Color(187, 83, 70));
+        btnReset.setForeground(new java.awt.Color(0, 0, 0));
         btnReset.setText("Reset");
         btnReset.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnReset.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +122,7 @@ public class JugarMemory extends javax.swing.JFrame {
         btnReset.setBounds(440, 0, 80, 30);
 
         btnSonido.setBackground(new java.awt.Color(187, 83, 70));
+        btnSonido.setForeground(new java.awt.Color(0, 0, 0));
         btnSonido.setText("Sonido");
         btnSonido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSonido.addActionListener(new java.awt.event.ActionListener() {
@@ -129,16 +133,19 @@ public class JugarMemory extends javax.swing.JFrame {
         panelSuperior.add(btnSonido);
         btnSonido.setBounds(520, 0, 80, 30);
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Puntos:");
         panelSuperior.add(jLabel1);
         jLabel1.setBounds(620, 0, 50, 30);
 
+        muestroPuntaje.setForeground(new java.awt.Color(0, 0, 0));
         muestroPuntaje.setText("------");
         muestroPuntaje.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panelSuperior.add(muestroPuntaje);
         muestroPuntaje.setBounds(670, 10, 50, 30);
 
         btnSalir.setBackground(new java.awt.Color(187, 83, 70));
+        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
         btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {

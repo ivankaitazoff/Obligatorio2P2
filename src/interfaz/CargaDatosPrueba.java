@@ -37,47 +37,64 @@ public class CargaDatosPrueba extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(450, 300));
         getContentPane().setLayout(null);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
-        jPanel1.add(jTextCantTemas);
-        jTextCantTemas.setBounds(215, 35, 167, 20);
 
+        jTextCantTemas.setBackground(new java.awt.Color(187, 83, 70));
+        jTextCantTemas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        jPanel1.add(jTextCantTemas);
+        jTextCantTemas.setBounds(215, 35, 167, 19);
+
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Cantidad de temas");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(43, 38, 90, 14);
+        jLabel1.setBounds(43, 38, 89, 15);
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Cantidad de preguntas en cada tema");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(0, 82, 190, 14);
-        jPanel1.add(jTextCantPreguntas);
-        jTextCantPreguntas.setBounds(215, 79, 167, 20);
+        jLabel2.setBounds(0, 82, 190, 15);
 
+        jTextCantPreguntas.setBackground(new java.awt.Color(187, 83, 70));
+        jTextCantPreguntas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        jPanel1.add(jTextCantPreguntas);
+        jTextCantPreguntas.setBounds(215, 79, 167, 19);
+
+        btnCrearDatos.setBackground(new java.awt.Color(187, 83, 70));
+        btnCrearDatos.setForeground(new java.awt.Color(0, 0, 0));
         btnCrearDatos.setText("Crear Datos");
+        btnCrearDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnCrearDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearDatosActionPerformed(evt);
             }
         });
         jPanel1.add(btnCrearDatos);
-        btnCrearDatos.setBounds(230, 140, 130, 23);
+        btnCrearDatos.setBounds(230, 140, 130, 19);
 
+        btnSalir.setBackground(new java.awt.Color(187, 83, 70));
+        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
+        btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
         jPanel1.add(btnSalir);
-        btnSalir.setBounds(40, 140, 120, 23);
+        btnSalir.setBounds(40, 140, 120, 19);
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("AVISO, AL CREAR DATOS USANDO ESTA VENTANA SE BORRARAN");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, 190, 400, 20);
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText(" TODOS LOS DATOS QUE HAY EN EL SISTEMA");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(0, 220, 400, 14);
+        jLabel4.setBounds(0, 220, 400, 15);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 400, 270);

@@ -46,9 +46,10 @@ public class GestionPregunta extends javax.swing.JFrame {
         cmbTemas.setToolTipText("");
         cmbTemas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(cmbTemas);
-        cmbTemas.setBounds(140, 10, 254, 22);
+        cmbTemas.setBounds(140, 10, 254, 28);
 
         volverAMenu.setBackground(new java.awt.Color(187, 83, 70));
+        volverAMenu.setForeground(new java.awt.Color(0, 0, 0));
         volverAMenu.setText("Volver a menu principal");
         volverAMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         volverAMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -60,30 +61,34 @@ public class GestionPregunta extends javax.swing.JFrame {
         volverAMenu.setBounds(440, 310, 140, 19);
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Seleccionar Tema");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(20, 10, 110, 30);
 
         jLabel2.setBackground(new java.awt.Color(187, 83, 70));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ingresar pregunta");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(20, 80, 110, 40);
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ingresar respuesta");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 190, 92, 14);
+        jLabel3.setBounds(20, 190, 92, 15);
 
         pregunta.setBackground(new java.awt.Color(187, 83, 70));
-        pregunta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pregunta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jPanel1.add(pregunta);
-        pregunta.setBounds(140, 90, 254, 18);
+        pregunta.setBounds(140, 90, 254, 19);
 
         respuesta.setBackground(new java.awt.Color(187, 83, 70));
-        respuesta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        respuesta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jPanel1.add(respuesta);
-        respuesta.setBounds(140, 190, 254, 18);
+        respuesta.setBounds(140, 190, 254, 19);
 
         guardarPregunta.setBackground(new java.awt.Color(187, 83, 70));
+        guardarPregunta.setForeground(new java.awt.Color(0, 0, 0));
         guardarPregunta.setText("Guardar Pregunta");
         guardarPregunta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         guardarPregunta.addActionListener(new java.awt.event.ActionListener() {
@@ -95,12 +100,14 @@ public class GestionPregunta extends javax.swing.JFrame {
         guardarPregunta.setBounds(20, 310, 140, 19);
 
         jListaPreguntas.setBackground(new java.awt.Color(187, 83, 70));
+        jListaPreguntas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jScrollPane1.setViewportView(jListaPreguntas);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(460, 20, 110, 200);
 
         jButton1.setBackground(new java.awt.Color(187, 83, 70));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Eliminar tema seleccionado");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jButton1.addActionListener(new java.awt.event.ActionListener() {

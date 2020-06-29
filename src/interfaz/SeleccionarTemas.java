@@ -57,6 +57,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         jLabel1.setBounds(37, 12, 174, 15);
 
         jListaTemasElegidos.setBackground(new java.awt.Color(187, 83, 70));
+        jListaTemasElegidos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jScrollPane1.setViewportView(jListaTemasElegidos);
 
         jPanel1.add(jScrollPane1);
@@ -104,6 +105,7 @@ public class SeleccionarTemas extends javax.swing.JFrame {
         modoFlashCard.setBounds(270, 349, 190, 30);
 
         jListaEleccionTemas.setBackground(new java.awt.Color(187, 83, 70));
+        jListaEleccionTemas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         jScrollPane2.setViewportView(jListaEleccionTemas);
 
         jPanel1.add(jScrollPane2);

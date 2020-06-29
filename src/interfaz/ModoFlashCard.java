@@ -49,7 +49,7 @@ public class ModoFlashCard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnPreguntaAnterior);
-        btnPreguntaAnterior.setBounds(12, 66, 43, 19);
+        btnPreguntaAnterior.setBounds(12, 55, 60, 30);
 
         btnSiguientePregunta.setBackground(new java.awt.Color(187, 83, 70));
         btnSiguientePregunta.setForeground(new java.awt.Color(0, 0, 0));
@@ -61,9 +61,10 @@ public class ModoFlashCard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSiguientePregunta);
-        btnSiguientePregunta.setBounds(323, 66, 48, 19);
+        btnSiguientePregunta.setBounds(323, 55, 60, 30);
 
         btnTexto.setBackground(new java.awt.Color(187, 83, 70));
+        btnTexto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnTexto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTextoActionPerformed(evt);
@@ -82,7 +83,7 @@ public class ModoFlashCard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSalir);
-        btnSalir.setBounds(0, 170, 90, 19);
+        btnSalir.setBounds(0, 159, 90, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

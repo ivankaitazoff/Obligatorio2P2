@@ -24,77 +24,103 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelPath = new javax.swing.JLabel();
-        abrirNavegador = new javax.swing.JButton();
-        mostrarRuta = new javax.swing.JButton();
+        panel1 = new java.awt.Panel();
         cargaDatos = new javax.swing.JButton();
-        guardarDatos = new javax.swing.JButton();
-        cargaPrueba = new javax.swing.JButton();
+        mostrarRuta = new javax.swing.JButton();
+        abrirNavegador = new javax.swing.JButton();
+        labelPath = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        cargaPrueba = new javax.swing.JButton();
+        guardarDatos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(600, 400));
         getContentPane().setLayout(null);
 
-        labelPath.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPath.setText("Path");
-        getContentPane().add(labelPath);
-        labelPath.setBounds(10, 10, 380, 14);
+        panel1.setLayout(null);
 
-        abrirNavegador.setText("Abrir navegador");
-        abrirNavegador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                abrirNavegadorActionPerformed(evt);
-            }
-        });
-        getContentPane().add(abrirNavegador);
-        abrirNavegador.setBounds(70, 40, 250, 23);
-
-        mostrarRuta.setText("Mostrar ruta seleccionada");
-        mostrarRuta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mostrarRutaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(mostrarRuta);
-        mostrarRuta.setBounds(70, 70, 250, 23);
-
+        cargaDatos.setBackground(new java.awt.Color(187, 83, 70));
+        cargaDatos.setForeground(new java.awt.Color(0, 0, 0));
         cargaDatos.setText("Cargar datos desde txt");
+        cargaDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         cargaDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cargaDatosActionPerformed(evt);
             }
         });
-        getContentPane().add(cargaDatos);
-        cargaDatos.setBounds(30, 170, 150, 23);
+        panel1.add(cargaDatos);
+        cargaDatos.setBounds(30, 170, 150, 19);
 
-        guardarDatos.setText("Guardar datos a txt");
-        guardarDatos.addActionListener(new java.awt.event.ActionListener() {
+        mostrarRuta.setBackground(new java.awt.Color(187, 83, 70));
+        mostrarRuta.setForeground(new java.awt.Color(0, 0, 0));
+        mostrarRuta.setText("Mostrar ruta seleccionada");
+        mostrarRuta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        mostrarRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                guardarDatosActionPerformed(evt);
+                mostrarRutaActionPerformed(evt);
             }
         });
-        getContentPane().add(guardarDatos);
-        guardarDatos.setBounds(220, 170, 170, 23);
+        panel1.add(mostrarRuta);
+        mostrarRuta.setBounds(70, 70, 250, 19);
 
-        cargaPrueba.setText("Carga facil de datos de prueba");
-        cargaPrueba.addActionListener(new java.awt.event.ActionListener() {
+        abrirNavegador.setBackground(new java.awt.Color(187, 83, 70));
+        abrirNavegador.setForeground(new java.awt.Color(0, 0, 0));
+        abrirNavegador.setText("Abrir navegador");
+        abrirNavegador.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        abrirNavegador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cargaPruebaActionPerformed(evt);
+                abrirNavegadorActionPerformed(evt);
             }
         });
-        getContentPane().add(cargaPrueba);
-        cargaPrueba.setBounds(60, 220, 290, 23);
+        panel1.add(abrirNavegador);
+        abrirNavegador.setBounds(70, 40, 250, 19);
 
+        labelPath.setForeground(new java.awt.Color(0, 0, 0));
+        labelPath.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPath.setText("Path");
+        panel1.add(labelPath);
+        labelPath.setBounds(10, 10, 380, 15);
+
+        btnSalir.setBackground(new java.awt.Color(187, 83, 70));
+        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
+        btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir);
-        btnSalir.setBounds(150, 260, 100, 23);
+        panel1.add(btnSalir);
+        btnSalir.setBounds(150, 260, 100, 19);
+
+        cargaPrueba.setBackground(new java.awt.Color(187, 83, 70));
+        cargaPrueba.setForeground(new java.awt.Color(0, 0, 0));
+        cargaPrueba.setText("Carga facil de datos de prueba");
+        cargaPrueba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        cargaPrueba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cargaPruebaActionPerformed(evt);
+            }
+        });
+        panel1.add(cargaPrueba);
+        cargaPrueba.setBounds(60, 220, 290, 19);
+
+        guardarDatos.setBackground(new java.awt.Color(187, 83, 70));
+        guardarDatos.setForeground(new java.awt.Color(0, 0, 0));
+        guardarDatos.setText("Guardar datos a txt");
+        guardarDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        guardarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarDatosActionPerformed(evt);
+            }
+        });
+        panel1.add(guardarDatos);
+        guardarDatos.setBounds(220, 170, 170, 19);
+
+        getContentPane().add(panel1);
+        panel1.setBounds(0, 0, 400, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,5 +199,6 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
     private javax.swing.JButton guardarDatos;
     private javax.swing.JLabel labelPath;
     private javax.swing.JButton mostrarRuta;
+    private java.awt.Panel panel1;
     // End of variables declaration//GEN-END:variables
 }
