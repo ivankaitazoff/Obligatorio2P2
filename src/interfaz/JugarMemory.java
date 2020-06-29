@@ -89,6 +89,7 @@ public class JugarMemory extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1600, 1400));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
         panelSuperior.setBackground(new java.awt.Color(255, 255, 255));
@@ -104,7 +105,7 @@ public class JugarMemory extends javax.swing.JFrame {
             }
         });
         panelSuperior.add(btnAyudaParcial);
-        btnAyudaParcial.setBounds(90, 0, 80, 30);
+        btnAyudaParcial.setBounds(280, 0, 80, 30);
 
         btnAyudaTotal.setBackground(new java.awt.Color(187, 83, 70));
         btnAyudaTotal.setText("Ayuda Total");
@@ -115,7 +116,7 @@ public class JugarMemory extends javax.swing.JFrame {
             }
         });
         panelSuperior.add(btnAyudaTotal);
-        btnAyudaTotal.setBounds(170, 0, 80, 30);
+        btnAyudaTotal.setBounds(360, 0, 80, 30);
 
         btnReset.setBackground(new java.awt.Color(187, 83, 70));
         btnReset.setText("Reset");
@@ -126,7 +127,7 @@ public class JugarMemory extends javax.swing.JFrame {
             }
         });
         panelSuperior.add(btnReset);
-        btnReset.setBounds(250, 0, 80, 30);
+        btnReset.setBounds(440, 0, 80, 30);
 
         btnSonido.setBackground(new java.awt.Color(187, 83, 70));
         btnSonido.setText("Sonido");
@@ -137,16 +138,16 @@ public class JugarMemory extends javax.swing.JFrame {
             }
         });
         panelSuperior.add(btnSonido);
-        btnSonido.setBounds(330, 0, 80, 30);
+        btnSonido.setBounds(520, 0, 80, 30);
 
         jLabel1.setText("Puntos:");
         panelSuperior.add(jLabel1);
-        jLabel1.setBounds(430, 0, 50, 30);
+        jLabel1.setBounds(620, 0, 50, 30);
 
         muestroPuntaje.setText("------");
         muestroPuntaje.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panelSuperior.add(muestroPuntaje);
-        muestroPuntaje.setBounds(490, 10, 50, 30);
+        muestroPuntaje.setBounds(670, 10, 50, 30);
 
         btnSalir.setBackground(new java.awt.Color(187, 83, 70));
         btnSalir.setText("Salir");
@@ -157,17 +158,17 @@ public class JugarMemory extends javax.swing.JFrame {
             }
         });
         panelSuperior.add(btnSalir);
-        btnSalir.setBounds(10, 0, 80, 30);
+        btnSalir.setBounds(200, 0, 80, 30);
 
         getContentPane().add(panelSuperior);
 
         panelInferior.setBackground(new java.awt.Color(255, 255, 255));
         panelInferior.setForeground(new java.awt.Color(187, 83, 70));
-        panelInferior.setPreferredSize(new java.awt.Dimension(416, 339));
+        panelInferior.setPreferredSize(new java.awt.Dimension(1400, 1000));
         panelInferior.setLayout(new java.awt.GridLayout(3, 4));
         getContentPane().add(panelInferior);
 
-        setBounds(0, 0, 584, 361);
+        setBounds(0, 0, 899, 463);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSonidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSonidoActionPerformed
