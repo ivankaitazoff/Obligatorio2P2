@@ -245,7 +245,7 @@ public class JugarMemory extends javax.swing.JFrame {
         }
     }
 
-    private boolean preguntaYaUsada(int fila, int columna) {
+    public boolean preguntaYaUsada(int fila, int columna) {
         boolean usado = false;
         for (int i = 0; i < partida.getListaCasilleros().size(); i++) {
             if (fila == partida.getListaCasilleros().get(i).getPosicionX() && columna == partida.getListaCasilleros().get(i).getPosicionY()) {
@@ -253,6 +253,11 @@ public class JugarMemory extends javax.swing.JFrame {
             }
         }
         return usado;
+    }
+    
+     public int setNumeroRandom() {
+             int num = (int) (Math.floor(Math.random() * 6));
+        return num;
     }
     //PARA AGREGARLE AUDIO
     /* public static void music() 
