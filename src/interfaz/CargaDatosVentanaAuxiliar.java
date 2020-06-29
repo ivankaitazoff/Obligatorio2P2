@@ -34,78 +34,78 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
     private void initComponents() {
 
         labelPath = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        abrirNavegador = new javax.swing.JButton();
+        mostrarRuta = new javax.swing.JButton();
+        cargaDatos = new javax.swing.JButton();
+        guardarDatos = new javax.swing.JButton();
+        cargaPrueba = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(600, 400));
         getContentPane().setLayout(null);
 
         labelPath.setText("Path");
         getContentPane().add(labelPath);
-        labelPath.setBounds(28, 12, 360, 15);
+        labelPath.setBounds(30, 10, 360, 15);
 
-        jButton1.setText("Abrir navegador");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        abrirNavegador.setText("Abrir navegador");
+        abrirNavegador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                abrirNavegadorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(10, 50, 250, 25);
+        getContentPane().add(abrirNavegador);
+        abrirNavegador.setBounds(70, 40, 250, 25);
 
-        jButton2.setText("Mostrar path");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        mostrarRuta.setText("Mostrar ruta seleccionada");
+        mostrarRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                mostrarRutaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(20, 100, 250, 25);
+        getContentPane().add(mostrarRuta);
+        mostrarRuta.setBounds(70, 70, 250, 25);
 
-        jButton3.setText("Crear desde txt");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        cargaDatos.setText("Cargar datos desde txt");
+        cargaDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                cargaDatosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(30, 240, 150, 25);
+        getContentPane().add(cargaDatos);
+        cargaDatos.setBounds(30, 170, 150, 25);
 
-        jButton4.setText("Cargar datoos a txt");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        guardarDatos.setText("Guardar datos a txt");
+        guardarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                guardarDatosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(220, 240, 130, 25);
+        getContentPane().add(guardarDatos);
+        guardarDatos.setBounds(220, 170, 170, 25);
 
-        jButton5.setText("Carga facil de datos de prueba");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        cargaPrueba.setText("Carga facil de datos de prueba");
+        cargaPrueba.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                cargaPruebaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(63, 170, 290, 25);
+        getContentPane().add(cargaPrueba);
+        cargaPrueba.setBounds(60, 250, 290, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void abrirNavegadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirNavegadorActionPerformed
         BuscarDocumento b = new BuscarDocumento(sistema);
         b.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_abrirNavegadorActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void mostrarRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarRutaActionPerformed
         labelPath.setText(sistema.getPath());
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_mostrarRutaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void cargaDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaDatosActionPerformed
         ArchivoLectura arch = new ArchivoLectura(sistema.getPath());
         int contador = 1;
         ArrayList<String> listaCargados = new ArrayList<>();
@@ -132,23 +132,23 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
             }
 
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_cargaDatosActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void guardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarDatosActionPerformed
+        
+    }//GEN-LAST:event_guardarDatosActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void cargaPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaPruebaActionPerformed
         CargaDatosPrueba c = new CargaDatosPrueba(sistema);
         c.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_cargaPruebaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton abrirNavegador;
+    private javax.swing.JButton cargaDatos;
+    private javax.swing.JButton cargaPrueba;
+    private javax.swing.JButton guardarDatos;
     private javax.swing.JLabel labelPath;
+    private javax.swing.JButton mostrarRuta;
     // End of variables declaration//GEN-END:variables
 }

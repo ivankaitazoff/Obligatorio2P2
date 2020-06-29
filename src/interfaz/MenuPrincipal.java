@@ -24,11 +24,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         GestionarTemas = new javax.swing.JButton();
         GestionarPreguntasManualmente = new javax.swing.JButton();
-        CargaColectiva = new javax.swing.JButton();
         botonJugar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         guardarDatos = new javax.swing.JButton();
-        btnCargaPrueba = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -64,17 +62,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.add(GestionarPreguntasManualmente);
         GestionarPreguntasManualmente.setBounds(10, 10, 210, 60);
 
-        CargaColectiva.setBackground(new java.awt.Color(187, 83, 70));
-        CargaColectiva.setText("Carga De Preguntas Desde TXT");
-        CargaColectiva.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
-        CargaColectiva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CargaColectivaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(CargaColectiva);
-        CargaColectiva.setBounds(10, 150, 210, 60);
-
         botonJugar.setBackground(new java.awt.Color(187, 83, 70));
         botonJugar.setText("Jugar");
         botonJugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
@@ -98,7 +85,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnSalir.setBounds(230, 350, 90, 19);
 
         guardarDatos.setBackground(new java.awt.Color(187, 83, 70));
-        guardarDatos.setText("Guardar");
+        guardarDatos.setText("Opciones Generacion Datos");
         guardarDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
         guardarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,19 +93,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(guardarDatos);
-        guardarDatos.setBounds(10, 290, 140, 60);
-
-        btnCargaPrueba.setBackground(new java.awt.Color(187, 83, 70));
-        btnCargaPrueba.setText("Carga datos de prueba");
-        btnCargaPrueba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
-        btnCargaPrueba.setPreferredSize(new java.awt.Dimension(169, 19));
-        btnCargaPrueba.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargaPruebaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnCargaPrueba);
-        btnCargaPrueba.setBounds(10, 220, 210, 60);
+        guardarDatos.setBounds(10, 160, 210, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerebro.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -152,11 +127,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         gestionP.setVisible(true);
     }//GEN-LAST:event_GestionarPreguntasManualmenteActionPerformed
 
-    private void CargaColectivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargaColectivaActionPerformed
-   
-    
-    }//GEN-LAST:event_CargaColectivaActionPerformed
-
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         Obligatorio2P2.guardarSistema(this.sistema);
         this.dispose();//cierra vetana
@@ -173,19 +143,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_guardarDatosActionPerformed
 
-    private void btnCargaPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaPruebaActionPerformed
-        CargaDatosPrueba c = new CargaDatosPrueba(sistema);
-        c.setVisible(true);
-    }//GEN-LAST:event_btnCargaPruebaActionPerformed
-
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CargaColectiva;
     private javax.swing.JButton GestionarPreguntasManualmente;
     private javax.swing.JButton GestionarTemas;
     private javax.swing.JButton botonJugar;
-    private javax.swing.JButton btnCargaPrueba;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton guardarDatos;
     private javax.swing.JLabel jLabel1;
