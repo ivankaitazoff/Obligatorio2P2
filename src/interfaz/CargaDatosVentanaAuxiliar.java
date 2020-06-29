@@ -42,7 +42,6 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         panel1.setLayout(null);
 
         cargaDatos.setBackground(new java.awt.Color(187, 83, 70));
-        cargaDatos.setForeground(new java.awt.Color(0, 0, 0));
         cargaDatos.setText("Cargar datos desde txt");
         cargaDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         cargaDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +53,6 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         cargaDatos.setBounds(30, 170, 150, 19);
 
         mostrarRuta.setBackground(new java.awt.Color(187, 83, 70));
-        mostrarRuta.setForeground(new java.awt.Color(0, 0, 0));
         mostrarRuta.setText("Mostrar ruta seleccionada");
         mostrarRuta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         mostrarRuta.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +64,6 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         mostrarRuta.setBounds(70, 70, 250, 19);
 
         abrirNavegador.setBackground(new java.awt.Color(187, 83, 70));
-        abrirNavegador.setForeground(new java.awt.Color(0, 0, 0));
         abrirNavegador.setText("Abrir navegador");
         abrirNavegador.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         abrirNavegador.addActionListener(new java.awt.event.ActionListener() {
@@ -77,14 +74,12 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         panel1.add(abrirNavegador);
         abrirNavegador.setBounds(70, 40, 250, 19);
 
-        labelPath.setForeground(new java.awt.Color(0, 0, 0));
         labelPath.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelPath.setText("Path");
         panel1.add(labelPath);
-        labelPath.setBounds(10, 10, 380, 15);
+        labelPath.setBounds(10, 10, 380, 14);
 
         btnSalir.setBackground(new java.awt.Color(187, 83, 70));
-        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
         btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +91,6 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         btnSalir.setBounds(150, 260, 100, 19);
 
         cargaPrueba.setBackground(new java.awt.Color(187, 83, 70));
-        cargaPrueba.setForeground(new java.awt.Color(0, 0, 0));
         cargaPrueba.setText("Carga facil de datos de prueba");
         cargaPrueba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         cargaPrueba.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +102,6 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
         cargaPrueba.setBounds(60, 220, 290, 19);
 
         guardarDatos.setBackground(new java.awt.Color(187, 83, 70));
-        guardarDatos.setForeground(new java.awt.Color(0, 0, 0));
         guardarDatos.setText("Guardar datos a txt");
         guardarDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         guardarDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +128,7 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
     }//GEN-LAST:event_mostrarRutaActionPerformed
 
     private void cargaDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaDatosActionPerformed
-        ArchivoLectura arch = new ArchivoLectura(sistema.getPath());
+        try{ArchivoLectura arch = new ArchivoLectura(sistema.getPath());
         ArrayList<String> listaCargados = new ArrayList<>();
         while (arch.hayMasLineas()) {
             listaCargados.add(arch.linea());
@@ -160,6 +153,9 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
                 }
 
             }
+        }}
+        catch(Exception e){
+        JOptionPane.showMessageDialog(null, "No se pude encontrar el archivo", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_cargaDatosActionPerformed
 
@@ -178,7 +174,8 @@ public class CargaDatosVentanaAuxiliar extends javax.swing.JFrame {
             
             out.cerrar();
     }catch(Exception e) {
-            System.out.println("error");
+        JOptionPane.showMessageDialog(null, "No se pude encontrar el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+        
     }
     }//GEN-LAST:event_guardarDatosActionPerformed
 

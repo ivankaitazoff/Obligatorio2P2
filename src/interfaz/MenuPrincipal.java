@@ -48,7 +48,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(GestionarTemas);
-        GestionarTemas.setBounds(10, 80, 210, 60);
+        GestionarTemas.setBounds(10, 10, 210, 60);
 
         GestionarPreguntasManualmente.setBackground(new java.awt.Color(187, 83, 70));
         GestionarPreguntasManualmente.setText("Gestionar Preguntas Manualmente");
@@ -59,7 +59,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(GestionarPreguntasManualmente);
-        GestionarPreguntasManualmente.setBounds(10, 10, 210, 60);
+        GestionarPreguntasManualmente.setBounds(10, 80, 210, 60);
 
         botonJugar.setBackground(new java.awt.Color(187, 83, 70));
         botonJugar.setText("Jugar");
