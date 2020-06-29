@@ -132,12 +132,10 @@ public class JugarMemory extends javax.swing.JFrame {
             for (int j = 0; j < 4; j++) {
                 for (int k = 0; k < partida.getListaCasilleros().size(); k++) {
                     Casillero c=partida.getListaCasilleros().get(k);
-                    if (c.getPosicionX() == i && c.getPosicionY() == j
-                            && c.getEsPregunta() && !c.isUsado()) {
+                    if (c.getPosicionX() == i && c.getPosicionY() == j && c.getEsPregunta() && !c.isUsado()) {
                         botones[i][j].setText("Pregunta");
                     }
-                    else if (c.getPosicionX() == i && c.getPosicionY() == j
-                            && !c.getEsPregunta() && !c.isUsado()) {
+                    else if (c.getPosicionX() == i && c.getPosicionY() == j && !c.getEsPregunta() && !c.isUsado()) {
                         botones[i][j].setText("Respuesta");
                     }
                 }
@@ -164,12 +162,10 @@ public class JugarMemory extends javax.swing.JFrame {
             for (int j = 0; j < 4; j++) {
                 for (int k = 0; k < partida.getListaCasilleros().size(); k++) {
                     Casillero c=partida.getListaCasilleros().get(k);
-                    if (c.getPosicionX() == i && c.getPosicionY() == j
-                            && c.getEsPregunta() && !c.isUsado()) {
+                    if (c.getPosicionX() == i && c.getPosicionY() == j && c.getEsPregunta() && !c.isUsado()) {
                         botones[i][j].setText(c.getPregunta().getPregunta());
                     }
-                    else if (c.getPosicionX() == i && c.getPosicionY() == j
-                            && !c.getEsPregunta() && !c.isUsado()) {
+                    else if (c.getPosicionX() == i && c.getPosicionY() == j && !c.getEsPregunta() && !c.isUsado()) {
                         botones[i][j].setText(c.getPregunta().getRespuesta());
                     }
                 }
