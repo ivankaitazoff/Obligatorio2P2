@@ -67,7 +67,7 @@ public class Tema implements Serializable {
 
     @Override
     public String toString() {
-        return nombre + "," +cantidadPreguntas +"cantidad preguntas";
+        return nombre + "," +cantidadPreguntas +"(cantidad preguntas)";
     }
 
 }

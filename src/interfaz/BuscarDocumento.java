@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import java.awt.event.WindowEvent;
 import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -73,7 +74,9 @@ public class BuscarDocumento extends javax.swing.JFrame {
         this.jFileChooser1 = jFileChooser1;
     }
 
-    
+    public void windowClosing(WindowEvent e){
+        System.out.println("cerro la ventana");
+    }
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
